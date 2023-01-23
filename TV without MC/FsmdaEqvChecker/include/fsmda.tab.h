@@ -1,8 +1,8 @@
-/* A Bison parser, made by GNU Bison 3.8.2.  */
+/* A Bison parser, made by GNU Bison 3.5.1.  */
 
 /* Bison interface for Yacc-like parsers in C
 
-   Copyright (C) 1984, 1989-1990, 2000-2015, 2018-2021 Free Software Foundation,
+   Copyright (C) 1984, 1989-1990, 2000-2015, 2018-2020 Free Software Foundation,
    Inc.
 
    This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,7 @@
    GNU General Public License for more details.
 
    You should have received a copy of the GNU General Public License
-   along with this program.  If not, see <https://www.gnu.org/licenses/>.  */
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
 
 /* As a special exception, you may create a larger work that contains
    part or all of the Bison parser skeleton and distribute that work
@@ -31,9 +31,8 @@
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
-/* DO NOT RELY ON FEATURES THAT ARE NOT DOCUMENTED in the manual,
-   especially those whose name start with YY_ or yy_.  They are
-   private implementation details that can be changed or removed.  */
+/* Undocumented macros, especially those whose name start with YY_,
+   are private implementation details.  Do not rely on them.  */
 
 #ifndef YY_YY_FSMDA_TAB_H_INCLUDED
 # define YY_YY_FSMDA_TAB_H_INCLUDED
@@ -45,44 +44,39 @@
 extern int yydebug;
 #endif
 
-/* Token kinds.  */
+/* Token type.  */
 #ifndef YYTOKENTYPE
 # define YYTOKENTYPE
   enum yytokentype
   {
-    YYEMPTY = -2,
-    YYEOF = 0,                     /* "end of file"  */
-    YYerror = 256,                 /* error  */
-    YYUNDEF = 257,                 /* "invalid token"  */
-    IDENTIFIER = 258,              /* IDENTIFIER  */
-    CONSTANT = 259,                /* CONSTANT  */
-    STRING_LITERAL = 260,          /* STRING_LITERAL  */
-    LE_OP = 261,                   /* LE_OP  */
-    GE_OP = 262,                   /* GE_OP  */
-    EQ_OP = 263,                   /* EQ_OP  */
-    NE_OP = 264,                   /* NE_OP  */
-    AND = 265,                     /* AND  */
-    OR = 266,                      /* OR  */
-    NOT = 267,                     /* NOT  */
-    READ = 268,                    /* READ  */
-    OUT = 269,                     /* OUT  */
-    EQUAL = 270,                   /* EQUAL  */
-    COMMA = 271,                   /* COMMA  */
-    SEMIC = 272,                   /* SEMIC  */
-    SEPARATOR = 273,               /* SEPARATOR  */
-    LT_OP = 274,                   /* LT_OP  */
-    GT_OP = 275,                   /* GT_OP  */
-    LEFT_BR = 276,                 /* LEFT_BR  */
-    RIGHT_BR = 277,                /* RIGHT_BR  */
-    LEFT_SQBR = 278,               /* LEFT_SQBR  */
-    RIGHT_SQBR = 279,              /* RIGHT_SQBR  */
-    MULT = 280,                    /* MULT  */
-    DIV = 281,                     /* DIV  */
-    MOD = 282,                     /* MOD  */
-    PLUS = 283,                    /* PLUS  */
-    MINUS = 284                    /* MINUS  */
+    IDENTIFIER = 258,
+    CONSTANT = 259,
+    STRING_LITERAL = 260,
+    LE_OP = 261,
+    GE_OP = 262,
+    EQ_OP = 263,
+    NE_OP = 264,
+    AND = 265,
+    OR = 266,
+    NOT = 267,
+    READ = 268,
+    OUT = 269,
+    EQUAL = 270,
+    COMMA = 271,
+    SEMIC = 272,
+    SEPARATOR = 273,
+    LT_OP = 274,
+    GT_OP = 275,
+    LEFT_BR = 276,
+    RIGHT_BR = 277,
+    LEFT_SQBR = 278,
+    RIGHT_SQBR = 279,
+    MULT = 280,
+    DIV = 281,
+    MOD = 282,
+    PLUS = 283,
+    MINUS = 284
   };
-  typedef enum yytokentype yytoken_kind_t;
 #endif
 
 /* Value type.  */
@@ -101,7 +95,7 @@ union YYSTYPE
 	struct Statement_list* stmt_list;
 	
 
-#line 105 "fsmda.tab.h"
+#line 99 "fsmda.tab.h"
 
 };
 typedef union YYSTYPE YYSTYPE;
@@ -112,8 +106,6 @@ typedef union YYSTYPE YYSTYPE;
 
 extern YYSTYPE yylval;
 
-
 int yyparse (void);
-
 
 #endif /* !YY_YY_FSMDA_TAB_H_INCLUDED  */

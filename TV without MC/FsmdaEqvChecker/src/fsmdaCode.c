@@ -15,6 +15,8 @@
 #include <stdlib.h>
 #include <time.h>
 #include "FsmdaHeader.h"
+#include "valPropHeader.h"
+#include "ctraceCBMC.c"
 
 int count_extend = 0, count_iteration = 0;
 int nmodelCheck = 0;
@@ -4945,7 +4947,7 @@ void graphTraversal(FSMD *M1, PATHS_LIST *pl, int final, int end, var_list *V1, 
 					tempc = tempc->next;
 				}
 			}
-			cTraceUsingCBMC(M1, M2, pl, pl1, tempLIST, tempE_u, tempE_c, V1, V2);
+			cTraceUsingCBMC(M1, M2, pl, pl1, tempList, tempE_u, tempE_c, V1, V2);
 		}
 
 		vis[end] = 0;
