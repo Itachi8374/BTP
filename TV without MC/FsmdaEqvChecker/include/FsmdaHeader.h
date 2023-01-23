@@ -110,7 +110,18 @@ typedef struct trans_struct
 }TRANSITION_ST;
 // TRANSITION_ST is the name of the structure for transition
 
-
+//loop_info start
+typedef struct loop_struct
+{
+	char *loop_iterator;
+	char *initial_val;
+	char *lower_limit;
+	NC *loop_condition;
+	NC *propagated_cond;
+	int depth;
+	int parent[MAXSTATES];
+}LOOP_DETAILS;
+//loop_info end
 
 //  This holds the complete infomation of a state in the FSMD
 typedef struct state_struct
@@ -122,6 +133,7 @@ typedef struct state_struct
 	int dominant[100];
 	int leaky[100];
 
+	int stateColor; //pankaj;
 	//  this is the type of the state,it may be start state or
 	//  final state or any cutpoint or any other state
 
@@ -132,12 +144,24 @@ typedef struct state_struct
 
 	int isCutPoint, isTempCutPoint;
 	int isLoop;
+
 	//value propagation code start
 	boolean VAPFLAG; //flag to track VAP (Visited Along a Path)
 
 	PROPAGATED_VECTOR propVector;
 	//value propagation code end
+	
+	PROPAGATED_VECTOR propVector_2;
+	
+	boolean loop_header_flag; // loop_info-header info
+	
+	int my_loop_header;	
 
+	boolean do_Loop_Test ;
+
+	boolean avoid_Loop_Exit_Path;
+
+	LOOP_DETAILS *loop_info; // loop_info
 
 }NODE_ST;  // This is the structure for a state
 
