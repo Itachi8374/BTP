@@ -1,0 +1,89 @@
+\begin{figure*}[!t]
+ \centering
+ \scalebox{0.34}{
+ \begin{tikzpicture}[%
+      >=triangle 60,              % Nice arrows; your taste may be different
+      node distance=7mm and 4mm, % Global setup of box spacing
+      every join/.style={norm},   % Default linetype for connecting boxes
+ 	   font=\Large,auto
+      ]
+  \tikzset{
+ 	 rect/.style={draw,align=center,rectangle, text width=8cm,rounded corners},	
+ 	 test/.style={draw, align=center,diamond, aspect=1.3, text width=8em}}
+ \node [rect] (1) {Generate $\mathit{cTrace}$ for both $M_0$ and $M_1$};
+ 
+  \node [rect,below=of 1] (12)     {k$\leftarrow$1};
+ \node [rect,below=of 12] (2)     {\texttt{cbmc input.c -unwind k 
+ --no-unwinding-assertions}};
+ 
+ \node [test,below=of 2]  (t1)    {timeout?};
+ 
+ \node [rect,below left=of t1]   (3)    {behaviors May Not be equivalent};
+ 
+ \node [test,node distance=2cm and 1.5cm,below right=of t1]  (t2) 
+ {\texttt{\_\_CPROVER\\\_assume} statement  SAT};
+ 
+ \node [test,node distance=2cm and 4cm,below left=of t2]  (t3)    {User 
+defined Assertion violated?};
+ 
+ \node [rect,node distance=2cm and 3cm,below right=of t2]   (4)    {behaviors 
+ May Not be equivalent};
+
+
+\node [test,node distance=2cm and 4cm,below left=of t3]  (t21) {Verify 
+ unwinding assertion};
+  
+ \node [rect,node distance=2cm and 5cm,below =of t21]   (6)  {Mark both path 
+ as equivalent and proceed further};
+ 
+ 
+ \node [test,node distance=2cm and 3cm,below right=of t3]  (t6)    {mismatch 
+ in o/p values?};
+ 
+ \node [rect,below left=of t6]  (r6)    {Report Not equivalent and provide CE 
+ as a proof};
+ 
+ \node [rect,node distance=2cm and 3cm,below right=of t6,] (5)     {Run two 
+ programs over CE};
+ 
+ \node [test,below=of 5]  (t4)    {mismatch in o/p values?};
+ 
+ 
+ 
+ \node [rect,below right=of t4]   (7)  {Mark both path as equivalent and 
+ proceed further};
+ 
+ \node [rect,below left=of t4]  (8)    {Report Not equivalent and provide CE 
+ as  a proof};
+ 
+ 
+ \draw[->] (1) -- (12);
+ \draw[->] (12) -- (2);
+ \draw[->] (2) -- (t1);
+ \draw[->]  (t1.180) -| node[pos=0.3,above]{Yes} node[pos=0.8,left]{\color{blue}{(Case~4)}} (3);
+ \draw[->] (t1.0) -| node[above]{No} (t2.90);
+ \draw[,->]  (t2.0) -| node[pos=0.3, above]{No}   node[pos=0.8,right]{\color{blue}{(Case~1)}} (4);
+ \draw[->]  (t2.180) -| node[pos=0.3,above]{Yes} (t3);
+
+ \draw[->]  (t21.270) -- node[pos=0.3,left]{Yes} node[pos=0.8,left]{\color{blue}{(Case~2)}} (6);
+ \draw[->]  (t21.180) -- ($(t21)+(-6,0.0)$) |- 
+ node[pos=0.3,above,rotate=90]{No, $k\leftarrow k+1$} (2);
+
+ \draw[->]  (t3.0) -| node[pos=0.3,above,xshift=1.4cm]{Yes (Counter-example 
+ (CE) exits)} node[pos=0.8,right]{\color{blue}{(Case~3)}}  
+ (t6);
+ 
+ \draw[->]  (t3.180) -| node[pos=0.3,above]{No} (t21);
+
+ \draw[->]  (t6.180) -| node[pos=0.3,above]{Yes} node[pos=0.8,left]{\color{blue}{(Case~3.1)}} (r6);
+
+ \draw[->]  (t6) -| node[pos=0.3,above]{No} (5);
+ 
+ \draw[->] (5) -- (t4);
+ \draw[->]  (t4.180) -| node[pos=0.3,above]{Yes} node[pos=0.8,left]{\color{blue}{(Case~3.3)}} (8);
+ \draw[->]  (t4.0) -| node[pos=0.3,above]{No} node[pos=0.8,right]{\color{blue}{(Case~3.2)}} (7);
+ \end{tikzpicture}
+ }
+\caption{Control flow graph of counter-example generation using CBMC and its utilization in a PBEC framework.}
+\label{Fig:CFG}
+\end{figure*}

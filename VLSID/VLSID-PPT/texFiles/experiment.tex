@@ -1,0 +1,47 @@
+\begin{frame}[t]{Experimental Results}
+\begin{table}[!t]
+\setlength\tabcolsep{5pt} % default value: 6pt
+\renewcommand{\arraystretch}{1.2}
+  \centering
+  \begin{threeparttable}
+  \begin{tabular}{|l|c|c|c|c|c|c|c|c|}
+    \hline
+    \multirow{2}{*}{Benchmarks}&
+    \multirow{2}{*}{\#Path}&
+    \multicolumn{2}{c|}{\#State} &
+    \multicolumn{2}{c|}{Decision} &
+    \multicolumn{2}{c|}{Time (ms)} &
+    \multirow{2}{*}{Lines}\\\cline{3-8}
+    &&$M_0$&$M_1$&EVP&Our&EVP&Our&
+      \only<1,3-4>{\\\hline}
+      \only<2>{\\\hline\rowcolor{blue!20}}DIFFEQ&3&15&9&E&E&25&25&-% 
+      \only<1,3-4>{\\}
+      \only<2>{\\\rowcolor{blue!20}}LRU&39&33&32&E&E&1038&1038&-%
+      \only<1-2,4>{\\}
+      \only<3>{\\\rowcolor{blue!20}}DCT&1&8&16&MNE&NE&85&766&185%output change
+      \only<1-2,4>{\\}
+      \only<3>{\\\rowcolor{blue!20}}PERFECT&7&6&4&MNE&NE&56&227&74%live Variable change
+      \only<1-2,4>{\\}
+      \only<3>{\\\rowcolor{blue!20}}MODN&9&8&9&MNE&NE&66&890&137%live Variable Change
+      \only<1-2,4>{\\}
+      \only<3>{\\\rowcolor{blue!20}}GCD&11&8&4&MNE&NE&31&100&97%
+      \only<1-3>{\\}
+      \only<4>{\\\rowcolor{blue!20}}Test Case&6&5&5&MNE&MNE&20&26&32%
+   \\\hline
+  \end{tabular}
+    \begin{tablenotes}
+  \centering
+    \tiny
+    \item E -- Equivalent, MNE -- May Not be Equivalent, NE -- Not Equivalent
+    \end{tablenotes}
+  \end{threeparttable}
+  \end{table}%
+  \begin{overlayarea}{\textwidth}{3cm} 
+   \begin{itemize}
+   \only<1>{\item Implemented CEG on top of the EVP.}
+   \only<2>{\item No side effect on the existing method.}
+   \only<3>{\item The EVP takes strong decisions about the non-equivalence of behaviors.}
+   \only<4>{\item Finds a scenario where the EVP gives false negative result.}  
+   \end{itemize}
+\end{overlayarea}
+\end{frame}

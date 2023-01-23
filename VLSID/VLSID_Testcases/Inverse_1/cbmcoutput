@@ -1,0 +1,2137 @@
+CBMC version 5.8 64-bit x86_64 linux
+Parsing Inverse_1.c
+Converting
+Type-checking Inverse_1
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+Partial Inlining
+Generic Property Instrumentation
+Starting Bounded Model Checking
+Unwinding loop main.0 iteration 1 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 2 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 3 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 4 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 5 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 6 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 7 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 8 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 9 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 10 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 11 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 12 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 13 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 14 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 15 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 16 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 17 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 18 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 19 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 20 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 21 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 22 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 23 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 24 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 25 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 26 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 27 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 28 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 29 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 30 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 31 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 32 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 33 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 34 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 35 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 36 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 37 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 38 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 39 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 40 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 41 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 42 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 43 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 44 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 45 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 46 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 47 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 48 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 49 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 50 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 51 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 52 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 53 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 54 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 55 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 56 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 57 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 58 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 59 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 60 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 61 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 62 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 63 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 64 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 65 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 66 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 67 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 68 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 69 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 70 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 71 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 72 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 73 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 74 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 75 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 76 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 77 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 78 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 79 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 80 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 81 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 82 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 83 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 84 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 85 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 86 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 87 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 88 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 89 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 90 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 91 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 92 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 93 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 94 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 95 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 96 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 97 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 98 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.0 iteration 99 file Inverse_1.c line 6 function main thread 0
+Unwinding loop main.1 iteration 1 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 2 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 3 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 4 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 5 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 6 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 7 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 8 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 9 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 10 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 11 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 12 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 13 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 14 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 15 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 16 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 17 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 18 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 19 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 20 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 21 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 22 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 23 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 24 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 25 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 26 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 27 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 28 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 29 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 30 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 31 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 32 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 33 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 34 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 35 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 36 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 37 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 38 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 39 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 40 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 41 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 42 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 43 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 44 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 45 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 46 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 47 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 48 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 49 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 50 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 51 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 52 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 53 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 54 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 55 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 56 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 57 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 58 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 59 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 60 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 61 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 62 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 63 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 64 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 65 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 66 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 67 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 68 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 69 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 70 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 71 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 72 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 73 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 74 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 75 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 76 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 77 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 78 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 79 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 80 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 81 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 82 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 83 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 84 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 85 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 86 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 87 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 88 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 89 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 90 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 91 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 92 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 93 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 94 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 95 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 96 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 97 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 98 file Inverse_1.c line 20 function main thread 0
+Unwinding loop main.1 iteration 99 file Inverse_1.c line 20 function main thread 0
+size of program expression: 1369 steps
+simple slicing removed 6 assignments
+Generated 2 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+232 variables, 11 clauses
+SAT checker: instance is SATISFIABLE
+Solving with MiniSAT 2.2.1 with simplifier
+232 variables, 0 clauses
+SAT checker inconsistent: instance is UNSATISFIABLE
+Runtime decision procedure: 0.006s
+
+** Results:
+[main.assertion.1] assertion x0==x1: SUCCESS
+[main.assertion.2] assertion y0==y1: FAILURE
+
+Trace for main.assertion.2:
+
+State 18 file Inverse_1.c line 3 function main thread 0
+----------------------------------------------------
+  x1=0 (00000000000000000000000000000000)
+
+State 19 file Inverse_1.c line 3 function main thread 0
+----------------------------------------------------
+  y1=0 (00000000000000000000000000000000)
+
+State 20 file Inverse_1.c line 3 function main thread 0
+----------------------------------------------------
+  i1=0 (00000000000000000000000000000000)
+
+State 21 file Inverse_1.c line 3 function main thread 0
+----------------------------------------------------
+  x0=0 (00000000000000000000000000000000)
+
+State 22 file Inverse_1.c line 3 function main thread 0
+----------------------------------------------------
+  y0=0 (00000000000000000000000000000000)
+
+State 23 file Inverse_1.c line 3 function main thread 0
+----------------------------------------------------
+  n=0 (00000000000000000000000000000000)
+
+State 24 file Inverse_1.c line 3 function main thread 0
+----------------------------------------------------
+  i0=0 (00000000000000000000000000000000)
+
+State 25 file Inverse_1.c line 4 function main thread 0
+----------------------------------------------------
+  x0=5 (00000000000000000000000000000101)
+
+State 26 file Inverse_1.c line 5 function main thread 0
+----------------------------------------------------
+  y0=10 (00000000000000000000000000001010)
+
+State 27 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=1 (00000000000000000000000000000001)
+
+State 31 file Inverse_1.c line 12 function main thread 0
+----------------------------------------------------
+  x0=3 (00000000000000000000000000000011)
+
+State 32 file Inverse_1.c line 13 function main thread 0
+----------------------------------------------------
+  y0=20 (00000000000000000000000000010100)
+
+State 34 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=2 (00000000000000000000000000000010)
+
+State 39 file Inverse_1.c line 16 function main thread 0
+----------------------------------------------------
+  x0=4 (00000000000000000000000000000100)
+
+State 40 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=3 (00000000000000000000000000000011)
+
+State 44 file Inverse_1.c line 8 function main thread 0
+----------------------------------------------------
+  x0=5 (00000000000000000000000000000101)
+
+State 45 file Inverse_1.c line 9 function main thread 0
+----------------------------------------------------
+  y0=21 (00000000000000000000000000010101)
+
+State 47 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=4 (00000000000000000000000000000100)
+
+State 52 file Inverse_1.c line 12 function main thread 0
+----------------------------------------------------
+  x0=3 (00000000000000000000000000000011)
+
+State 53 file Inverse_1.c line 13 function main thread 0
+----------------------------------------------------
+  y0=42 (00000000000000000000000000101010)
+
+State 55 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=5 (00000000000000000000000000000101)
+
+State 60 file Inverse_1.c line 16 function main thread 0
+----------------------------------------------------
+  x0=4 (00000000000000000000000000000100)
+
+State 61 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=6 (00000000000000000000000000000110)
+
+State 65 file Inverse_1.c line 8 function main thread 0
+----------------------------------------------------
+  x0=5 (00000000000000000000000000000101)
+
+State 66 file Inverse_1.c line 9 function main thread 0
+----------------------------------------------------
+  y0=43 (00000000000000000000000000101011)
+
+State 68 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=7 (00000000000000000000000000000111)
+
+State 73 file Inverse_1.c line 12 function main thread 0
+----------------------------------------------------
+  x0=3 (00000000000000000000000000000011)
+
+State 74 file Inverse_1.c line 13 function main thread 0
+----------------------------------------------------
+  y0=86 (00000000000000000000000001010110)
+
+State 76 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=8 (00000000000000000000000000001000)
+
+State 81 file Inverse_1.c line 16 function main thread 0
+----------------------------------------------------
+  x0=4 (00000000000000000000000000000100)
+
+State 82 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=9 (00000000000000000000000000001001)
+
+State 86 file Inverse_1.c line 8 function main thread 0
+----------------------------------------------------
+  x0=5 (00000000000000000000000000000101)
+
+State 87 file Inverse_1.c line 9 function main thread 0
+----------------------------------------------------
+  y0=87 (00000000000000000000000001010111)
+
+State 89 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=10 (00000000000000000000000000001010)
+
+State 94 file Inverse_1.c line 12 function main thread 0
+----------------------------------------------------
+  x0=3 (00000000000000000000000000000011)
+
+State 95 file Inverse_1.c line 13 function main thread 0
+----------------------------------------------------
+  y0=174 (00000000000000000000000010101110)
+
+State 97 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=11 (00000000000000000000000000001011)
+
+State 102 file Inverse_1.c line 16 function main thread 0
+----------------------------------------------------
+  x0=4 (00000000000000000000000000000100)
+
+State 103 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=12 (00000000000000000000000000001100)
+
+State 107 file Inverse_1.c line 8 function main thread 0
+----------------------------------------------------
+  x0=5 (00000000000000000000000000000101)
+
+State 108 file Inverse_1.c line 9 function main thread 0
+----------------------------------------------------
+  y0=175 (00000000000000000000000010101111)
+
+State 110 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=13 (00000000000000000000000000001101)
+
+State 115 file Inverse_1.c line 12 function main thread 0
+----------------------------------------------------
+  x0=3 (00000000000000000000000000000011)
+
+State 116 file Inverse_1.c line 13 function main thread 0
+----------------------------------------------------
+  y0=350 (00000000000000000000000101011110)
+
+State 118 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=14 (00000000000000000000000000001110)
+
+State 123 file Inverse_1.c line 16 function main thread 0
+----------------------------------------------------
+  x0=4 (00000000000000000000000000000100)
+
+State 124 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=15 (00000000000000000000000000001111)
+
+State 128 file Inverse_1.c line 8 function main thread 0
+----------------------------------------------------
+  x0=5 (00000000000000000000000000000101)
+
+State 129 file Inverse_1.c line 9 function main thread 0
+----------------------------------------------------
+  y0=351 (00000000000000000000000101011111)
+
+State 131 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=16 (00000000000000000000000000010000)
+
+State 136 file Inverse_1.c line 12 function main thread 0
+----------------------------------------------------
+  x0=3 (00000000000000000000000000000011)
+
+State 137 file Inverse_1.c line 13 function main thread 0
+----------------------------------------------------
+  y0=702 (00000000000000000000001010111110)
+
+State 139 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=17 (00000000000000000000000000010001)
+
+State 144 file Inverse_1.c line 16 function main thread 0
+----------------------------------------------------
+  x0=4 (00000000000000000000000000000100)
+
+State 145 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=18 (00000000000000000000000000010010)
+
+State 149 file Inverse_1.c line 8 function main thread 0
+----------------------------------------------------
+  x0=5 (00000000000000000000000000000101)
+
+State 150 file Inverse_1.c line 9 function main thread 0
+----------------------------------------------------
+  y0=703 (00000000000000000000001010111111)
+
+State 152 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=19 (00000000000000000000000000010011)
+
+State 157 file Inverse_1.c line 12 function main thread 0
+----------------------------------------------------
+  x0=3 (00000000000000000000000000000011)
+
+State 158 file Inverse_1.c line 13 function main thread 0
+----------------------------------------------------
+  y0=1406 (00000000000000000000010101111110)
+
+State 160 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=20 (00000000000000000000000000010100)
+
+State 165 file Inverse_1.c line 16 function main thread 0
+----------------------------------------------------
+  x0=4 (00000000000000000000000000000100)
+
+State 166 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=21 (00000000000000000000000000010101)
+
+State 170 file Inverse_1.c line 8 function main thread 0
+----------------------------------------------------
+  x0=5 (00000000000000000000000000000101)
+
+State 171 file Inverse_1.c line 9 function main thread 0
+----------------------------------------------------
+  y0=1407 (00000000000000000000010101111111)
+
+State 173 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=22 (00000000000000000000000000010110)
+
+State 178 file Inverse_1.c line 12 function main thread 0
+----------------------------------------------------
+  x0=3 (00000000000000000000000000000011)
+
+State 179 file Inverse_1.c line 13 function main thread 0
+----------------------------------------------------
+  y0=2814 (00000000000000000000101011111110)
+
+State 181 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=23 (00000000000000000000000000010111)
+
+State 186 file Inverse_1.c line 16 function main thread 0
+----------------------------------------------------
+  x0=4 (00000000000000000000000000000100)
+
+State 187 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=24 (00000000000000000000000000011000)
+
+State 191 file Inverse_1.c line 8 function main thread 0
+----------------------------------------------------
+  x0=5 (00000000000000000000000000000101)
+
+State 192 file Inverse_1.c line 9 function main thread 0
+----------------------------------------------------
+  y0=2815 (00000000000000000000101011111111)
+
+State 194 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=25 (00000000000000000000000000011001)
+
+State 199 file Inverse_1.c line 12 function main thread 0
+----------------------------------------------------
+  x0=3 (00000000000000000000000000000011)
+
+State 200 file Inverse_1.c line 13 function main thread 0
+----------------------------------------------------
+  y0=5630 (00000000000000000001010111111110)
+
+State 202 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=26 (00000000000000000000000000011010)
+
+State 207 file Inverse_1.c line 16 function main thread 0
+----------------------------------------------------
+  x0=4 (00000000000000000000000000000100)
+
+State 208 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=27 (00000000000000000000000000011011)
+
+State 212 file Inverse_1.c line 8 function main thread 0
+----------------------------------------------------
+  x0=5 (00000000000000000000000000000101)
+
+State 213 file Inverse_1.c line 9 function main thread 0
+----------------------------------------------------
+  y0=5631 (00000000000000000001010111111111)
+
+State 215 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=28 (00000000000000000000000000011100)
+
+State 220 file Inverse_1.c line 12 function main thread 0
+----------------------------------------------------
+  x0=3 (00000000000000000000000000000011)
+
+State 221 file Inverse_1.c line 13 function main thread 0
+----------------------------------------------------
+  y0=11262 (00000000000000000010101111111110)
+
+State 223 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=29 (00000000000000000000000000011101)
+
+State 228 file Inverse_1.c line 16 function main thread 0
+----------------------------------------------------
+  x0=4 (00000000000000000000000000000100)
+
+State 229 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=30 (00000000000000000000000000011110)
+
+State 233 file Inverse_1.c line 8 function main thread 0
+----------------------------------------------------
+  x0=5 (00000000000000000000000000000101)
+
+State 234 file Inverse_1.c line 9 function main thread 0
+----------------------------------------------------
+  y0=11263 (00000000000000000010101111111111)
+
+State 236 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=31 (00000000000000000000000000011111)
+
+State 241 file Inverse_1.c line 12 function main thread 0
+----------------------------------------------------
+  x0=3 (00000000000000000000000000000011)
+
+State 242 file Inverse_1.c line 13 function main thread 0
+----------------------------------------------------
+  y0=22526 (00000000000000000101011111111110)
+
+State 244 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=32 (00000000000000000000000000100000)
+
+State 249 file Inverse_1.c line 16 function main thread 0
+----------------------------------------------------
+  x0=4 (00000000000000000000000000000100)
+
+State 250 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=33 (00000000000000000000000000100001)
+
+State 254 file Inverse_1.c line 8 function main thread 0
+----------------------------------------------------
+  x0=5 (00000000000000000000000000000101)
+
+State 255 file Inverse_1.c line 9 function main thread 0
+----------------------------------------------------
+  y0=22527 (00000000000000000101011111111111)
+
+State 257 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=34 (00000000000000000000000000100010)
+
+State 262 file Inverse_1.c line 12 function main thread 0
+----------------------------------------------------
+  x0=3 (00000000000000000000000000000011)
+
+State 263 file Inverse_1.c line 13 function main thread 0
+----------------------------------------------------
+  y0=45054 (00000000000000001010111111111110)
+
+State 265 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=35 (00000000000000000000000000100011)
+
+State 270 file Inverse_1.c line 16 function main thread 0
+----------------------------------------------------
+  x0=4 (00000000000000000000000000000100)
+
+State 271 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=36 (00000000000000000000000000100100)
+
+State 275 file Inverse_1.c line 8 function main thread 0
+----------------------------------------------------
+  x0=5 (00000000000000000000000000000101)
+
+State 276 file Inverse_1.c line 9 function main thread 0
+----------------------------------------------------
+  y0=45055 (00000000000000001010111111111111)
+
+State 278 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=37 (00000000000000000000000000100101)
+
+State 283 file Inverse_1.c line 12 function main thread 0
+----------------------------------------------------
+  x0=3 (00000000000000000000000000000011)
+
+State 284 file Inverse_1.c line 13 function main thread 0
+----------------------------------------------------
+  y0=90110 (00000000000000010101111111111110)
+
+State 286 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=38 (00000000000000000000000000100110)
+
+State 291 file Inverse_1.c line 16 function main thread 0
+----------------------------------------------------
+  x0=4 (00000000000000000000000000000100)
+
+State 292 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=39 (00000000000000000000000000100111)
+
+State 296 file Inverse_1.c line 8 function main thread 0
+----------------------------------------------------
+  x0=5 (00000000000000000000000000000101)
+
+State 297 file Inverse_1.c line 9 function main thread 0
+----------------------------------------------------
+  y0=90111 (00000000000000010101111111111111)
+
+State 299 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=40 (00000000000000000000000000101000)
+
+State 304 file Inverse_1.c line 12 function main thread 0
+----------------------------------------------------
+  x0=3 (00000000000000000000000000000011)
+
+State 305 file Inverse_1.c line 13 function main thread 0
+----------------------------------------------------
+  y0=180222 (00000000000000101011111111111110)
+
+State 307 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=41 (00000000000000000000000000101001)
+
+State 312 file Inverse_1.c line 16 function main thread 0
+----------------------------------------------------
+  x0=4 (00000000000000000000000000000100)
+
+State 313 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=42 (00000000000000000000000000101010)
+
+State 317 file Inverse_1.c line 8 function main thread 0
+----------------------------------------------------
+  x0=5 (00000000000000000000000000000101)
+
+State 318 file Inverse_1.c line 9 function main thread 0
+----------------------------------------------------
+  y0=180223 (00000000000000101011111111111111)
+
+State 320 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=43 (00000000000000000000000000101011)
+
+State 325 file Inverse_1.c line 12 function main thread 0
+----------------------------------------------------
+  x0=3 (00000000000000000000000000000011)
+
+State 326 file Inverse_1.c line 13 function main thread 0
+----------------------------------------------------
+  y0=360446 (00000000000001010111111111111110)
+
+State 328 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=44 (00000000000000000000000000101100)
+
+State 333 file Inverse_1.c line 16 function main thread 0
+----------------------------------------------------
+  x0=4 (00000000000000000000000000000100)
+
+State 334 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=45 (00000000000000000000000000101101)
+
+State 338 file Inverse_1.c line 8 function main thread 0
+----------------------------------------------------
+  x0=5 (00000000000000000000000000000101)
+
+State 339 file Inverse_1.c line 9 function main thread 0
+----------------------------------------------------
+  y0=360447 (00000000000001010111111111111111)
+
+State 341 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=46 (00000000000000000000000000101110)
+
+State 346 file Inverse_1.c line 12 function main thread 0
+----------------------------------------------------
+  x0=3 (00000000000000000000000000000011)
+
+State 347 file Inverse_1.c line 13 function main thread 0
+----------------------------------------------------
+  y0=720894 (00000000000010101111111111111110)
+
+State 349 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=47 (00000000000000000000000000101111)
+
+State 354 file Inverse_1.c line 16 function main thread 0
+----------------------------------------------------
+  x0=4 (00000000000000000000000000000100)
+
+State 355 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=48 (00000000000000000000000000110000)
+
+State 359 file Inverse_1.c line 8 function main thread 0
+----------------------------------------------------
+  x0=5 (00000000000000000000000000000101)
+
+State 360 file Inverse_1.c line 9 function main thread 0
+----------------------------------------------------
+  y0=720895 (00000000000010101111111111111111)
+
+State 362 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=49 (00000000000000000000000000110001)
+
+State 367 file Inverse_1.c line 12 function main thread 0
+----------------------------------------------------
+  x0=3 (00000000000000000000000000000011)
+
+State 368 file Inverse_1.c line 13 function main thread 0
+----------------------------------------------------
+  y0=1441790 (00000000000101011111111111111110)
+
+State 370 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=50 (00000000000000000000000000110010)
+
+State 375 file Inverse_1.c line 16 function main thread 0
+----------------------------------------------------
+  x0=4 (00000000000000000000000000000100)
+
+State 376 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=51 (00000000000000000000000000110011)
+
+State 380 file Inverse_1.c line 8 function main thread 0
+----------------------------------------------------
+  x0=5 (00000000000000000000000000000101)
+
+State 381 file Inverse_1.c line 9 function main thread 0
+----------------------------------------------------
+  y0=1441791 (00000000000101011111111111111111)
+
+State 383 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=52 (00000000000000000000000000110100)
+
+State 388 file Inverse_1.c line 12 function main thread 0
+----------------------------------------------------
+  x0=3 (00000000000000000000000000000011)
+
+State 389 file Inverse_1.c line 13 function main thread 0
+----------------------------------------------------
+  y0=2883582 (00000000001010111111111111111110)
+
+State 391 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=53 (00000000000000000000000000110101)
+
+State 396 file Inverse_1.c line 16 function main thread 0
+----------------------------------------------------
+  x0=4 (00000000000000000000000000000100)
+
+State 397 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=54 (00000000000000000000000000110110)
+
+State 401 file Inverse_1.c line 8 function main thread 0
+----------------------------------------------------
+  x0=5 (00000000000000000000000000000101)
+
+State 402 file Inverse_1.c line 9 function main thread 0
+----------------------------------------------------
+  y0=2883583 (00000000001010111111111111111111)
+
+State 404 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=55 (00000000000000000000000000110111)
+
+State 409 file Inverse_1.c line 12 function main thread 0
+----------------------------------------------------
+  x0=3 (00000000000000000000000000000011)
+
+State 410 file Inverse_1.c line 13 function main thread 0
+----------------------------------------------------
+  y0=5767166 (00000000010101111111111111111110)
+
+State 412 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=56 (00000000000000000000000000111000)
+
+State 417 file Inverse_1.c line 16 function main thread 0
+----------------------------------------------------
+  x0=4 (00000000000000000000000000000100)
+
+State 418 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=57 (00000000000000000000000000111001)
+
+State 422 file Inverse_1.c line 8 function main thread 0
+----------------------------------------------------
+  x0=5 (00000000000000000000000000000101)
+
+State 423 file Inverse_1.c line 9 function main thread 0
+----------------------------------------------------
+  y0=5767167 (00000000010101111111111111111111)
+
+State 425 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=58 (00000000000000000000000000111010)
+
+State 430 file Inverse_1.c line 12 function main thread 0
+----------------------------------------------------
+  x0=3 (00000000000000000000000000000011)
+
+State 431 file Inverse_1.c line 13 function main thread 0
+----------------------------------------------------
+  y0=11534334 (00000000101011111111111111111110)
+
+State 433 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=59 (00000000000000000000000000111011)
+
+State 438 file Inverse_1.c line 16 function main thread 0
+----------------------------------------------------
+  x0=4 (00000000000000000000000000000100)
+
+State 439 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=60 (00000000000000000000000000111100)
+
+State 443 file Inverse_1.c line 8 function main thread 0
+----------------------------------------------------
+  x0=5 (00000000000000000000000000000101)
+
+State 444 file Inverse_1.c line 9 function main thread 0
+----------------------------------------------------
+  y0=11534335 (00000000101011111111111111111111)
+
+State 446 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=61 (00000000000000000000000000111101)
+
+State 451 file Inverse_1.c line 12 function main thread 0
+----------------------------------------------------
+  x0=3 (00000000000000000000000000000011)
+
+State 452 file Inverse_1.c line 13 function main thread 0
+----------------------------------------------------
+  y0=23068670 (00000001010111111111111111111110)
+
+State 454 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=62 (00000000000000000000000000111110)
+
+State 459 file Inverse_1.c line 16 function main thread 0
+----------------------------------------------------
+  x0=4 (00000000000000000000000000000100)
+
+State 460 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=63 (00000000000000000000000000111111)
+
+State 464 file Inverse_1.c line 8 function main thread 0
+----------------------------------------------------
+  x0=5 (00000000000000000000000000000101)
+
+State 465 file Inverse_1.c line 9 function main thread 0
+----------------------------------------------------
+  y0=23068671 (00000001010111111111111111111111)
+
+State 467 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=64 (00000000000000000000000001000000)
+
+State 472 file Inverse_1.c line 12 function main thread 0
+----------------------------------------------------
+  x0=3 (00000000000000000000000000000011)
+
+State 473 file Inverse_1.c line 13 function main thread 0
+----------------------------------------------------
+  y0=46137342 (00000010101111111111111111111110)
+
+State 475 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=65 (00000000000000000000000001000001)
+
+State 480 file Inverse_1.c line 16 function main thread 0
+----------------------------------------------------
+  x0=4 (00000000000000000000000000000100)
+
+State 481 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=66 (00000000000000000000000001000010)
+
+State 485 file Inverse_1.c line 8 function main thread 0
+----------------------------------------------------
+  x0=5 (00000000000000000000000000000101)
+
+State 486 file Inverse_1.c line 9 function main thread 0
+----------------------------------------------------
+  y0=46137343 (00000010101111111111111111111111)
+
+State 488 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=67 (00000000000000000000000001000011)
+
+State 493 file Inverse_1.c line 12 function main thread 0
+----------------------------------------------------
+  x0=3 (00000000000000000000000000000011)
+
+State 494 file Inverse_1.c line 13 function main thread 0
+----------------------------------------------------
+  y0=92274686 (00000101011111111111111111111110)
+
+State 496 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=68 (00000000000000000000000001000100)
+
+State 501 file Inverse_1.c line 16 function main thread 0
+----------------------------------------------------
+  x0=4 (00000000000000000000000000000100)
+
+State 502 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=69 (00000000000000000000000001000101)
+
+State 506 file Inverse_1.c line 8 function main thread 0
+----------------------------------------------------
+  x0=5 (00000000000000000000000000000101)
+
+State 507 file Inverse_1.c line 9 function main thread 0
+----------------------------------------------------
+  y0=92274687 (00000101011111111111111111111111)
+
+State 509 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=70 (00000000000000000000000001000110)
+
+State 514 file Inverse_1.c line 12 function main thread 0
+----------------------------------------------------
+  x0=3 (00000000000000000000000000000011)
+
+State 515 file Inverse_1.c line 13 function main thread 0
+----------------------------------------------------
+  y0=184549374 (00001010111111111111111111111110)
+
+State 517 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=71 (00000000000000000000000001000111)
+
+State 522 file Inverse_1.c line 16 function main thread 0
+----------------------------------------------------
+  x0=4 (00000000000000000000000000000100)
+
+State 523 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=72 (00000000000000000000000001001000)
+
+State 527 file Inverse_1.c line 8 function main thread 0
+----------------------------------------------------
+  x0=5 (00000000000000000000000000000101)
+
+State 528 file Inverse_1.c line 9 function main thread 0
+----------------------------------------------------
+  y0=184549375 (00001010111111111111111111111111)
+
+State 530 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=73 (00000000000000000000000001001001)
+
+State 535 file Inverse_1.c line 12 function main thread 0
+----------------------------------------------------
+  x0=3 (00000000000000000000000000000011)
+
+State 536 file Inverse_1.c line 13 function main thread 0
+----------------------------------------------------
+  y0=369098750 (00010101111111111111111111111110)
+
+State 538 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=74 (00000000000000000000000001001010)
+
+State 543 file Inverse_1.c line 16 function main thread 0
+----------------------------------------------------
+  x0=4 (00000000000000000000000000000100)
+
+State 544 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=75 (00000000000000000000000001001011)
+
+State 548 file Inverse_1.c line 8 function main thread 0
+----------------------------------------------------
+  x0=5 (00000000000000000000000000000101)
+
+State 549 file Inverse_1.c line 9 function main thread 0
+----------------------------------------------------
+  y0=369098751 (00010101111111111111111111111111)
+
+State 551 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=76 (00000000000000000000000001001100)
+
+State 556 file Inverse_1.c line 12 function main thread 0
+----------------------------------------------------
+  x0=3 (00000000000000000000000000000011)
+
+State 557 file Inverse_1.c line 13 function main thread 0
+----------------------------------------------------
+  y0=738197502 (00101011111111111111111111111110)
+
+State 559 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=77 (00000000000000000000000001001101)
+
+State 564 file Inverse_1.c line 16 function main thread 0
+----------------------------------------------------
+  x0=4 (00000000000000000000000000000100)
+
+State 565 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=78 (00000000000000000000000001001110)
+
+State 569 file Inverse_1.c line 8 function main thread 0
+----------------------------------------------------
+  x0=5 (00000000000000000000000000000101)
+
+State 570 file Inverse_1.c line 9 function main thread 0
+----------------------------------------------------
+  y0=738197503 (00101011111111111111111111111111)
+
+State 572 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=79 (00000000000000000000000001001111)
+
+State 577 file Inverse_1.c line 12 function main thread 0
+----------------------------------------------------
+  x0=3 (00000000000000000000000000000011)
+
+State 578 file Inverse_1.c line 13 function main thread 0
+----------------------------------------------------
+  y0=1476395006 (01010111111111111111111111111110)
+
+State 580 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=80 (00000000000000000000000001010000)
+
+State 585 file Inverse_1.c line 16 function main thread 0
+----------------------------------------------------
+  x0=4 (00000000000000000000000000000100)
+
+State 586 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=81 (00000000000000000000000001010001)
+
+State 590 file Inverse_1.c line 8 function main thread 0
+----------------------------------------------------
+  x0=5 (00000000000000000000000000000101)
+
+State 591 file Inverse_1.c line 9 function main thread 0
+----------------------------------------------------
+  y0=1476395007 (01010111111111111111111111111111)
+
+State 593 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=82 (00000000000000000000000001010010)
+
+State 598 file Inverse_1.c line 12 function main thread 0
+----------------------------------------------------
+  x0=3 (00000000000000000000000000000011)
+
+State 599 file Inverse_1.c line 13 function main thread 0
+----------------------------------------------------
+  y0=-1342177282 (10101111111111111111111111111110)
+
+State 601 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=83 (00000000000000000000000001010011)
+
+State 606 file Inverse_1.c line 16 function main thread 0
+----------------------------------------------------
+  x0=4 (00000000000000000000000000000100)
+
+State 607 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=84 (00000000000000000000000001010100)
+
+State 611 file Inverse_1.c line 8 function main thread 0
+----------------------------------------------------
+  x0=5 (00000000000000000000000000000101)
+
+State 612 file Inverse_1.c line 9 function main thread 0
+----------------------------------------------------
+  y0=-1342177281 (10101111111111111111111111111111)
+
+State 614 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=85 (00000000000000000000000001010101)
+
+State 619 file Inverse_1.c line 12 function main thread 0
+----------------------------------------------------
+  x0=3 (00000000000000000000000000000011)
+
+State 620 file Inverse_1.c line 13 function main thread 0
+----------------------------------------------------
+  y0=1610612734 (01011111111111111111111111111110)
+
+State 622 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=86 (00000000000000000000000001010110)
+
+State 627 file Inverse_1.c line 16 function main thread 0
+----------------------------------------------------
+  x0=4 (00000000000000000000000000000100)
+
+State 628 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=87 (00000000000000000000000001010111)
+
+State 632 file Inverse_1.c line 8 function main thread 0
+----------------------------------------------------
+  x0=5 (00000000000000000000000000000101)
+
+State 633 file Inverse_1.c line 9 function main thread 0
+----------------------------------------------------
+  y0=1610612735 (01011111111111111111111111111111)
+
+State 635 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=88 (00000000000000000000000001011000)
+
+State 640 file Inverse_1.c line 12 function main thread 0
+----------------------------------------------------
+  x0=3 (00000000000000000000000000000011)
+
+State 641 file Inverse_1.c line 13 function main thread 0
+----------------------------------------------------
+  y0=-1073741826 (10111111111111111111111111111110)
+
+State 643 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=89 (00000000000000000000000001011001)
+
+State 648 file Inverse_1.c line 16 function main thread 0
+----------------------------------------------------
+  x0=4 (00000000000000000000000000000100)
+
+State 649 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=90 (00000000000000000000000001011010)
+
+State 653 file Inverse_1.c line 8 function main thread 0
+----------------------------------------------------
+  x0=5 (00000000000000000000000000000101)
+
+State 654 file Inverse_1.c line 9 function main thread 0
+----------------------------------------------------
+  y0=-1073741825 (10111111111111111111111111111111)
+
+State 656 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=91 (00000000000000000000000001011011)
+
+State 661 file Inverse_1.c line 12 function main thread 0
+----------------------------------------------------
+  x0=3 (00000000000000000000000000000011)
+
+State 662 file Inverse_1.c line 13 function main thread 0
+----------------------------------------------------
+  y0=2147483646 (01111111111111111111111111111110)
+
+State 664 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=92 (00000000000000000000000001011100)
+
+State 669 file Inverse_1.c line 16 function main thread 0
+----------------------------------------------------
+  x0=4 (00000000000000000000000000000100)
+
+State 670 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=93 (00000000000000000000000001011101)
+
+State 674 file Inverse_1.c line 8 function main thread 0
+----------------------------------------------------
+  x0=5 (00000000000000000000000000000101)
+
+State 675 file Inverse_1.c line 9 function main thread 0
+----------------------------------------------------
+  y0=2147483647 (01111111111111111111111111111111)
+
+State 677 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=94 (00000000000000000000000001011110)
+
+State 682 file Inverse_1.c line 12 function main thread 0
+----------------------------------------------------
+  x0=3 (00000000000000000000000000000011)
+
+State 683 file Inverse_1.c line 13 function main thread 0
+----------------------------------------------------
+  y0=-2 (11111111111111111111111111111110)
+
+State 685 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=95 (00000000000000000000000001011111)
+
+State 690 file Inverse_1.c line 16 function main thread 0
+----------------------------------------------------
+  x0=4 (00000000000000000000000000000100)
+
+State 691 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=96 (00000000000000000000000001100000)
+
+State 695 file Inverse_1.c line 8 function main thread 0
+----------------------------------------------------
+  x0=5 (00000000000000000000000000000101)
+
+State 696 file Inverse_1.c line 9 function main thread 0
+----------------------------------------------------
+  y0=-1 (11111111111111111111111111111111)
+
+State 698 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=97 (00000000000000000000000001100001)
+
+State 703 file Inverse_1.c line 12 function main thread 0
+----------------------------------------------------
+  x0=3 (00000000000000000000000000000011)
+
+State 704 file Inverse_1.c line 13 function main thread 0
+----------------------------------------------------
+  y0=-2 (11111111111111111111111111111110)
+
+State 706 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=98 (00000000000000000000000001100010)
+
+State 711 file Inverse_1.c line 16 function main thread 0
+----------------------------------------------------
+  x0=4 (00000000000000000000000000000100)
+
+State 712 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=99 (00000000000000000000000001100011)
+
+State 716 file Inverse_1.c line 8 function main thread 0
+----------------------------------------------------
+  x0=5 (00000000000000000000000000000101)
+
+State 717 file Inverse_1.c line 9 function main thread 0
+----------------------------------------------------
+  y0=-1 (11111111111111111111111111111111)
+
+State 719 file Inverse_1.c line 6 function main thread 0
+----------------------------------------------------
+  i0=100 (00000000000000000000000001100100)
+
+State 722 file Inverse_1.c line 18 function main thread 0
+----------------------------------------------------
+  x1=5 (00000000000000000000000000000101)
+
+State 723 file Inverse_1.c line 19 function main thread 0
+----------------------------------------------------
+  y1=10 (00000000000000000000000000001010)
+
+State 724 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=1 (00000000000000000000000000000001)
+
+State 728 file Inverse_1.c line 25 function main thread 0
+----------------------------------------------------
+  y1=20 (00000000000000000000000000010100)
+
+State 730 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=2 (00000000000000000000000000000010)
+
+State 735 file Inverse_1.c line 28 function main thread 0
+----------------------------------------------------
+  y1=23 (00000000000000000000000000010111)
+
+State 736 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=3 (00000000000000000000000000000011)
+
+State 740 file Inverse_1.c line 22 function main thread 0
+----------------------------------------------------
+  y1=24 (00000000000000000000000000011000)
+
+State 742 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=4 (00000000000000000000000000000100)
+
+State 747 file Inverse_1.c line 25 function main thread 0
+----------------------------------------------------
+  y1=48 (00000000000000000000000000110000)
+
+State 749 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=5 (00000000000000000000000000000101)
+
+State 754 file Inverse_1.c line 28 function main thread 0
+----------------------------------------------------
+  y1=51 (00000000000000000000000000110011)
+
+State 755 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=6 (00000000000000000000000000000110)
+
+State 759 file Inverse_1.c line 22 function main thread 0
+----------------------------------------------------
+  y1=52 (00000000000000000000000000110100)
+
+State 761 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=7 (00000000000000000000000000000111)
+
+State 766 file Inverse_1.c line 25 function main thread 0
+----------------------------------------------------
+  y1=104 (00000000000000000000000001101000)
+
+State 768 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=8 (00000000000000000000000000001000)
+
+State 773 file Inverse_1.c line 28 function main thread 0
+----------------------------------------------------
+  y1=107 (00000000000000000000000001101011)
+
+State 774 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=9 (00000000000000000000000000001001)
+
+State 778 file Inverse_1.c line 22 function main thread 0
+----------------------------------------------------
+  y1=108 (00000000000000000000000001101100)
+
+State 780 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=10 (00000000000000000000000000001010)
+
+State 785 file Inverse_1.c line 25 function main thread 0
+----------------------------------------------------
+  y1=216 (00000000000000000000000011011000)
+
+State 787 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=11 (00000000000000000000000000001011)
+
+State 792 file Inverse_1.c line 28 function main thread 0
+----------------------------------------------------
+  y1=219 (00000000000000000000000011011011)
+
+State 793 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=12 (00000000000000000000000000001100)
+
+State 797 file Inverse_1.c line 22 function main thread 0
+----------------------------------------------------
+  y1=220 (00000000000000000000000011011100)
+
+State 799 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=13 (00000000000000000000000000001101)
+
+State 804 file Inverse_1.c line 25 function main thread 0
+----------------------------------------------------
+  y1=440 (00000000000000000000000110111000)
+
+State 806 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=14 (00000000000000000000000000001110)
+
+State 811 file Inverse_1.c line 28 function main thread 0
+----------------------------------------------------
+  y1=443 (00000000000000000000000110111011)
+
+State 812 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=15 (00000000000000000000000000001111)
+
+State 816 file Inverse_1.c line 22 function main thread 0
+----------------------------------------------------
+  y1=444 (00000000000000000000000110111100)
+
+State 818 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=16 (00000000000000000000000000010000)
+
+State 823 file Inverse_1.c line 25 function main thread 0
+----------------------------------------------------
+  y1=888 (00000000000000000000001101111000)
+
+State 825 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=17 (00000000000000000000000000010001)
+
+State 830 file Inverse_1.c line 28 function main thread 0
+----------------------------------------------------
+  y1=891 (00000000000000000000001101111011)
+
+State 831 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=18 (00000000000000000000000000010010)
+
+State 835 file Inverse_1.c line 22 function main thread 0
+----------------------------------------------------
+  y1=892 (00000000000000000000001101111100)
+
+State 837 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=19 (00000000000000000000000000010011)
+
+State 842 file Inverse_1.c line 25 function main thread 0
+----------------------------------------------------
+  y1=1784 (00000000000000000000011011111000)
+
+State 844 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=20 (00000000000000000000000000010100)
+
+State 849 file Inverse_1.c line 28 function main thread 0
+----------------------------------------------------
+  y1=1787 (00000000000000000000011011111011)
+
+State 850 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=21 (00000000000000000000000000010101)
+
+State 854 file Inverse_1.c line 22 function main thread 0
+----------------------------------------------------
+  y1=1788 (00000000000000000000011011111100)
+
+State 856 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=22 (00000000000000000000000000010110)
+
+State 861 file Inverse_1.c line 25 function main thread 0
+----------------------------------------------------
+  y1=3576 (00000000000000000000110111111000)
+
+State 863 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=23 (00000000000000000000000000010111)
+
+State 868 file Inverse_1.c line 28 function main thread 0
+----------------------------------------------------
+  y1=3579 (00000000000000000000110111111011)
+
+State 869 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=24 (00000000000000000000000000011000)
+
+State 873 file Inverse_1.c line 22 function main thread 0
+----------------------------------------------------
+  y1=3580 (00000000000000000000110111111100)
+
+State 875 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=25 (00000000000000000000000000011001)
+
+State 880 file Inverse_1.c line 25 function main thread 0
+----------------------------------------------------
+  y1=7160 (00000000000000000001101111111000)
+
+State 882 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=26 (00000000000000000000000000011010)
+
+State 887 file Inverse_1.c line 28 function main thread 0
+----------------------------------------------------
+  y1=7163 (00000000000000000001101111111011)
+
+State 888 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=27 (00000000000000000000000000011011)
+
+State 892 file Inverse_1.c line 22 function main thread 0
+----------------------------------------------------
+  y1=7164 (00000000000000000001101111111100)
+
+State 894 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=28 (00000000000000000000000000011100)
+
+State 899 file Inverse_1.c line 25 function main thread 0
+----------------------------------------------------
+  y1=14328 (00000000000000000011011111111000)
+
+State 901 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=29 (00000000000000000000000000011101)
+
+State 906 file Inverse_1.c line 28 function main thread 0
+----------------------------------------------------
+  y1=14331 (00000000000000000011011111111011)
+
+State 907 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=30 (00000000000000000000000000011110)
+
+State 911 file Inverse_1.c line 22 function main thread 0
+----------------------------------------------------
+  y1=14332 (00000000000000000011011111111100)
+
+State 913 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=31 (00000000000000000000000000011111)
+
+State 918 file Inverse_1.c line 25 function main thread 0
+----------------------------------------------------
+  y1=28664 (00000000000000000110111111111000)
+
+State 920 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=32 (00000000000000000000000000100000)
+
+State 925 file Inverse_1.c line 28 function main thread 0
+----------------------------------------------------
+  y1=28667 (00000000000000000110111111111011)
+
+State 926 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=33 (00000000000000000000000000100001)
+
+State 930 file Inverse_1.c line 22 function main thread 0
+----------------------------------------------------
+  y1=28668 (00000000000000000110111111111100)
+
+State 932 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=34 (00000000000000000000000000100010)
+
+State 937 file Inverse_1.c line 25 function main thread 0
+----------------------------------------------------
+  y1=57336 (00000000000000001101111111111000)
+
+State 939 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=35 (00000000000000000000000000100011)
+
+State 944 file Inverse_1.c line 28 function main thread 0
+----------------------------------------------------
+  y1=57339 (00000000000000001101111111111011)
+
+State 945 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=36 (00000000000000000000000000100100)
+
+State 949 file Inverse_1.c line 22 function main thread 0
+----------------------------------------------------
+  y1=57340 (00000000000000001101111111111100)
+
+State 951 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=37 (00000000000000000000000000100101)
+
+State 956 file Inverse_1.c line 25 function main thread 0
+----------------------------------------------------
+  y1=114680 (00000000000000011011111111111000)
+
+State 958 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=38 (00000000000000000000000000100110)
+
+State 963 file Inverse_1.c line 28 function main thread 0
+----------------------------------------------------
+  y1=114683 (00000000000000011011111111111011)
+
+State 964 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=39 (00000000000000000000000000100111)
+
+State 968 file Inverse_1.c line 22 function main thread 0
+----------------------------------------------------
+  y1=114684 (00000000000000011011111111111100)
+
+State 970 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=40 (00000000000000000000000000101000)
+
+State 975 file Inverse_1.c line 25 function main thread 0
+----------------------------------------------------
+  y1=229368 (00000000000000110111111111111000)
+
+State 977 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=41 (00000000000000000000000000101001)
+
+State 982 file Inverse_1.c line 28 function main thread 0
+----------------------------------------------------
+  y1=229371 (00000000000000110111111111111011)
+
+State 983 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=42 (00000000000000000000000000101010)
+
+State 987 file Inverse_1.c line 22 function main thread 0
+----------------------------------------------------
+  y1=229372 (00000000000000110111111111111100)
+
+State 989 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=43 (00000000000000000000000000101011)
+
+State 994 file Inverse_1.c line 25 function main thread 0
+----------------------------------------------------
+  y1=458744 (00000000000001101111111111111000)
+
+State 996 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=44 (00000000000000000000000000101100)
+
+State 1001 file Inverse_1.c line 28 function main thread 0
+----------------------------------------------------
+  y1=458747 (00000000000001101111111111111011)
+
+State 1002 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=45 (00000000000000000000000000101101)
+
+State 1006 file Inverse_1.c line 22 function main thread 0
+----------------------------------------------------
+  y1=458748 (00000000000001101111111111111100)
+
+State 1008 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=46 (00000000000000000000000000101110)
+
+State 1013 file Inverse_1.c line 25 function main thread 0
+----------------------------------------------------
+  y1=917496 (00000000000011011111111111111000)
+
+State 1015 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=47 (00000000000000000000000000101111)
+
+State 1020 file Inverse_1.c line 28 function main thread 0
+----------------------------------------------------
+  y1=917499 (00000000000011011111111111111011)
+
+State 1021 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=48 (00000000000000000000000000110000)
+
+State 1025 file Inverse_1.c line 22 function main thread 0
+----------------------------------------------------
+  y1=917500 (00000000000011011111111111111100)
+
+State 1027 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=49 (00000000000000000000000000110001)
+
+State 1032 file Inverse_1.c line 25 function main thread 0
+----------------------------------------------------
+  y1=1835000 (00000000000110111111111111111000)
+
+State 1034 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=50 (00000000000000000000000000110010)
+
+State 1039 file Inverse_1.c line 28 function main thread 0
+----------------------------------------------------
+  y1=1835003 (00000000000110111111111111111011)
+
+State 1040 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=51 (00000000000000000000000000110011)
+
+State 1044 file Inverse_1.c line 22 function main thread 0
+----------------------------------------------------
+  y1=1835004 (00000000000110111111111111111100)
+
+State 1046 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=52 (00000000000000000000000000110100)
+
+State 1051 file Inverse_1.c line 25 function main thread 0
+----------------------------------------------------
+  y1=3670008 (00000000001101111111111111111000)
+
+State 1053 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=53 (00000000000000000000000000110101)
+
+State 1058 file Inverse_1.c line 28 function main thread 0
+----------------------------------------------------
+  y1=3670011 (00000000001101111111111111111011)
+
+State 1059 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=54 (00000000000000000000000000110110)
+
+State 1063 file Inverse_1.c line 22 function main thread 0
+----------------------------------------------------
+  y1=3670012 (00000000001101111111111111111100)
+
+State 1065 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=55 (00000000000000000000000000110111)
+
+State 1070 file Inverse_1.c line 25 function main thread 0
+----------------------------------------------------
+  y1=7340024 (00000000011011111111111111111000)
+
+State 1072 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=56 (00000000000000000000000000111000)
+
+State 1077 file Inverse_1.c line 28 function main thread 0
+----------------------------------------------------
+  y1=7340027 (00000000011011111111111111111011)
+
+State 1078 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=57 (00000000000000000000000000111001)
+
+State 1082 file Inverse_1.c line 22 function main thread 0
+----------------------------------------------------
+  y1=7340028 (00000000011011111111111111111100)
+
+State 1084 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=58 (00000000000000000000000000111010)
+
+State 1089 file Inverse_1.c line 25 function main thread 0
+----------------------------------------------------
+  y1=14680056 (00000000110111111111111111111000)
+
+State 1091 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=59 (00000000000000000000000000111011)
+
+State 1096 file Inverse_1.c line 28 function main thread 0
+----------------------------------------------------
+  y1=14680059 (00000000110111111111111111111011)
+
+State 1097 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=60 (00000000000000000000000000111100)
+
+State 1101 file Inverse_1.c line 22 function main thread 0
+----------------------------------------------------
+  y1=14680060 (00000000110111111111111111111100)
+
+State 1103 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=61 (00000000000000000000000000111101)
+
+State 1108 file Inverse_1.c line 25 function main thread 0
+----------------------------------------------------
+  y1=29360120 (00000001101111111111111111111000)
+
+State 1110 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=62 (00000000000000000000000000111110)
+
+State 1115 file Inverse_1.c line 28 function main thread 0
+----------------------------------------------------
+  y1=29360123 (00000001101111111111111111111011)
+
+State 1116 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=63 (00000000000000000000000000111111)
+
+State 1120 file Inverse_1.c line 22 function main thread 0
+----------------------------------------------------
+  y1=29360124 (00000001101111111111111111111100)
+
+State 1122 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=64 (00000000000000000000000001000000)
+
+State 1127 file Inverse_1.c line 25 function main thread 0
+----------------------------------------------------
+  y1=58720248 (00000011011111111111111111111000)
+
+State 1129 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=65 (00000000000000000000000001000001)
+
+State 1134 file Inverse_1.c line 28 function main thread 0
+----------------------------------------------------
+  y1=58720251 (00000011011111111111111111111011)
+
+State 1135 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=66 (00000000000000000000000001000010)
+
+State 1139 file Inverse_1.c line 22 function main thread 0
+----------------------------------------------------
+  y1=58720252 (00000011011111111111111111111100)
+
+State 1141 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=67 (00000000000000000000000001000011)
+
+State 1146 file Inverse_1.c line 25 function main thread 0
+----------------------------------------------------
+  y1=117440504 (00000110111111111111111111111000)
+
+State 1148 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=68 (00000000000000000000000001000100)
+
+State 1153 file Inverse_1.c line 28 function main thread 0
+----------------------------------------------------
+  y1=117440507 (00000110111111111111111111111011)
+
+State 1154 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=69 (00000000000000000000000001000101)
+
+State 1158 file Inverse_1.c line 22 function main thread 0
+----------------------------------------------------
+  y1=117440508 (00000110111111111111111111111100)
+
+State 1160 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=70 (00000000000000000000000001000110)
+
+State 1165 file Inverse_1.c line 25 function main thread 0
+----------------------------------------------------
+  y1=234881016 (00001101111111111111111111111000)
+
+State 1167 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=71 (00000000000000000000000001000111)
+
+State 1172 file Inverse_1.c line 28 function main thread 0
+----------------------------------------------------
+  y1=234881019 (00001101111111111111111111111011)
+
+State 1173 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=72 (00000000000000000000000001001000)
+
+State 1177 file Inverse_1.c line 22 function main thread 0
+----------------------------------------------------
+  y1=234881020 (00001101111111111111111111111100)
+
+State 1179 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=73 (00000000000000000000000001001001)
+
+State 1184 file Inverse_1.c line 25 function main thread 0
+----------------------------------------------------
+  y1=469762040 (00011011111111111111111111111000)
+
+State 1186 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=74 (00000000000000000000000001001010)
+
+State 1191 file Inverse_1.c line 28 function main thread 0
+----------------------------------------------------
+  y1=469762043 (00011011111111111111111111111011)
+
+State 1192 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=75 (00000000000000000000000001001011)
+
+State 1196 file Inverse_1.c line 22 function main thread 0
+----------------------------------------------------
+  y1=469762044 (00011011111111111111111111111100)
+
+State 1198 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=76 (00000000000000000000000001001100)
+
+State 1203 file Inverse_1.c line 25 function main thread 0
+----------------------------------------------------
+  y1=939524088 (00110111111111111111111111111000)
+
+State 1205 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=77 (00000000000000000000000001001101)
+
+State 1210 file Inverse_1.c line 28 function main thread 0
+----------------------------------------------------
+  y1=939524091 (00110111111111111111111111111011)
+
+State 1211 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=78 (00000000000000000000000001001110)
+
+State 1215 file Inverse_1.c line 22 function main thread 0
+----------------------------------------------------
+  y1=939524092 (00110111111111111111111111111100)
+
+State 1217 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=79 (00000000000000000000000001001111)
+
+State 1222 file Inverse_1.c line 25 function main thread 0
+----------------------------------------------------
+  y1=1879048184 (01101111111111111111111111111000)
+
+State 1224 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=80 (00000000000000000000000001010000)
+
+State 1229 file Inverse_1.c line 28 function main thread 0
+----------------------------------------------------
+  y1=1879048187 (01101111111111111111111111111011)
+
+State 1230 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=81 (00000000000000000000000001010001)
+
+State 1234 file Inverse_1.c line 22 function main thread 0
+----------------------------------------------------
+  y1=1879048188 (01101111111111111111111111111100)
+
+State 1236 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=82 (00000000000000000000000001010010)
+
+State 1241 file Inverse_1.c line 25 function main thread 0
+----------------------------------------------------
+  y1=-536870920 (11011111111111111111111111111000)
+
+State 1243 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=83 (00000000000000000000000001010011)
+
+State 1248 file Inverse_1.c line 28 function main thread 0
+----------------------------------------------------
+  y1=-536870917 (11011111111111111111111111111011)
+
+State 1249 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=84 (00000000000000000000000001010100)
+
+State 1253 file Inverse_1.c line 22 function main thread 0
+----------------------------------------------------
+  y1=-536870916 (11011111111111111111111111111100)
+
+State 1255 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=85 (00000000000000000000000001010101)
+
+State 1260 file Inverse_1.c line 25 function main thread 0
+----------------------------------------------------
+  y1=-1073741832 (10111111111111111111111111111000)
+
+State 1262 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=86 (00000000000000000000000001010110)
+
+State 1267 file Inverse_1.c line 28 function main thread 0
+----------------------------------------------------
+  y1=-1073741829 (10111111111111111111111111111011)
+
+State 1268 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=87 (00000000000000000000000001010111)
+
+State 1272 file Inverse_1.c line 22 function main thread 0
+----------------------------------------------------
+  y1=-1073741828 (10111111111111111111111111111100)
+
+State 1274 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=88 (00000000000000000000000001011000)
+
+State 1279 file Inverse_1.c line 25 function main thread 0
+----------------------------------------------------
+  y1=2147483640 (01111111111111111111111111111000)
+
+State 1281 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=89 (00000000000000000000000001011001)
+
+State 1286 file Inverse_1.c line 28 function main thread 0
+----------------------------------------------------
+  y1=2147483643 (01111111111111111111111111111011)
+
+State 1287 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=90 (00000000000000000000000001011010)
+
+State 1291 file Inverse_1.c line 22 function main thread 0
+----------------------------------------------------
+  y1=2147483644 (01111111111111111111111111111100)
+
+State 1293 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=91 (00000000000000000000000001011011)
+
+State 1298 file Inverse_1.c line 25 function main thread 0
+----------------------------------------------------
+  y1=-8 (11111111111111111111111111111000)
+
+State 1300 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=92 (00000000000000000000000001011100)
+
+State 1305 file Inverse_1.c line 28 function main thread 0
+----------------------------------------------------
+  y1=-5 (11111111111111111111111111111011)
+
+State 1306 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=93 (00000000000000000000000001011101)
+
+State 1310 file Inverse_1.c line 22 function main thread 0
+----------------------------------------------------
+  y1=-4 (11111111111111111111111111111100)
+
+State 1312 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=94 (00000000000000000000000001011110)
+
+State 1317 file Inverse_1.c line 25 function main thread 0
+----------------------------------------------------
+  y1=-8 (11111111111111111111111111111000)
+
+State 1319 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=95 (00000000000000000000000001011111)
+
+State 1324 file Inverse_1.c line 28 function main thread 0
+----------------------------------------------------
+  y1=-5 (11111111111111111111111111111011)
+
+State 1325 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=96 (00000000000000000000000001100000)
+
+State 1329 file Inverse_1.c line 22 function main thread 0
+----------------------------------------------------
+  y1=-4 (11111111111111111111111111111100)
+
+State 1331 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=97 (00000000000000000000000001100001)
+
+State 1336 file Inverse_1.c line 25 function main thread 0
+----------------------------------------------------
+  y1=-8 (11111111111111111111111111111000)
+
+State 1338 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=98 (00000000000000000000000001100010)
+
+State 1343 file Inverse_1.c line 28 function main thread 0
+----------------------------------------------------
+  y1=-5 (11111111111111111111111111111011)
+
+State 1344 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=99 (00000000000000000000000001100011)
+
+State 1348 file Inverse_1.c line 22 function main thread 0
+----------------------------------------------------
+  y1=-4 (11111111111111111111111111111100)
+
+State 1350 file Inverse_1.c line 20 function main thread 0
+----------------------------------------------------
+  i1=100 (00000000000000000000000001100100)
+
+Violated property:
+  file Inverse_1.c line 31 function main
+  assertion y0==y1
+  y0 == y1
+
+
+** 1 of 2 failed (2 iterations)
+VERIFICATION FAILED

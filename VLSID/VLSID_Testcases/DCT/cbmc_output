@@ -1,0 +1,653 @@
+CBMC version 5.8 64-bit x86_64 linux
+Parsing inputCBMC.c
+file <command-line> line 0: <command-line>:0:0: warning: "__STDC_VERSION__" redefined
+<built-in>: note: this is the location of the previous definition
+Converting
+Type-checking inputCBMC
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+Partial Inlining
+Generic Property Instrumentation
+Starting Bounded Model Checking
+size of program expression: 234 steps
+simple slicing removed 3 assignments
+Generated 30 VCC(s), 30 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+20196 variables, 99436 clauses
+SAT checker: instance is SATISFIABLE
+Solving with MiniSAT 2.2.1 with simplifier
+20196 variables, 7592 clauses
+SAT checker inconsistent: instance is UNSATISFIABLE
+Runtime decision procedure: 0.671s
+
+** Results:
+[main.assertion.1] assertion a00 == a01: SUCCESS
+[main.assertion.2] assertion a70 == a71: SUCCESS
+[main.assertion.3] assertion b10 == b11: SUCCESS
+[main.assertion.4] assertion a20 == a21: SUCCESS
+[main.assertion.5] assertion a30 == a31: SUCCESS
+[main.assertion.6] assertion a40 == a41: SUCCESS
+[main.assertion.7] assertion b50 == b51: SUCCESS
+[main.assertion.8] assertion a60 == a61: SUCCESS
+[main.assertion.9] assertion b00 == b01: SUCCESS
+[main.assertion.10] assertion c40 == c41: SUCCESS
+[main.assertion.11] assertion d20 == d21: SUCCESS
+[main.assertion.12] assertion b60 == b61: SUCCESS
+[main.assertion.13] assertion d30 == d31: SUCCESS
+[main.assertion.14] assertion c70 == c71: SUCCESS
+[main.assertion.15] assertion c50 == c51: SUCCESS
+[main.assertion.16] assertion d00 == d01: SUCCESS
+[main.assertion.17] assertion d10 == d11: SUCCESS
+[main.assertion.18] assertion c60 == c61: SUCCESS
+[main.assertion.19] assertion d50 == d51: SUCCESS
+[main.assertion.20] assertion d70 == d71: SUCCESS
+[main.assertion.21] assertion d40 == d41: SUCCESS
+[main.assertion.22] assertion d60 == d61: SUCCESS
+[main.assertion.23] assertion o40 == o41: SUCCESS
+[main.assertion.24] assertion o00 == o01: SUCCESS
+[main.assertion.25] assertion o20 == o21: SUCCESS
+[main.assertion.26] assertion o60 == o61: SUCCESS
+[main.assertion.27] assertion o10 == o11: SUCCESS
+[main.assertion.28] assertion o70 == o71: FAILURE
+[main.assertion.29] assertion o30 == o31: SUCCESS
+[main.assertion.30] assertion o50 == o51: SUCCESS
+
+Trace for main.assertion.28:
+
+State 18 file inputCBMC.c line 3 function main thread 0
+----------------------------------------------------
+  i0=-1 (11111111111111111111111111111111)
+
+State 19 file inputCBMC.c line 4 function main thread 0
+----------------------------------------------------
+  i7=477218589 (00011100011100011100011100011101)
+
+State 20 file inputCBMC.c line 5 function main thread 0
+----------------------------------------------------
+  a00=0 (00000000000000000000000000000000)
+
+State 21 file inputCBMC.c line 6 function main thread 0
+----------------------------------------------------
+  a01=0 (00000000000000000000000000000000)
+
+State 22 file inputCBMC.c line 7 function main thread 0
+----------------------------------------------------
+  a70=0 (00000000000000000000000000000000)
+
+State 23 file inputCBMC.c line 8 function main thread 0
+----------------------------------------------------
+  a71=0 (00000000000000000000000000000000)
+
+State 24 file inputCBMC.c line 9 function main thread 0
+----------------------------------------------------
+  i1=0 (00000000000000000000000000000000)
+
+State 25 file inputCBMC.c line 10 function main thread 0
+----------------------------------------------------
+  i2=-267643611 (11110000000011000001010100100101)
+
+State 26 file inputCBMC.c line 11 function main thread 0
+----------------------------------------------------
+  b10=0 (00000000000000000000000000000000)
+
+State 27 file inputCBMC.c line 12 function main thread 0
+----------------------------------------------------
+  b11=0 (00000000000000000000000000000000)
+
+State 28 file inputCBMC.c line 13 function main thread 0
+----------------------------------------------------
+  a20=0 (00000000000000000000000000000000)
+
+State 29 file inputCBMC.c line 14 function main thread 0
+----------------------------------------------------
+  a21=0 (00000000000000000000000000000000)
+
+State 30 file inputCBMC.c line 15 function main thread 0
+----------------------------------------------------
+  i3=0 (00000000000000000000000000000000)
+
+State 31 file inputCBMC.c line 16 function main thread 0
+----------------------------------------------------
+  i4=1908874354 (01110001110001110001110001110010)
+
+State 32 file inputCBMC.c line 17 function main thread 0
+----------------------------------------------------
+  a30=0 (00000000000000000000000000000000)
+
+State 33 file inputCBMC.c line 18 function main thread 0
+----------------------------------------------------
+  a31=0 (00000000000000000000000000000000)
+
+State 34 file inputCBMC.c line 19 function main thread 0
+----------------------------------------------------
+  a40=0 (00000000000000000000000000000000)
+
+State 35 file inputCBMC.c line 20 function main thread 0
+----------------------------------------------------
+  a41=0 (00000000000000000000000000000000)
+
+State 36 file inputCBMC.c line 21 function main thread 0
+----------------------------------------------------
+  i5=0 (00000000000000000000000000000000)
+
+State 37 file inputCBMC.c line 22 function main thread 0
+----------------------------------------------------
+  i6=0 (00000000000000000000000000000000)
+
+State 38 file inputCBMC.c line 23 function main thread 0
+----------------------------------------------------
+  b50=0 (00000000000000000000000000000000)
+
+State 39 file inputCBMC.c line 24 function main thread 0
+----------------------------------------------------
+  b51=0 (00000000000000000000000000000000)
+
+State 40 file inputCBMC.c line 25 function main thread 0
+----------------------------------------------------
+  a60=0 (00000000000000000000000000000000)
+
+State 41 file inputCBMC.c line 26 function main thread 0
+----------------------------------------------------
+  a61=0 (00000000000000000000000000000000)
+
+State 42 file inputCBMC.c line 27 function main thread 0
+----------------------------------------------------
+  b00=0 (00000000000000000000000000000000)
+
+State 43 file inputCBMC.c line 28 function main thread 0
+----------------------------------------------------
+  b01=0 (00000000000000000000000000000000)
+
+State 44 file inputCBMC.c line 29 function main thread 0
+----------------------------------------------------
+  c40=0 (00000000000000000000000000000000)
+
+State 45 file inputCBMC.c line 30 function main thread 0
+----------------------------------------------------
+  c41=0 (00000000000000000000000000000000)
+
+State 46 file inputCBMC.c line 31 function main thread 0
+----------------------------------------------------
+  d20=0 (00000000000000000000000000000000)
+
+State 47 file inputCBMC.c line 32 function main thread 0
+----------------------------------------------------
+  d21=0 (00000000000000000000000000000000)
+
+State 48 file inputCBMC.c line 33 function main thread 0
+----------------------------------------------------
+  b60=0 (00000000000000000000000000000000)
+
+State 49 file inputCBMC.c line 34 function main thread 0
+----------------------------------------------------
+  b61=0 (00000000000000000000000000000000)
+
+State 50 file inputCBMC.c line 35 function main thread 0
+----------------------------------------------------
+  d30=0 (00000000000000000000000000000000)
+
+State 51 file inputCBMC.c line 36 function main thread 0
+----------------------------------------------------
+  d31=0 (00000000000000000000000000000000)
+
+State 52 file inputCBMC.c line 37 function main thread 0
+----------------------------------------------------
+  c70=0 (00000000000000000000000000000000)
+
+State 53 file inputCBMC.c line 38 function main thread 0
+----------------------------------------------------
+  c71=0 (00000000000000000000000000000000)
+
+State 54 file inputCBMC.c line 39 function main thread 0
+----------------------------------------------------
+  c50=0 (00000000000000000000000000000000)
+
+State 55 file inputCBMC.c line 40 function main thread 0
+----------------------------------------------------
+  c51=0 (00000000000000000000000000000000)
+
+State 56 file inputCBMC.c line 41 function main thread 0
+----------------------------------------------------
+  d00=0 (00000000000000000000000000000000)
+
+State 57 file inputCBMC.c line 42 function main thread 0
+----------------------------------------------------
+  d01=0 (00000000000000000000000000000000)
+
+State 58 file inputCBMC.c line 43 function main thread 0
+----------------------------------------------------
+  d10=0 (00000000000000000000000000000000)
+
+State 59 file inputCBMC.c line 44 function main thread 0
+----------------------------------------------------
+  d11=0 (00000000000000000000000000000000)
+
+State 60 file inputCBMC.c line 45 function main thread 0
+----------------------------------------------------
+  c60=0 (00000000000000000000000000000000)
+
+State 61 file inputCBMC.c line 46 function main thread 0
+----------------------------------------------------
+  c61=0 (00000000000000000000000000000000)
+
+State 62 file inputCBMC.c line 47 function main thread 0
+----------------------------------------------------
+  d50=0 (00000000000000000000000000000000)
+
+State 63 file inputCBMC.c line 48 function main thread 0
+----------------------------------------------------
+  d51=0 (00000000000000000000000000000000)
+
+State 64 file inputCBMC.c line 49 function main thread 0
+----------------------------------------------------
+  d70=0 (00000000000000000000000000000000)
+
+State 65 file inputCBMC.c line 50 function main thread 0
+----------------------------------------------------
+  d71=0 (00000000000000000000000000000000)
+
+State 66 file inputCBMC.c line 51 function main thread 0
+----------------------------------------------------
+  tmp00=0 (00000000000000000000000000000000)
+
+State 67 file inputCBMC.c line 52 function main thread 0
+----------------------------------------------------
+  tmp01=0 (00000000000000000000000000000000)
+
+State 68 file inputCBMC.c line 53 function main thread 0
+----------------------------------------------------
+  tmp10=0 (00000000000000000000000000000000)
+
+State 69 file inputCBMC.c line 54 function main thread 0
+----------------------------------------------------
+  tmp11=0 (00000000000000000000000000000000)
+
+State 70 file inputCBMC.c line 55 function main thread 0
+----------------------------------------------------
+  d40=0 (00000000000000000000000000000000)
+
+State 71 file inputCBMC.c line 56 function main thread 0
+----------------------------------------------------
+  d41=0 (00000000000000000000000000000000)
+
+State 72 file inputCBMC.c line 57 function main thread 0
+----------------------------------------------------
+  d60=0 (00000000000000000000000000000000)
+
+State 73 file inputCBMC.c line 58 function main thread 0
+----------------------------------------------------
+  d61=0 (00000000000000000000000000000000)
+
+State 74 file inputCBMC.c line 59 function main thread 0
+----------------------------------------------------
+  o40=0 (00000000000000000000000000000000)
+
+State 75 file inputCBMC.c line 60 function main thread 0
+----------------------------------------------------
+  o41=0 (00000000000000000000000000000000)
+
+State 76 file inputCBMC.c line 61 function main thread 0
+----------------------------------------------------
+  o00=0 (00000000000000000000000000000000)
+
+State 77 file inputCBMC.c line 62 function main thread 0
+----------------------------------------------------
+  o01=0 (00000000000000000000000000000000)
+
+State 78 file inputCBMC.c line 63 function main thread 0
+----------------------------------------------------
+  tmp20=0 (00000000000000000000000000000000)
+
+State 79 file inputCBMC.c line 64 function main thread 0
+----------------------------------------------------
+  tmp21=0 (00000000000000000000000000000000)
+
+State 80 file inputCBMC.c line 65 function main thread 0
+----------------------------------------------------
+  o20=0 (00000000000000000000000000000000)
+
+State 81 file inputCBMC.c line 66 function main thread 0
+----------------------------------------------------
+  o21=0 (00000000000000000000000000000000)
+
+State 82 file inputCBMC.c line 67 function main thread 0
+----------------------------------------------------
+  o60=0 (00000000000000000000000000000000)
+
+State 83 file inputCBMC.c line 68 function main thread 0
+----------------------------------------------------
+  o61=0 (00000000000000000000000000000000)
+
+State 84 file inputCBMC.c line 69 function main thread 0
+----------------------------------------------------
+  o10=0 (00000000000000000000000000000000)
+
+State 85 file inputCBMC.c line 70 function main thread 0
+----------------------------------------------------
+  o11=0 (00000000000000000000000000000000)
+
+State 86 file inputCBMC.c line 71 function main thread 0
+----------------------------------------------------
+  o70=0 (00000000000000000000000000000000)
+
+State 87 file inputCBMC.c line 72 function main thread 0
+----------------------------------------------------
+  o71=0 (00000000000000000000000000000000)
+
+State 88 file inputCBMC.c line 73 function main thread 0
+----------------------------------------------------
+  o30=0 (00000000000000000000000000000000)
+
+State 89 file inputCBMC.c line 74 function main thread 0
+----------------------------------------------------
+  o31=0 (00000000000000000000000000000000)
+
+State 90 file inputCBMC.c line 75 function main thread 0
+----------------------------------------------------
+  o50=0 (00000000000000000000000000000000)
+
+State 91 file inputCBMC.c line 76 function main thread 0
+----------------------------------------------------
+  o51=0 (00000000000000000000000000000000)
+
+State 92 file inputCBMC.c line 77 function main thread 0
+----------------------------------------------------
+  sT00=0 (00000000000000000000000000000000)
+
+State 93 file inputCBMC.c line 78 function main thread 0
+----------------------------------------------------
+  sT01=0 (00000000000000000000000000000000)
+
+State 94 file inputCBMC.c line 79 function main thread 0
+----------------------------------------------------
+  sT10=0 (00000000000000000000000000000000)
+
+State 95 file inputCBMC.c line 80 function main thread 0
+----------------------------------------------------
+  sT11=0 (00000000000000000000000000000000)
+
+State 96 file inputCBMC.c line 81 function main thread 0
+----------------------------------------------------
+  sT20=0 (00000000000000000000000000000000)
+
+State 97 file inputCBMC.c line 82 function main thread 0
+----------------------------------------------------
+  sT21=0 (00000000000000000000000000000000)
+
+State 98 file inputCBMC.c line 84 function main thread 0
+----------------------------------------------------
+  a00=477218588 (00011100011100011100011100011100)
+
+State 99 file inputCBMC.c line 85 function main thread 0
+----------------------------------------------------
+  a70=-477218590 (11100011100011100011100011100010)
+
+State 100 file inputCBMC.c line 86 function main thread 0
+----------------------------------------------------
+  b10=-267643611 (11110000000011000001010100100101)
+
+State 101 file inputCBMC.c line 87 function main thread 0
+----------------------------------------------------
+  a20=267643611 (00001111111100111110101011011011)
+
+State 102 file inputCBMC.c line 88 function main thread 0
+----------------------------------------------------
+  a30=1908874354 (01110001110001110001110001110010)
+
+State 103 file inputCBMC.c line 89 function main thread 0
+----------------------------------------------------
+  a40=-1908874354 (10001110001110001110001110001110)
+
+State 104 file inputCBMC.c line 90 function main thread 0
+----------------------------------------------------
+  b50=0 (00000000000000000000000000000000)
+
+State 105 file inputCBMC.c line 91 function main thread 0
+----------------------------------------------------
+  a60=0 (00000000000000000000000000000000)
+
+State 106 file inputCBMC.c line 92 function main thread 0
+----------------------------------------------------
+  b00=-1431655766 (10101010101010101010101010101010)
+
+State 107 file inputCBMC.c line 93 function main thread 0
+----------------------------------------------------
+  c40=-1908874354 (10001110001110001110001110001110)
+
+State 108 file inputCBMC.c line 94 function main thread 0
+----------------------------------------------------
+  d20=267643611 (00001111111100111110101011011011)
+
+State 109 file inputCBMC.c line 95 function main thread 0
+----------------------------------------------------
+  b60=267643611 (00001111111100111110101011011011)
+
+State 110 file inputCBMC.c line 96 function main thread 0
+----------------------------------------------------
+  d30=1431655764 (01010101010101010101010101010100)
+
+State 111 file inputCBMC.c line 97 function main thread 0
+----------------------------------------------------
+  c70=-1908874352 (10001110001110001110001110010000)
+
+State 112 file inputCBMC.c line 98 function main thread 0
+----------------------------------------------------
+  c50=0 (00000000000000000000000000000000)
+
+State 113 file inputCBMC.c line 99 function main thread 0
+----------------------------------------------------
+  d00=-1699299377 (10011010101101101011111111001111)
+
+State 114 file inputCBMC.c line 100 function main thread 0
+----------------------------------------------------
+  d10=-1164012155 (10111010100111101001010110000101)
+
+State 115 file inputCBMC.c line 101 function main thread 0
+----------------------------------------------------
+  c60=1073741826 (01000000000000000000000000000010)
+
+State 116 file inputCBMC.c line 102 function main thread 0
+----------------------------------------------------
+  d50=-1908874352 (10001110001110001110001110010000)
+
+State 117 file inputCBMC.c line 103 function main thread 0
+----------------------------------------------------
+  d70=1908874352 (01110001110001110001110001110000)
+
+State 118 file inputCBMC.c line 104 function main thread 0
+----------------------------------------------------
+  tmp00=954437168 (00111000111000111000111000110000)
+
+State 119 file inputCBMC.c line 105 function main thread 0
+----------------------------------------------------
+  tmp10=954437168 (00111000111000111000111000110000)
+
+State 120 file inputCBMC.c line 106 function main thread 0
+----------------------------------------------------
+  d40=-835132528 (11001110001110001110001110010000)
+
+State 121 file inputCBMC.c line 107 function main thread 0
+----------------------------------------------------
+  d60=1312351116 (01001110001110001110001110001100)
+
+State 122 file inputCBMC.c line 108 function main thread 0
+----------------------------------------------------
+  o40=-1073742278 (10111111111111111111111000111010)
+
+State 123 file inputCBMC.c line 109 function main thread 0
+----------------------------------------------------
+  o00=1073741374 (00111111111111111111111000111110)
+
+State 124 file inputCBMC.c line 110 function main thread 0
+----------------------------------------------------
+  tmp20=0 (00000000000000000000000000000000)
+
+State 125 file inputCBMC.c line 111 function main thread 0
+----------------------------------------------------
+  o20=-93437717 (11111010011011100100000011101011)
+
+State 126 file inputCBMC.c line 112 function main thread 0
+----------------------------------------------------
+  o60=-93437717 (11111010011011100100000011101011)
+
+State 127 file inputCBMC.c line 113 function main thread 0
+----------------------------------------------------
+  o10=0 (00000000000000000000000000000000)
+
+State 128 file inputCBMC.c line 114 function main thread 0
+----------------------------------------------------
+  o70=0 (00000000000000000000000000000000)
+
+State 129 file inputCBMC.c line 115 function main thread 0
+----------------------------------------------------
+  o30=0 (00000000000000000000000000000000)
+
+State 130 file inputCBMC.c line 116 function main thread 0
+----------------------------------------------------
+  o50=0 (00000000000000000000000000000000)
+
+State 131 file inputCBMC.c line 120 function main thread 0
+----------------------------------------------------
+  a01=477218588 (00011100011100011100011100011100)
+
+State 132 file inputCBMC.c line 121 function main thread 0
+----------------------------------------------------
+  a71=-477218590 (11100011100011100011100011100010)
+
+State 133 file inputCBMC.c line 122 function main thread 0
+----------------------------------------------------
+  b11=-267643611 (11110000000011000001010100100101)
+
+State 134 file inputCBMC.c line 123 function main thread 0
+----------------------------------------------------
+  a21=267643611 (00001111111100111110101011011011)
+
+State 135 file inputCBMC.c line 124 function main thread 0
+----------------------------------------------------
+  a31=1908874354 (01110001110001110001110001110010)
+
+State 136 file inputCBMC.c line 125 function main thread 0
+----------------------------------------------------
+  a41=-1908874354 (10001110001110001110001110001110)
+
+State 137 file inputCBMC.c line 126 function main thread 0
+----------------------------------------------------
+  b51=0 (00000000000000000000000000000000)
+
+State 138 file inputCBMC.c line 127 function main thread 0
+----------------------------------------------------
+  a61=0 (00000000000000000000000000000000)
+
+State 139 file inputCBMC.c line 128 function main thread 0
+----------------------------------------------------
+  b01=-1431655766 (10101010101010101010101010101010)
+
+State 140 file inputCBMC.c line 129 function main thread 0
+----------------------------------------------------
+  c41=-1908874354 (10001110001110001110001110001110)
+
+State 141 file inputCBMC.c line 130 function main thread 0
+----------------------------------------------------
+  d21=267643611 (00001111111100111110101011011011)
+
+State 142 file inputCBMC.c line 131 function main thread 0
+----------------------------------------------------
+  b61=267643611 (00001111111100111110101011011011)
+
+State 143 file inputCBMC.c line 132 function main thread 0
+----------------------------------------------------
+  d31=1431655764 (01010101010101010101010101010100)
+
+State 144 file inputCBMC.c line 133 function main thread 0
+----------------------------------------------------
+  c71=-1908874352 (10001110001110001110001110010000)
+
+State 145 file inputCBMC.c line 134 function main thread 0
+----------------------------------------------------
+  c51=0 (00000000000000000000000000000000)
+
+State 146 file inputCBMC.c line 135 function main thread 0
+----------------------------------------------------
+  d01=-1699299377 (10011010101101101011111111001111)
+
+State 147 file inputCBMC.c line 136 function main thread 0
+----------------------------------------------------
+  d11=-1164012155 (10111010100111101001010110000101)
+
+State 148 file inputCBMC.c line 137 function main thread 0
+----------------------------------------------------
+  c61=1073741826 (01000000000000000000000000000010)
+
+State 149 file inputCBMC.c line 138 function main thread 0
+----------------------------------------------------
+  d51=-1908874352 (10001110001110001110001110010000)
+
+State 150 file inputCBMC.c line 139 function main thread 0
+----------------------------------------------------
+  d71=1908874352 (01110001110001110001110001110000)
+
+State 151 file inputCBMC.c line 140 function main thread 0
+----------------------------------------------------
+  sT01=954437168 (00111000111000111000111000110000)
+
+State 152 file inputCBMC.c line 141 function main thread 0
+----------------------------------------------------
+  sT11=954437168 (00111000111000111000111000110000)
+
+State 153 file inputCBMC.c line 142 function main thread 0
+----------------------------------------------------
+  d41=-835132528 (11001110001110001110001110010000)
+
+State 154 file inputCBMC.c line 143 function main thread 0
+----------------------------------------------------
+  d61=1312351116 (01001110001110001110001110001100)
+
+State 155 file inputCBMC.c line 144 function main thread 0
+----------------------------------------------------
+  o41=-1073742278 (10111111111111111111111000111010)
+
+State 156 file inputCBMC.c line 145 function main thread 0
+----------------------------------------------------
+  o01=1073741374 (00111111111111111111111000111110)
+
+State 157 file inputCBMC.c line 146 function main thread 0
+----------------------------------------------------
+  sT21=0 (00000000000000000000000000000000)
+
+State 158 file inputCBMC.c line 147 function main thread 0
+----------------------------------------------------
+  o21=-93437717 (11111010011011100100000011101011)
+
+State 159 file inputCBMC.c line 148 function main thread 0
+----------------------------------------------------
+  o61=-93437717 (11111010011011100100000011101011)
+
+State 160 file inputCBMC.c line 149 function main thread 0
+----------------------------------------------------
+  o11=0 (00000000000000000000000000000000)
+
+State 161 file inputCBMC.c line 150 function main thread 0
+----------------------------------------------------
+  o71=1 (00000000000000000000000000000001)
+
+State 162 file inputCBMC.c line 151 function main thread 0
+----------------------------------------------------
+  o31=0 (00000000000000000000000000000000)
+
+State 163 file inputCBMC.c line 152 function main thread 0
+----------------------------------------------------
+  o51=0 (00000000000000000000000000000000)
+
+Violated property:
+  file inputCBMC.c line 182 function main
+  assertion o70 == o71
+  o70 == o71
+
+
+** 1 of 30 failed (2 iterations)
+VERIFICATION FAILED

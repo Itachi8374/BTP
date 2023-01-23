@@ -1,0 +1,53 @@
+\begin{algorithm}[!t]
+%\small
+\scriptsize
+ \SetArgSty{textup} % to avoid italic font 
+ %\SetKwInOut{Input}{Input}
+ %\SetKwInOut{Output}{Output} 
+% \Input{Two FSMD $M_0$ and $M_1$, a path $\alpha$ of a path cover of $M_0$, a 
+% path $\beta$ of a path cover of $M_1$, $\mathtt{EQ\_LIST}$ contains equivalent 
+% path pairs, $\mathtt{C\_LIST}$ contains candidate for conditionally equivalent 
+% path pairs.}
+% \Output{$\bar{v}=\langle v_1,v_2,\dots,v_n\rangle$ input variable list such 
+% that $v_i$ represents the value of the input variable $v_i$. A 
+%  boolean variable $\mathit{Equiv}$ which is $\mathtt{True}$ if the 
+ % $\alpha\simeq\beta$ otherwise $\mathtt{False}$. A boolean variable 
+ % $\mathit{flaseComp}$ which is $\mathtt{True}$ if all computations 
+ % represented by \textit{cTrace} are false computation otherwise 
+ % $\mathtt{False}$.}
+ DFS from the start state of $\alpha$ in $\mathtt{C\_LIST}$ to obtain the 
+ sequence  $\langle p_{0j},~p_{0j+1},~...,~p_{0k},~\alpha\rangle$.\label{Line:ctraceM0}\\
+ DFS from the start state of $p_{0j}$ in $\mathtt{EQ\_LIST}$ to obtain the sequence 
+ $\langle p_{00},~p_{01},~...,~p_{0i}\rangle$.\label{Line:ctraceM1}\\
+ Encode the $\mathit{cTrace}=\langle 
+ p_{00},p_{01},\dots,p_{0i},p_{0j},p_{0j+1},\dots,p_{0k},\alpha\rangle$ 
+ and its corresponding \textit{cTrace} in $M_1$ as C, say ``input.c".\label{Line:encode}\\
+ Initialize the unwinding loop bound (ULB) $k$ to 1.\\
+ Use \texttt{cbmc input.c -unwind k --no-unwinding-assertions} command to 
+ invoke  CBMC.\\
+\uIf{The condition mentioned in  \texttt{\_\_CPROVER\_assume} is not satisfiable\label{Line:caseStart}}
+  {{\KwRet{$\langle\text{NULL},\mathtt{False},\mathtt{True}\rangle$}\tcc*{Case~1}}}
+\uElseIf{All the unwinding assertions along with the user defined assertions are 
+valid}
+ {{\KwRet{$\langle\text{NULL},\mathtt{True},\mathtt{False}\rangle$}\tcc*{Case~2}}}
+ \uElseIf{ CBMC produces a counter-example for the assertion belongs to an output 
+ variable}
+  {{\KwRet{$\langle \bar{v},\mathtt{False},\mathtt{False}\rangle$}\tcc*{Case~3.1}}}
+ \uElseIf{CBMC produces a counter-example for the assertion belongs to live 
+  variable}
+  {Execute both $M_0$ and $M_1$ with the values obtained from CBMC as inputs.\\
+     \uIf{outputs are the same}
+ {{\KwRet{$\langle \text{NULL},\mathtt{False},\mathtt{False}\rangle$}}\tcc*{Case~3.2}}
+     \Else
+  {{\KwRet{$\langle \bar{v},\mathtt{False},\mathtt{False}\rangle$}}\tcc*{Case~3.3}}
+    }  
+ \uElseIf{CBMC hits the time limit\label{Line:caseEnd}}
+  {{\KwRet{$\langle \text{NULL},\mathtt{False},\mathtt{False}\rangle$}}\tcc*{Case~4}}
+ \Else
+  { Increase ULB by one (i.e., k=k+1) and go to step~5}
+ %\ENDIF
+ \caption{$\mathtt{counterExmapleGenerator}$($M_0$, $M_1$, $\alpha$,  $\beta$, 
+ $\mathtt{EQ\_LIST, C\_LIST}$)}
+ \label{Algo:ctrace}
+ \end{algorithm}
+

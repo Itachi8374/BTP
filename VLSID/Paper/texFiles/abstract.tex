@@ -1,0 +1,13 @@
+Path-based equivalence checkers (PBECs) have been successfully applied for verification of 
+programs from diverse domains and at various stages of high-level synthesis. 
+These verifiers can be sound but not complete. Therefore, non-equivalence cases 
+require further investigation of the two programs being compared by some human expert.  
+In this work, we show how a counter-trace (\textit{cTrace}) can be generated in the case of 
+non-equivalence reported by the PBEC. 
+We show how a Bounded Model Checker (CBMC) can be
+used to find suitable initialization values for input variables (i.e., a
+counter-example) for a given \textit{cTrace}.
+With our counter-example generation framework, we show how a strong non-equivalence decision 
+can be taken in a PBEC. We also show that some false negative cases of the PBEC can also be 
+revealed using this framework. Experimental results demonstrate the usefulness
+of our method.

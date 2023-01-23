@@ -1,0 +1,1711 @@
+
+Calling Parser....
+File opening: WAVELET_org.txt
+
+
+  "Wavelet.org" FSMD states and its transitions are displayed below  
+
+
+
+ State name is  qq1000 
+
+Status of VAPFLAG: False
+
+   qq1000   to   -->qq1999
+
+i  :=  0 
+j  :=  0 
+
+
+ State name is  qq1999 
+
+Status of VAPFLAG: False
+
+   qq1999   to   -->qq1005LELE
+ ( 0 - 1  * ( /   -3 + 1 * n , 2 )+ 1 * j >= 0 ) 
+
+   qq1999   to   -->qq1001
+ ( 0 - 1  * ( /   -3 + 1 * n , 2 )+ 1 * j < 0 ) 
+
+
+ State name is  qq1001 
+
+Status of VAPFLAG: False
+
+   qq1001   to   -->qq1002
+
+wksp  :=  write ( wksp, 0 + 1 * i , 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )+ 1 * C3 * read ( a, 3 + 1 * j ))
+
+
+ State name is  qq1002 
+
+Status of VAPFLAG: False
+
+   qq1002   to   -->qq1997
+
+wksp  :=  write ( wksp, 100 + 1 * i , 0 - 1 * C0 * read ( a, 3 + 1 * j )+ 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j ))
+
+
+ State name is  qq1997 
+
+Status of VAPFLAG: False
+
+   qq1997   to   -->qq1999
+
+j  :=  2 + 1 * j 
+i  :=  1 + 1 * i 
+
+
+ State name is  qq1003 
+
+Status of VAPFLAG: False
+
+   qq1003   to   -->qq1004
+
+wksp  :=  write ( wksp, 0 + 1 * i , 0 + 1 * C0 * read ( a, 2 + 1 * j )+ 1 * C1 * read ( a, 3 + 1 * j )+ 1 * C2 * read ( a, 4 + 1 * j )+ 1 * C3 * read ( a, 5 + 1 * j ))
+
+
+ State name is  qq1004 
+
+Status of VAPFLAG: False
+
+   qq1004   to   -->qq1994
+
+wksp  :=  write ( wksp, 100 + 1 * i , 0 - 1 * C0 * read ( a, 5 + 1 * j )+ 1 * C1 * read ( a, 4 + 1 * j )- 1 * C2 * read ( a, 3 + 1 * j )+ 1 * C3 * read ( a, 2 + 1 * j ))
+
+
+ State name is  qq1994 
+
+Status of VAPFLAG: False
+
+   qq1994   to   -->qq1996
+
+j  :=  2 + 1 * j 
+i  :=  1 + 1 * i 
+
+
+ State name is  qq1993 
+
+Status of VAPFLAG: False
+
+   qq1993   to   -->qq1995LB
+ ( 0 + 1 * filter != 0 ) 
+
+   qq1993   to   -->qq1998LB
+ ( 0 + 1 * filter == 0 ) 
+
+
+ State name is  qq1998LB 
+
+Status of VAPFLAG: False
+
+   qq1998LB   to   -->qq1999
+
+i  :=  0 
+j  :=  0 
+
+
+ State name is  qq1995LB 
+
+Status of VAPFLAG: False
+
+   qq1995LB   to   -->qq1996
+
+i  :=  0 
+j  :=  0 
+
+
+ State name is  qq1996 
+
+Status of VAPFLAG: False
+
+   qq1996   to   -->qq1005LELE
+ ( 0 - 1  * ( /   -3 + 1 * n , 2 )+ 1 * j >= 0 ) 
+
+   qq1996   to   -->qq1003
+ ( 0 - 1  * ( /   -3 + 1 * n , 2 )+ 1 * j < 0 ) 
+
+
+ State name is  qq1005LELE 
+
+Status of VAPFLAG: False
+
+
+ State name is  qq1005LELE0 
+
+Status of VAPFLAG: False
+
+Calling Parser....
+File opening: WAVELET_schd.txt
+
+
+  "Wavelet.schd" FSMD states and its transitions are displayed below  
+
+
+
+ State name is  qq1000 
+
+Status of VAPFLAG: False
+
+   qq1000   to   -->qq1999
+
+i  :=  0 
+j  :=  0 
+
+
+ State name is  qq1999 
+
+Status of VAPFLAG: False
+
+   qq1999   to   -->qq1037
+ ( 0 - 1  * ( /   -3 + 1 * n , 2 )+ 1 * j >= 0 ) 
+
+   qq1999   to   -->qq1003
+ ( 0 - 1  * ( /   -3 + 1 * n , 2 )+ 1 * j < 0 ) 
+
+
+ State name is  qq1003 
+
+Status of VAPFLAG: False
+
+   qq1003   to   -->qq1007
+
+sT6_25  :=  0 + 1 * C3 * read ( a, 3 + 1 * j )
+sT9_25  :=  0 + 1 * C2 * read ( a, 2 + 1 * j )
+sT12_25  :=  0 + 1 * C1 * read ( a, 1 + 1 * j )
+sT14_25  :=  0 + 1 * C0 * read ( a, 0 + 1 * j )
+
+
+ State name is  qq1007 
+
+Status of VAPFLAG: False
+
+   qq1007   to   -->qq1008
+
+sT15_25  :=  0 + 1 * sT12_25 + 1 * sT14_25 
+
+
+ State name is  qq1008 
+
+Status of VAPFLAG: False
+
+   qq1008   to   -->qq1009
+
+sT16_25  :=  0 + 1 * sT9_25 + 1 * sT15_25 
+
+
+ State name is  qq1009 
+
+Status of VAPFLAG: False
+
+   qq1009   to   -->qq1010
+
+wksp  :=  write ( wksp, 0 + 1 * i , 0 + 1 * sT6_25 + 1 * sT16_25 )
+
+
+ State name is  qq1010 
+
+Status of VAPFLAG: False
+
+   qq1010   to   -->qq1014
+
+sT19_25  :=  0 + 1 * C0 * read ( a, 3 + 1 * j )
+sT22_25  :=  0 + 1 * C1 * read ( a, 2 + 1 * j )
+sT25_25  :=  0 + 1 * C2 * read ( a, 1 + 1 * j )
+sT27_25  :=  0 + 1 * C3 * read ( a, 0 + 1 * j )
+
+
+ State name is  qq1014 
+
+Status of VAPFLAG: False
+
+   qq1014   to   -->qq1015
+
+sT28_25  :=  0 - 1 * sT25_25 + 1 * sT27_25 
+
+
+ State name is  qq1015 
+
+Status of VAPFLAG: False
+
+   qq1015   to   -->qq1016
+
+sT29_25  :=  0 + 1 * sT22_25 + 1 * sT28_25 
+
+
+ State name is  qq1016 
+
+Status of VAPFLAG: False
+
+   qq1016   to   -->qq1017
+
+wksp  :=  write ( wksp, 100 + 1 * i , 0 - 1 * sT19_25 + 1 * sT29_25 )
+
+
+ State name is  qq1017 
+
+Status of VAPFLAG: False
+
+   qq1017   to   -->qq1999
+
+j  :=  2 + 1 * j 
+i  :=  1 + 1 * i 
+
+
+ State name is  qq1019 
+
+Status of VAPFLAG: False
+
+   qq1019   to   -->qq1997
+
+i  :=  0 
+j  :=  0 
+
+
+ State name is  qq1997 
+
+Status of VAPFLAG: False
+
+   qq1997   to   -->qq1037
+ ( 0 - 1  * ( /   -3 + 1 * n , 2 )+ 1 * j >= 0 ) 
+
+   qq1997   to   -->qq1021
+ ( 0 - 1  * ( /   -3 + 1 * n , 2 )+ 1 * j < 0 ) 
+
+
+ State name is  qq1021 
+
+Status of VAPFLAG: False
+
+   qq1021   to   -->qq1025
+
+sT36_32  :=  0 + 1 * C3 * read ( a, 5 + 1 * j )
+sT39_32  :=  0 + 1 * C2 * read ( a, 4 + 1 * j )
+sT42_32  :=  0 + 1 * C1 * read ( a, 3 + 1 * j )
+sT45_32  :=  0 + 1 * C0 * read ( a, 2 + 1 * j )
+
+
+ State name is  qq1025 
+
+Status of VAPFLAG: False
+
+   qq1025   to   -->qq1026
+
+sT46_32  :=  0 + 1 * sT42_32 + 1 * sT45_32 
+
+
+ State name is  qq1026 
+
+Status of VAPFLAG: False
+
+   qq1026   to   -->qq1027
+
+sT47_32  :=  0 + 1 * sT39_32 + 1 * sT46_32 
+
+
+ State name is  qq1027 
+
+Status of VAPFLAG: False
+
+   qq1027   to   -->qq1028
+
+wksp  :=  write ( wksp, 0 + 1 * i , 0 + 1 * sT36_32 + 1 * sT47_32 )
+
+
+ State name is  qq1028 
+
+Status of VAPFLAG: False
+
+   qq1028   to   -->qq1032
+
+sT50_32  :=  0 + 1 * C0 * read ( a, 5 + 1 * j )
+sT53_32  :=  0 + 1 * C1 * read ( a, 4 + 1 * j )
+sT56_32  :=  0 + 1 * C2 * read ( a, 3 + 1 * j )
+sT59_32  :=  0 + 1 * C3 * read ( a, 2 + 1 * j )
+
+
+ State name is  qq1032 
+
+Status of VAPFLAG: False
+
+   qq1032   to   -->qq1033
+
+sT60_32  :=  0 - 1 * sT56_32 + 1 * sT59_32 
+
+
+ State name is  qq1033 
+
+Status of VAPFLAG: False
+
+   qq1033   to   -->qq1034
+
+sT61_32  :=  0 + 1 * sT53_32 + 1 * sT60_32 
+
+
+ State name is  qq1034 
+
+Status of VAPFLAG: False
+
+   qq1034   to   -->qq1035
+
+wksp  :=  write ( wksp, 100 + 1 * i , 0 - 1 * sT50_32 + 1 * sT61_32 )
+
+
+ State name is  qq1035 
+
+Status of VAPFLAG: False
+
+   qq1035   to   -->qq1997
+
+j  :=  2 + 1 * j 
+i  :=  1 + 1 * i 
+
+
+ State name is  qq1996 
+
+Status of VAPFLAG: False
+
+   qq1996   to   -->qq1019
+ ( 0 + 1 * filter != 0 ) 
+
+   qq1996   to   -->qq1001
+ ( 0 + 1 * filter == 0 ) 
+
+
+ State name is  qq1001 
+
+Status of VAPFLAG: False
+
+
+ State name is  qq1037 
+
+Status of VAPFLAG: False
+
+ FSMDs read successfully 
+
+ vars of : V0_V1  
+ -
+ -
+ 0
+ 0
+ i
+ j
+ wksp
+ C0
+ a
+ C1
+ 1
+ C2
+ 2
+ C3
+ 3
+ 100
+ 4
+ 5
+ filter
+ n
+
+ vars of : V1_minus_V0_V1 
+ sT6_25 
+ sT9_25 
+ sT12_25 
+ sT14_25 
+ sT15_25 
+ sT16_25 
+ sT19_25 
+ sT22_25 
+ sT25_25 
+ sT27_25 
+ sT28_25 
+ sT29_25 
+ sT36_32 
+ sT39_32 
+ sT42_32 
+ sT45_32 
+ sT46_32 
+ sT47_32 
+ sT50_32 
+ sT53_32 
+ sT56_32 
+ sT59_32 
+ sT60_32 
+ sT61_32 
+
+
+Displaying all paths of M0
+
+
+
+ Displaying all the paths of the path list 
+
+  0  0 qq1000 --> 1 qq1999 
+
+
+
+ i := 0 
+ j := 0 
+
+
+  1  1 qq1999 --> 12 qq1005LELE 
+
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+
+
+
+  2  1 qq1999 --> 2 qq1001 --> 3 qq1002 --> 4 qq1997 --> 1 qq1999 
+
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+
+ wksp := write ( wksp, 0 + 1 * i , 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )+ 1 * C3 * read ( a, 3 + 1 * j ))
+ wksp := write ( wksp, 100 + 1 * i , 0 - 1 * C0 * read ( a, 3 + 1 * j )+ 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j ))
+ j := 2 + 1 * j 
+ i := 1 + 1 * i 
+
+
+  3  8 qq1993 --> 10 qq1995LB --> 11 qq1996 
+
+ ( 0 + 1 * filter != 0 ) 
+
+ i := 0 
+ j := 0 
+
+
+  4  8 qq1993 --> 9 qq1998LB --> 1 qq1999 
+
+ ( 0 + 1 * filter == 0 ) 
+
+ i := 0 
+ j := 0 
+
+
+  5  11 qq1996 --> 12 qq1005LELE 
+
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+
+
+
+  6  11 qq1996 --> 5 qq1003 --> 6 qq1004 --> 7 qq1994 --> 11 qq1996 
+
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+
+ wksp := write ( wksp, 0 + 1 * i , 0 + 1 * C0 * read ( a, 2 + 1 * j )+ 1 * C1 * read ( a, 3 + 1 * j )+ 1 * C2 * read ( a, 4 + 1 * j )+ 1 * C3 * read ( a, 5 + 1 * j ))
+ wksp := write ( wksp, 100 + 1 * i , 0 - 1 * C0 * read ( a, 5 + 1 * j )+ 1 * C1 * read ( a, 4 + 1 * j )- 1 * C2 * read ( a, 3 + 1 * j )+ 1 * C3 * read ( a, 2 + 1 * j ))
+ j := 2 + 1 * j 
+ i := 1 + 1 * i 
+
+
+In liveVariableAnalysis
+
+In updateLivenessInfo
+
+Out of updateLivenessInfo
+
+In updateLivenessInfo
+
+Out of updateLivenessInfo
+
+In updateLivenessInfo
+
+Out of updateLivenessInfo
+
+In updateLivenessInfo
+
+Out of updateLivenessInfo
+
+In updateLivenessInfo
+
+Out of updateLivenessInfo
+
+In updateLivenessInfo
+
+Out of updateLivenessInfo
+
+Out of liveVariableAnalysis
+
+Displaying the CFG along with Live Variable Analysis
+
+ i := 0 
+ j := 0 
+Use: 
+Def: i  j  
+Live_s: n  C3  a  C2  C1  C0  
+Live_f: n  j  C3  a  C2  C1  C0  i  
+-----
+
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+Use: n  j  
+Def: 
+Live_s: n  j  
+Live_f: 
+-----
+
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+ wksp := write ( wksp, 0 + 1 * i , 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )+ 1 * C3 * read ( a, 3 + 1 * j ))
+ wksp := write ( wksp, 100 + 1 * i , 0 - 1 * C0 * read ( a, 3 + 1 * j )+ 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j ))
+ j := 2 + 1 * j 
+ i := 1 + 1 * i 
+Use: n  j  C3  a  C2  C1  C0  i  
+Def: j  i  
+Live_s: n  j  C3  a  C2  C1  C0  i  
+Live_f: n  j  C3  a  C2  C1  C0  i  
+-----
+
+ ( 0 + 1 * filter != 0 ) 
+ i := 0 
+ j := 0 
+Use: filter  
+Def: i  j  
+Live_s: filter  n  C3  a  C2  C1  C0  
+Live_f: n  j  C3  a  C2  C1  C0  i  
+-----
+
+ ( 0 + 1 * filter == 0 ) 
+ i := 0 
+ j := 0 
+Use: filter  
+Def: i  j  
+Live_s: filter  n  C3  a  C2  C1  C0  
+Live_f: n  j  C3  a  C2  C1  C0  i  
+-----
+
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+Use: n  j  
+Def: 
+Live_s: n  j  
+Live_f: 
+-----
+
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+ wksp := write ( wksp, 0 + 1 * i , 0 + 1 * C0 * read ( a, 2 + 1 * j )+ 1 * C1 * read ( a, 3 + 1 * j )+ 1 * C2 * read ( a, 4 + 1 * j )+ 1 * C3 * read ( a, 5 + 1 * j ))
+ wksp := write ( wksp, 100 + 1 * i , 0 - 1 * C0 * read ( a, 5 + 1 * j )+ 1 * C1 * read ( a, 4 + 1 * j )- 1 * C2 * read ( a, 3 + 1 * j )+ 1 * C3 * read ( a, 2 + 1 * j ))
+ j := 2 + 1 * j 
+ i := 1 + 1 * i 
+Use: n  j  C3  a  C2  C1  C0  i  
+Def: j  i  
+Live_s: n  j  C3  a  C2  C1  C0  i  
+Live_f: n  j  C3  a  C2  C1  C0  i  
+-----
+
+
+
+Displaying all paths of M1
+
+
+
+ Displaying all the paths of the path list 
+
+  0  0 qq1000 --> 1 qq1999 
+
+
+
+ i := 0 
+ j := 0 
+
+
+  1  1 qq1999 --> 24 qq1037 
+
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+
+
+
+  2  1 qq1999 --> 2 qq1003 --> 3 qq1007 --> 4 qq1008 --> 5 qq1009 --> 6 qq1010 --> 7 qq1014 --> 8 qq1015 --> 9 qq1016 --> 10 qq1017 --> 1 qq1999 
+
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+
+ sT6_25 := 0 + 1 * C3 * read ( a, 3 + 1 * j )
+ sT9_25 := 0 + 1 * C2 * read ( a, 2 + 1 * j )
+ sT12_25 := 0 + 1 * C1 * read ( a, 1 + 1 * j )
+ sT14_25 := 0 + 1 * C0 * read ( a, 0 + 1 * j )
+ sT15_25 := 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )
+ sT16_25 := 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )
+ wksp := write ( wksp, 0 + 1 * i , 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )+ 1 * C3 * read ( a, 3 + 1 * j ))
+ wksp := write ( wksp, 100 + 1 * i , 0 - 1 * C0 * read ( a, 3 + 1 * j )+ 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j ))
+ sT19_25 := 0 + 1 * C0 * read ( a, 3 + 1 * j )
+ sT22_25 := 0 + 1 * C1 * read ( a, 2 + 1 * j )
+ sT25_25 := 0 + 1 * C2 * read ( a, 1 + 1 * j )
+ sT27_25 := 0 + 1 * C3 * read ( a, 0 + 1 * j )
+ sT28_25 := 0 - 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j )
+ sT29_25 := 0 + 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j )
+ j := 2 + 1 * j 
+ i := 1 + 1 * i 
+
+
+  3  12 qq1997 --> 24 qq1037 
+
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+
+
+
+  4  12 qq1997 --> 13 qq1021 --> 14 qq1025 --> 15 qq1026 --> 16 qq1027 --> 17 qq1028 --> 18 qq1032 --> 19 qq1033 --> 20 qq1034 --> 21 qq1035 --> 12 qq1997 
+
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+
+ sT36_32 := 0 + 1 * C3 * read ( a, 5 + 1 * j )
+ sT39_32 := 0 + 1 * C2 * read ( a, 4 + 1 * j )
+ sT42_32 := 0 + 1 * C1 * read ( a, 3 + 1 * j )
+ sT45_32 := 0 + 1 * C0 * read ( a, 2 + 1 * j )
+ sT46_32 := 0 + 1 * C0 * read ( a, 2 + 1 * j )+ 1 * C1 * read ( a, 3 + 1 * j )
+ sT47_32 := 0 + 1 * C0 * read ( a, 2 + 1 * j )+ 1 * C1 * read ( a, 3 + 1 * j )+ 1 * C2 * read ( a, 4 + 1 * j )
+ wksp := write ( wksp, 0 + 1 * i , 0 + 1 * C0 * read ( a, 2 + 1 * j )+ 1 * C1 * read ( a, 3 + 1 * j )+ 1 * C2 * read ( a, 4 + 1 * j )+ 1 * C3 * read ( a, 5 + 1 * j ))
+ wksp := write ( wksp, 100 + 1 * i , 0 - 1 * C0 * read ( a, 5 + 1 * j )+ 1 * C1 * read ( a, 4 + 1 * j )- 1 * C2 * read ( a, 3 + 1 * j )+ 1 * C3 * read ( a, 2 + 1 * j ))
+ sT50_32 := 0 + 1 * C0 * read ( a, 5 + 1 * j )
+ sT53_32 := 0 + 1 * C1 * read ( a, 4 + 1 * j )
+ sT56_32 := 0 + 1 * C2 * read ( a, 3 + 1 * j )
+ sT59_32 := 0 + 1 * C3 * read ( a, 2 + 1 * j )
+ sT60_32 := 0 - 1 * C2 * read ( a, 3 + 1 * j )+ 1 * C3 * read ( a, 2 + 1 * j )
+ sT61_32 := 0 + 1 * C1 * read ( a, 4 + 1 * j )- 1 * C2 * read ( a, 3 + 1 * j )+ 1 * C3 * read ( a, 2 + 1 * j )
+ j := 2 + 1 * j 
+ i := 1 + 1 * i 
+
+
+  5  22 qq1996 --> 11 qq1019 --> 12 qq1997 
+
+ ( 0 + 1 * filter != 0 ) 
+
+ i := 0 
+ j := 0 
+
+
+  6  22 qq1996 --> 23 qq1001 
+
+ ( 0 + 1 * filter == 0 ) 
+
+
+
+In liveVariableAnalysis
+
+In updateLivenessInfo
+
+Out of updateLivenessInfo
+
+In updateLivenessInfo
+
+Out of updateLivenessInfo
+
+In updateLivenessInfo
+
+Out of updateLivenessInfo
+
+In updateLivenessInfo
+
+Out of updateLivenessInfo
+
+In updateLivenessInfo
+
+Out of updateLivenessInfo
+
+In updateLivenessInfo
+
+Out of updateLivenessInfo
+
+In updateLivenessInfo
+
+Out of updateLivenessInfo
+
+Out of liveVariableAnalysis
+
+Displaying the CFG along with Live Variable Analysis
+
+ i := 0 
+ j := 0 
+Use: 
+Def: i  j  
+Live_s: n  C3  a  C2  C1  C0  
+Live_f: n  j  C3  a  C2  C1  C0  i  
+-----
+
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+Use: n  j  
+Def: 
+Live_s: n  j  
+Live_f: 
+-----
+
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+ sT6_25 := 0 + 1 * C3 * read ( a, 3 + 1 * j )
+ sT9_25 := 0 + 1 * C2 * read ( a, 2 + 1 * j )
+ sT12_25 := 0 + 1 * C1 * read ( a, 1 + 1 * j )
+ sT14_25 := 0 + 1 * C0 * read ( a, 0 + 1 * j )
+ sT15_25 := 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )
+ sT16_25 := 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )
+ wksp := write ( wksp, 0 + 1 * i , 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )+ 1 * C3 * read ( a, 3 + 1 * j ))
+ wksp := write ( wksp, 100 + 1 * i , 0 - 1 * C0 * read ( a, 3 + 1 * j )+ 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j ))
+ sT19_25 := 0 + 1 * C0 * read ( a, 3 + 1 * j )
+ sT22_25 := 0 + 1 * C1 * read ( a, 2 + 1 * j )
+ sT25_25 := 0 + 1 * C2 * read ( a, 1 + 1 * j )
+ sT27_25 := 0 + 1 * C3 * read ( a, 0 + 1 * j )
+ sT28_25 := 0 - 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j )
+ sT29_25 := 0 + 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j )
+ j := 2 + 1 * j 
+ i := 1 + 1 * i 
+Use: n  j  C3  a  C2  C1  C0  i  
+Def: sT6_25  sT9_25  sT12_25  sT14_25  sT15_25  sT16_25  sT19_25  sT22_25  sT25_25  sT27_25  sT28_25  sT29_25  j  i  
+Live_s: n  j  C3  a  C2  C1  C0  i  
+Live_f: n  j  C3  a  C2  C1  C0  i  
+-----
+
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+Use: n  j  
+Def: 
+Live_s: n  j  
+Live_f: 
+-----
+
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+ sT36_32 := 0 + 1 * C3 * read ( a, 5 + 1 * j )
+ sT39_32 := 0 + 1 * C2 * read ( a, 4 + 1 * j )
+ sT42_32 := 0 + 1 * C1 * read ( a, 3 + 1 * j )
+ sT45_32 := 0 + 1 * C0 * read ( a, 2 + 1 * j )
+ sT46_32 := 0 + 1 * C0 * read ( a, 2 + 1 * j )+ 1 * C1 * read ( a, 3 + 1 * j )
+ sT47_32 := 0 + 1 * C0 * read ( a, 2 + 1 * j )+ 1 * C1 * read ( a, 3 + 1 * j )+ 1 * C2 * read ( a, 4 + 1 * j )
+ wksp := write ( wksp, 0 + 1 * i , 0 + 1 * C0 * read ( a, 2 + 1 * j )+ 1 * C1 * read ( a, 3 + 1 * j )+ 1 * C2 * read ( a, 4 + 1 * j )+ 1 * C3 * read ( a, 5 + 1 * j ))
+ wksp := write ( wksp, 100 + 1 * i , 0 - 1 * C0 * read ( a, 5 + 1 * j )+ 1 * C1 * read ( a, 4 + 1 * j )- 1 * C2 * read ( a, 3 + 1 * j )+ 1 * C3 * read ( a, 2 + 1 * j ))
+ sT50_32 := 0 + 1 * C0 * read ( a, 5 + 1 * j )
+ sT53_32 := 0 + 1 * C1 * read ( a, 4 + 1 * j )
+ sT56_32 := 0 + 1 * C2 * read ( a, 3 + 1 * j )
+ sT59_32 := 0 + 1 * C3 * read ( a, 2 + 1 * j )
+ sT60_32 := 0 - 1 * C2 * read ( a, 3 + 1 * j )+ 1 * C3 * read ( a, 2 + 1 * j )
+ sT61_32 := 0 + 1 * C1 * read ( a, 4 + 1 * j )- 1 * C2 * read ( a, 3 + 1 * j )+ 1 * C3 * read ( a, 2 + 1 * j )
+ j := 2 + 1 * j 
+ i := 1 + 1 * i 
+Use: n  j  C3  a  C2  C1  C0  i  
+Def: sT36_32  sT39_32  sT42_32  sT45_32  sT46_32  sT47_32  sT50_32  sT53_32  sT56_32  sT59_32  sT60_32  sT61_32  j  i  
+Live_s: n  j  C3  a  C2  C1  C0  i  
+Live_f: n  j  C3  a  C2  C1  C0  i  
+-----
+
+ ( 0 + 1 * filter != 0 ) 
+ i := 0 
+ j := 0 
+Use: filter  
+Def: i  j  
+Live_s: filter  n  C3  a  C2  C1  C0  
+Live_f: n  j  C3  a  C2  C1  C0  i  
+-----
+
+ ( 0 + 1 * filter == 0 ) 
+Use: filter  
+Def: 
+Live_s: filter  
+Live_f: 
+-----
+
+Symbol 0: 	 - 	 0
+Symbol 1: 	 i 	 57
+Symbol 2: 	 j 	 58
+Symbol 3: 	 wksp 	 77634
+Symbol 4: 	 C0 	 190
+Symbol 5: 	 a 	 49
+Symbol 6: 	 C1 	 191
+Symbol 7: 	 C2 	 192
+Symbol 8: 	 C3 	 193
+Symbol 9: 	 filter 	 6037396
+Symbol 10: 	 n 	 62
+Symbol 11: 	 sT6_25 	 7070725
+Symbol 12: 	 sT9_25 	 7073725
+Symbol 13: 	 sT12_25 	 70616725
+Symbol 14: 	 sT14_25 	 70618725
+Symbol 15: 	 sT15_25 	 70619725
+Symbol 16: 	 sT16_25 	 70620725
+Symbol 17: 	 sT19_25 	 70623725
+Symbol 18: 	 sT22_25 	 70626725
+Symbol 19: 	 sT25_25 	 70629725
+Symbol 20: 	 sT27_25 	 70631725
+Symbol 21: 	 sT28_25 	 70632725
+Symbol 22: 	 sT29_25 	 70633725
+Symbol 23: 	 sT36_32 	 70640732
+Symbol 24: 	 sT39_32 	 70643732
+Symbol 25: 	 sT42_32 	 70646732
+Symbol 26: 	 sT45_32 	 70649732
+Symbol 27: 	 sT46_32 	 70650732
+Symbol 28: 	 sT47_32 	 70651732
+Symbol 29: 	 sT50_32 	 70654732
+Symbol 30: 	 sT53_32 	 70657732
+Symbol 31: 	 sT56_32 	 70660732
+Symbol 32: 	 sT59_32 	 70663732
+Symbol 33: 	 sT60_32 	 70664732
+Symbol 34: 	 sT61_32 	 70665732
+
+
+Through Queue: 0
+
+ In correspondenceChecker( qq1000, qq1000 )
+Checking condition for path with index 0
+
+ In createDummyPath()
+
+ i := 0 
+ j := 0 
+Propagated Vector
+ Condition: 
+	 True
+
+WARNING: In createDummyNode() with NULL expression
+
+ Displaying the dummy path created
+
+ End of displaying the dummy path created
+
+ Displaying concatenated path
+
+ i := 0 
+ j := 0 
+ End of displaying concatenated path
+
+ In compatibleConditions() with arguments
+ First Condition:
+ Second Condition:
+ In compatibleConditions() with arguments
+ First Condition:
+ Second Condition:
+ In correspondenceChecker( qq1000, qq1000 ) with path_id: 0
+
+ In findEquivalentPath(.., .., qq1000, ..)
+
+Beta:
+ i := 0 
+ j := 0 
+PV_Beta:
+Propagated Vector
+ Condition: 
+	 True
+
+PV_Alpha:
+Propagated Vector
+ Condition: 
+	 True
+
+ In createDummyPath()
+
+ i := 0 
+ j := 0 
+Propagated Vector
+ Condition: 
+	 True
+
+WARNING: In createDummyNode() with NULL expression
+
+ Displaying the dummy path created
+
+ End of displaying the dummy path created
+
+ Displaying concatenated path
+
+ i := 0 
+ j := 0 
+ End of displaying concatenated path
+
+ In compatibleConditions() with arguments
+ First Condition:
+ Second Condition:
+ In compatibleConditions() with arguments
+ First Condition:
+ Second Condition:
+ In compatibleConditions() with arguments
+ First Condition:
+ Second Condition:
+ Comparing beta with path alpha with id: 0
+
+ In createDummyPath()
+
+ i := 0 
+ j := 0 
+Propagated Vector
+ Condition: 
+	 True
+
+WARNING: In createDummyNode() with NULL expression
+
+ Displaying the dummy path created
+
+ End of displaying the dummy path created
+
+ Displaying concatenated path
+
+ i := 0 
+ j := 0 
+ End of displaying concatenated path
+
+ In compatibleConditions() with arguments
+ First Condition:
+ Second Condition:
+ Result of checkCondition(): 1
+
+ In valuePropagation()
+
+ i := 0 
+ j := 0 
+Propagated Vector
+ Condition: 
+	 True
+
+ i := 0 
+ j := 0 
+Propagated Vector
+ Condition: 
+	 True
+
+ In createDummyPath()
+
+ i := 0 
+ j := 0 
+Propagated Vector
+ Condition: 
+	 True
+
+WARNING: In createDummyNode() with NULL expression
+
+ Displaying the dummy path created
+
+ End of displaying the dummy path created
+
+ Displaying concatenated path
+
+ i := 0 
+ j := 0 
+ End of displaying concatenated path
+
+ In createDummyPath()
+
+ i := 0 
+ j := 0 
+Propagated Vector
+ Condition: 
+	 True
+
+WARNING: In createDummyNode() with NULL expression
+
+ Displaying the dummy path created
+
+ End of displaying the dummy path created
+
+ Displaying concatenated path
+
+ i := 0 
+ j := 0 
+ End of displaying concatenated path
+Modified paths
+Path beta'
+
+ i := 0 
+ j := 0 
+Path alpha'
+
+ i := 0 
+ j := 0 
+ Vectors to be propagated
+
+Propagated Vector
+ Condition: 
+	 True
+
+Propagated Vector
+ Condition: 
+	 True
+
+ Out of countMismatch, #mismatches = 0
+
+ Back from findEquivalentPath() to correspondenceChecker()
+ indexOfP0: 0, indexOfP1: 0
+ Beta path:
+qq1000 --> qq1999
+
+ i := 0 
+ j := 0 
+Propagated Vector
+ Condition: 
+	 True
+
+
+ Alpha path:
+qq1000 --> qq1999
+
+ i := 0 
+ j := 0 
+Propagated Vector
+ Condition: 
+	 True
+
+Out of equivalentPropagatedVector() with TRUE indicating Case 1.1
+
+ Updating E_u
+Enqueueing ( qq1999, qq1999 ) in eta
+
+
+ Out of already_present_queue with return value FALSE
+
+ Updating E_c
+
+ Out of correspondenceChecker( qq1000, qq1000 ) with return value 1
+
+
+Through Queue: 0
+
+ In correspondenceChecker( qq1999, qq1999 )
+Checking condition for path with index 1
+
+ In createDummyPath()
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+Propagated Vector
+ Condition: 
+	 True
+
+WARNING: In createDummyNode() with NULL expression
+
+ Displaying the dummy path created
+
+ End of displaying the dummy path created
+
+ Displaying concatenated path
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+ End of displaying concatenated path
+
+ In compatibleConditions() with arguments
+ First Condition:
+ Second Condition: ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+ In compatibleConditions() with arguments
+ First Condition:
+ Second Condition: ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+ In correspondenceChecker( qq1999, qq1999 ) with path_id: 1
+
+ In findEquivalentPath(.., .., qq1999, ..)
+
+Beta: ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+PV_Beta:
+Propagated Vector
+ Condition: 
+	 True
+
+PV_Alpha:
+Propagated Vector
+ Condition: 
+	 True
+
+ In createDummyPath()
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+Propagated Vector
+ Condition: 
+	 True
+
+WARNING: In createDummyNode() with NULL expression
+
+ Displaying the dummy path created
+
+ End of displaying the dummy path created
+
+ Displaying concatenated path
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+ End of displaying concatenated path
+
+ In compatibleConditions() with arguments
+ First Condition: ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+ Second Condition:
+ In compatibleConditions() with arguments
+ First Condition: ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+ Second Condition: ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+ Out of compatibleConditions() with return value 1
+
+ In compatibleConditions() with arguments
+ First Condition:
+ Second Condition: ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+ Comparing beta with path alpha with id: 1
+
+ In createDummyPath()
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+Propagated Vector
+ Condition: 
+	 True
+
+WARNING: In createDummyNode() with NULL expression
+
+ Displaying the dummy path created
+
+ End of displaying the dummy path created
+
+ Displaying concatenated path
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+ End of displaying concatenated path
+
+ In compatibleConditions() with arguments
+ First Condition: ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+ Second Condition: ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+ Out of compatibleConditions() with return value 1
+
+ Result of checkCondition(): 1
+
+ In valuePropagation()
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+Propagated Vector
+ Condition: 
+	 True
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+Propagated Vector
+ Condition: 
+	 True
+
+ In createDummyPath()
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+Propagated Vector
+ Condition: 
+	 True
+
+WARNING: In createDummyNode() with NULL expression
+
+ Displaying the dummy path created
+
+ End of displaying the dummy path created
+
+ Displaying concatenated path
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+ End of displaying concatenated path
+
+ In createDummyPath()
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+Propagated Vector
+ Condition: 
+	 True
+
+WARNING: In createDummyNode() with NULL expression
+
+ Displaying the dummy path created
+
+ End of displaying the dummy path created
+
+ Displaying concatenated path
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+ End of displaying concatenated path
+Modified paths
+Path beta'
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+Path alpha'
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+ Vectors to be propagated
+
+Propagated Vector
+ Condition: 
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+Propagated Vector
+ Condition: 
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+ Out of countMismatch, #mismatches = 0
+
+ Back from findEquivalentPath() to correspondenceChecker()
+ indexOfP0: 1, indexOfP1: 1
+ Beta path:
+qq1999 --> qq1005LELE
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+Propagated Vector
+ Condition: 
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+
+ Alpha path:
+qq1999 --> qq1037
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+Propagated Vector
+ Condition: 
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+Out of equivalentPropagatedVector() with TRUE indicating Case 1.1
+
+ Updating E_u
+Enqueueing ( qq1005LELE, qq1037 ) in eta
+
+
+ Out of already_present_queue with return value FALSE
+
+ Updating E_c
+Checking condition for path with index 2
+
+ In createDummyPath()
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+ wksp := write ( wksp, 0 + 1 * i , 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )+ 1 * C3 * read ( a, 3 + 1 * j ))
+ wksp := write ( wksp, 100 + 1 * i , 0 - 1 * C0 * read ( a, 3 + 1 * j )+ 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j ))
+ j := 2 + 1 * j 
+ i := 1 + 1 * i 
+Propagated Vector
+ Condition: 
+	 True
+
+WARNING: In createDummyNode() with NULL expression
+
+ Displaying the dummy path created
+
+ End of displaying the dummy path created
+
+ Displaying concatenated path
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+ wksp := write ( wksp, 0 + 1 * i , 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )+ 1 * C3 * read ( a, 3 + 1 * j ))
+ wksp := write ( wksp, 100 + 1 * i , 0 - 1 * C0 * read ( a, 3 + 1 * j )+ 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j ))
+ j := 2 + 1 * j 
+ i := 1 + 1 * i 
+ End of displaying concatenated path
+
+ In compatibleConditions() with arguments
+ First Condition:
+ Second Condition: ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+ In compatibleConditions() with arguments
+ First Condition:
+ Second Condition: ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+ In correspondenceChecker( qq1999, qq1999 ) with path_id: 2
+
+ In findEquivalentPath(.., .., qq1999, ..)
+
+Beta: ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+ wksp := write ( wksp, 0 + 1 * i , 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )+ 1 * C3 * read ( a, 3 + 1 * j ))
+ wksp := write ( wksp, 100 + 1 * i , 0 - 1 * C0 * read ( a, 3 + 1 * j )+ 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j ))
+ j := 2 + 1 * j 
+ i := 1 + 1 * i 
+PV_Beta:
+Propagated Vector
+ Condition: 
+	 True
+
+PV_Alpha:
+Propagated Vector
+ Condition: 
+	 True
+
+ In createDummyPath()
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+ wksp := write ( wksp, 0 + 1 * i , 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )+ 1 * C3 * read ( a, 3 + 1 * j ))
+ wksp := write ( wksp, 100 + 1 * i , 0 - 1 * C0 * read ( a, 3 + 1 * j )+ 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j ))
+ j := 2 + 1 * j 
+ i := 1 + 1 * i 
+Propagated Vector
+ Condition: 
+	 True
+
+WARNING: In createDummyNode() with NULL expression
+
+ Displaying the dummy path created
+
+ End of displaying the dummy path created
+
+ Displaying concatenated path
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+ wksp := write ( wksp, 0 + 1 * i , 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )+ 1 * C3 * read ( a, 3 + 1 * j ))
+ wksp := write ( wksp, 100 + 1 * i , 0 - 1 * C0 * read ( a, 3 + 1 * j )+ 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j ))
+ j := 2 + 1 * j 
+ i := 1 + 1 * i 
+ End of displaying concatenated path
+
+ In compatibleConditions() with arguments
+ First Condition: ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+ Second Condition:
+ In compatibleConditions() with arguments
+ First Condition: ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+ Second Condition: ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+ Out of compatibleConditions() with return value 0
+
+ In compatibleConditions() with arguments
+ First Condition: ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+ Second Condition:
+ In compatibleConditions() with arguments
+ First Condition: ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+ Second Condition: ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+ Out of compatibleConditions() with return value 1
+
+ In compatibleConditions() with arguments
+ First Condition:
+ Second Condition: ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+ Comparing beta with path alpha with id: 2
+
+ In createDummyPath()
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+ sT6_25 := 0 + 1 * C3 * read ( a, 3 + 1 * j )
+ sT9_25 := 0 + 1 * C2 * read ( a, 2 + 1 * j )
+ sT12_25 := 0 + 1 * C1 * read ( a, 1 + 1 * j )
+ sT14_25 := 0 + 1 * C0 * read ( a, 0 + 1 * j )
+ sT15_25 := 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )
+ sT16_25 := 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )
+ wksp := write ( wksp, 0 + 1 * i , 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )+ 1 * C3 * read ( a, 3 + 1 * j ))
+ wksp := write ( wksp, 100 + 1 * i , 0 - 1 * C0 * read ( a, 3 + 1 * j )+ 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j ))
+ sT19_25 := 0 + 1 * C0 * read ( a, 3 + 1 * j )
+ sT22_25 := 0 + 1 * C1 * read ( a, 2 + 1 * j )
+ sT25_25 := 0 + 1 * C2 * read ( a, 1 + 1 * j )
+ sT27_25 := 0 + 1 * C3 * read ( a, 0 + 1 * j )
+ sT28_25 := 0 - 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j )
+ sT29_25 := 0 + 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j )
+ j := 2 + 1 * j 
+ i := 1 + 1 * i 
+Propagated Vector
+ Condition: 
+	 True
+
+WARNING: In createDummyNode() with NULL expression
+
+ Displaying the dummy path created
+
+ End of displaying the dummy path created
+
+ Displaying concatenated path
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+ sT6_25 := 0 + 1 * C3 * read ( a, 3 + 1 * j )
+ sT9_25 := 0 + 1 * C2 * read ( a, 2 + 1 * j )
+ sT12_25 := 0 + 1 * C1 * read ( a, 1 + 1 * j )
+ sT14_25 := 0 + 1 * C0 * read ( a, 0 + 1 * j )
+ sT15_25 := 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )
+ sT16_25 := 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )
+ wksp := write ( wksp, 0 + 1 * i , 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )+ 1 * C3 * read ( a, 3 + 1 * j ))
+ wksp := write ( wksp, 100 + 1 * i , 0 - 1 * C0 * read ( a, 3 + 1 * j )+ 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j ))
+ sT19_25 := 0 + 1 * C0 * read ( a, 3 + 1 * j )
+ sT22_25 := 0 + 1 * C1 * read ( a, 2 + 1 * j )
+ sT25_25 := 0 + 1 * C2 * read ( a, 1 + 1 * j )
+ sT27_25 := 0 + 1 * C3 * read ( a, 0 + 1 * j )
+ sT28_25 := 0 - 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j )
+ sT29_25 := 0 + 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j )
+ j := 2 + 1 * j 
+ i := 1 + 1 * i 
+ End of displaying concatenated path
+
+ In compatibleConditions() with arguments
+ First Condition: ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+ Second Condition: ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+ Out of compatibleConditions() with return value 1
+
+ Result of checkCondition(): 1
+
+ In valuePropagation()
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+ wksp := write ( wksp, 0 + 1 * i , 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )+ 1 * C3 * read ( a, 3 + 1 * j ))
+ wksp := write ( wksp, 100 + 1 * i , 0 - 1 * C0 * read ( a, 3 + 1 * j )+ 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j ))
+ j := 2 + 1 * j 
+ i := 1 + 1 * i 
+Propagated Vector
+ Condition: 
+	 True
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+ sT6_25 := 0 + 1 * C3 * read ( a, 3 + 1 * j )
+ sT9_25 := 0 + 1 * C2 * read ( a, 2 + 1 * j )
+ sT12_25 := 0 + 1 * C1 * read ( a, 1 + 1 * j )
+ sT14_25 := 0 + 1 * C0 * read ( a, 0 + 1 * j )
+ sT15_25 := 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )
+ sT16_25 := 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )
+ wksp := write ( wksp, 0 + 1 * i , 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )+ 1 * C3 * read ( a, 3 + 1 * j ))
+ wksp := write ( wksp, 100 + 1 * i , 0 - 1 * C0 * read ( a, 3 + 1 * j )+ 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j ))
+ sT19_25 := 0 + 1 * C0 * read ( a, 3 + 1 * j )
+ sT22_25 := 0 + 1 * C1 * read ( a, 2 + 1 * j )
+ sT25_25 := 0 + 1 * C2 * read ( a, 1 + 1 * j )
+ sT27_25 := 0 + 1 * C3 * read ( a, 0 + 1 * j )
+ sT28_25 := 0 - 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j )
+ sT29_25 := 0 + 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j )
+ j := 2 + 1 * j 
+ i := 1 + 1 * i 
+Propagated Vector
+ Condition: 
+	 True
+
+ In createDummyPath()
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+ wksp := write ( wksp, 0 + 1 * i , 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )+ 1 * C3 * read ( a, 3 + 1 * j ))
+ wksp := write ( wksp, 100 + 1 * i , 0 - 1 * C0 * read ( a, 3 + 1 * j )+ 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j ))
+ j := 2 + 1 * j 
+ i := 1 + 1 * i 
+Propagated Vector
+ Condition: 
+	 True
+
+WARNING: In createDummyNode() with NULL expression
+
+ Displaying the dummy path created
+
+ End of displaying the dummy path created
+
+ Displaying concatenated path
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+ wksp := write ( wksp, 0 + 1 * i , 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )+ 1 * C3 * read ( a, 3 + 1 * j ))
+ wksp := write ( wksp, 100 + 1 * i , 0 - 1 * C0 * read ( a, 3 + 1 * j )+ 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j ))
+ j := 2 + 1 * j 
+ i := 1 + 1 * i 
+ End of displaying concatenated path
+
+ In createDummyPath()
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+ sT6_25 := 0 + 1 * C3 * read ( a, 3 + 1 * j )
+ sT9_25 := 0 + 1 * C2 * read ( a, 2 + 1 * j )
+ sT12_25 := 0 + 1 * C1 * read ( a, 1 + 1 * j )
+ sT14_25 := 0 + 1 * C0 * read ( a, 0 + 1 * j )
+ sT15_25 := 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )
+ sT16_25 := 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )
+ wksp := write ( wksp, 0 + 1 * i , 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )+ 1 * C3 * read ( a, 3 + 1 * j ))
+ wksp := write ( wksp, 100 + 1 * i , 0 - 1 * C0 * read ( a, 3 + 1 * j )+ 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j ))
+ sT19_25 := 0 + 1 * C0 * read ( a, 3 + 1 * j )
+ sT22_25 := 0 + 1 * C1 * read ( a, 2 + 1 * j )
+ sT25_25 := 0 + 1 * C2 * read ( a, 1 + 1 * j )
+ sT27_25 := 0 + 1 * C3 * read ( a, 0 + 1 * j )
+ sT28_25 := 0 - 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j )
+ sT29_25 := 0 + 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j )
+ j := 2 + 1 * j 
+ i := 1 + 1 * i 
+Propagated Vector
+ Condition: 
+	 True
+
+WARNING: In createDummyNode() with NULL expression
+
+ Displaying the dummy path created
+
+ End of displaying the dummy path created
+
+ Displaying concatenated path
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+ sT6_25 := 0 + 1 * C3 * read ( a, 3 + 1 * j )
+ sT9_25 := 0 + 1 * C2 * read ( a, 2 + 1 * j )
+ sT12_25 := 0 + 1 * C1 * read ( a, 1 + 1 * j )
+ sT14_25 := 0 + 1 * C0 * read ( a, 0 + 1 * j )
+ sT15_25 := 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )
+ sT16_25 := 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )
+ wksp := write ( wksp, 0 + 1 * i , 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )+ 1 * C3 * read ( a, 3 + 1 * j ))
+ wksp := write ( wksp, 100 + 1 * i , 0 - 1 * C0 * read ( a, 3 + 1 * j )+ 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j ))
+ sT19_25 := 0 + 1 * C0 * read ( a, 3 + 1 * j )
+ sT22_25 := 0 + 1 * C1 * read ( a, 2 + 1 * j )
+ sT25_25 := 0 + 1 * C2 * read ( a, 1 + 1 * j )
+ sT27_25 := 0 + 1 * C3 * read ( a, 0 + 1 * j )
+ sT28_25 := 0 - 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j )
+ sT29_25 := 0 + 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j )
+ j := 2 + 1 * j 
+ i := 1 + 1 * i 
+ End of displaying concatenated path
+Modified paths
+Path beta'
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+ wksp := write ( wksp, 0 + 1 * i , 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )+ 1 * C3 * read ( a, 3 + 1 * j ))
+ wksp := write ( wksp, 100 + 1 * i , 0 - 1 * C0 * read ( a, 3 + 1 * j )+ 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j ))
+ j := 2 + 1 * j 
+ i := 1 + 1 * i 
+Path alpha'
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+ sT6_25 := 0 + 1 * C3 * read ( a, 3 + 1 * j )
+ sT9_25 := 0 + 1 * C2 * read ( a, 2 + 1 * j )
+ sT12_25 := 0 + 1 * C1 * read ( a, 1 + 1 * j )
+ sT14_25 := 0 + 1 * C0 * read ( a, 0 + 1 * j )
+ sT15_25 := 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )
+ sT16_25 := 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )
+ wksp := write ( wksp, 0 + 1 * i , 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )+ 1 * C3 * read ( a, 3 + 1 * j ))
+ wksp := write ( wksp, 100 + 1 * i , 0 - 1 * C0 * read ( a, 3 + 1 * j )+ 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j ))
+ sT19_25 := 0 + 1 * C0 * read ( a, 3 + 1 * j )
+ sT22_25 := 0 + 1 * C1 * read ( a, 2 + 1 * j )
+ sT25_25 := 0 + 1 * C2 * read ( a, 1 + 1 * j )
+ sT27_25 := 0 + 1 * C3 * read ( a, 0 + 1 * j )
+ sT28_25 := 0 - 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j )
+ sT29_25 := 0 + 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j )
+ j := 2 + 1 * j 
+ i := 1 + 1 * i 
+sT6_25 := 0 + 1 * C3 * read ( a, 3 + 1 * j )occurs in alpha only
+sT6_25 is Not Live
+
+sT9_25 := 0 + 1 * C2 * read ( a, 2 + 1 * j )occurs in alpha only
+sT9_25 is Not Live
+
+sT12_25 := 0 + 1 * C1 * read ( a, 1 + 1 * j )occurs in alpha only
+sT12_25 is Not Live
+
+sT14_25 := 0 + 1 * C0 * read ( a, 0 + 1 * j )occurs in alpha only
+sT14_25 is Not Live
+
+sT15_25 := 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )occurs in alpha only
+sT15_25 is Not Live
+
+sT16_25 := 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )occurs in alpha only
+sT16_25 is Not Live
+
+sT19_25 := 0 + 1 * C0 * read ( a, 3 + 1 * j )occurs in alpha only
+sT19_25 is Not Live
+
+sT22_25 := 0 + 1 * C1 * read ( a, 2 + 1 * j )occurs in alpha only
+sT22_25 is Not Live
+
+sT25_25 := 0 + 1 * C2 * read ( a, 1 + 1 * j )occurs in alpha only
+sT25_25 is Not Live
+
+sT27_25 := 0 + 1 * C3 * read ( a, 0 + 1 * j )occurs in alpha only
+sT27_25 is Not Live
+
+sT28_25 := 0 - 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j )occurs in alpha only
+sT28_25 is Not Live
+
+sT29_25 := 0 + 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j )occurs in alpha only
+sT29_25 is Not Live
+
+ Vectors to be propagated
+
+Propagated Vector
+ Condition: 
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+Propagated Vector
+ Condition: 
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+ Out of countMismatch, #mismatches = 0
+
+ Back from findEquivalentPath() to correspondenceChecker()
+ indexOfP0: 2, indexOfP1: 2
+ Beta path:
+qq1999 --> qq1001 --> qq1002 --> qq1997 --> qq1999
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+ wksp := write ( wksp, 0 + 1 * i , 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )+ 1 * C3 * read ( a, 3 + 1 * j ))
+ wksp := write ( wksp, 100 + 1 * i , 0 - 1 * C0 * read ( a, 3 + 1 * j )+ 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j ))
+ j := 2 + 1 * j 
+ i := 1 + 1 * i 
+Propagated Vector
+ Condition: 
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+
+ Alpha path:
+qq1999 --> qq1003 --> qq1007 --> qq1008 --> qq1009 --> qq1010 --> qq1014 --> qq1015 --> qq1016 --> qq1017 --> qq1999
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+ sT6_25 := 0 + 1 * C3 * read ( a, 3 + 1 * j )
+ sT9_25 := 0 + 1 * C2 * read ( a, 2 + 1 * j )
+ sT12_25 := 0 + 1 * C1 * read ( a, 1 + 1 * j )
+ sT14_25 := 0 + 1 * C0 * read ( a, 0 + 1 * j )
+ sT15_25 := 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )
+ sT16_25 := 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )
+ wksp := write ( wksp, 0 + 1 * i , 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )+ 1 * C3 * read ( a, 3 + 1 * j ))
+ wksp := write ( wksp, 100 + 1 * i , 0 - 1 * C0 * read ( a, 3 + 1 * j )+ 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j ))
+ sT19_25 := 0 + 1 * C0 * read ( a, 3 + 1 * j )
+ sT22_25 := 0 + 1 * C1 * read ( a, 2 + 1 * j )
+ sT25_25 := 0 + 1 * C2 * read ( a, 1 + 1 * j )
+ sT27_25 := 0 + 1 * C3 * read ( a, 0 + 1 * j )
+ sT28_25 := 0 - 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j )
+ sT29_25 := 0 + 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j )
+ j := 2 + 1 * j 
+ i := 1 + 1 * i 
+Propagated Vector
+ Condition: 
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+Out of equivalentPropagatedVector() with TRUE indicating Case 1.1
+
+ Updating E_u
+Enqueueing ( qq1999, qq1999 ) in eta
+
+
+ Out of already_present_queue with return value TRUE because match is found for entry number: 1
+
+ Updating E_c
+
+ Out of correspondenceChecker( qq1999, qq1999 ) with return value 1
+
+
+Through Queue: 0
+
+ In correspondenceChecker( qq1005LELE, qq1037 )
+
+ Out of correspondenceChecker( qq1005LELE, qq1037 ) with return value 1
+
+
+
+
+###################### Verification Report #######################
+
+
+ M0 ("Wavelet.org") and M1 ("Wavelet.schd") are equivalent.
+
+ No. of states in M0: 14, and No. of states in M1: 25
+
+ No. of paths in the path cover of M0: 7, and No. of paths in the path cover of M1: 7
+
+ No. of null paths in the path cover of M0: 0, and No. of null paths in the path cover of M1: 0
+
+ Maximum depth of recursion: 0
+
+ Maximum mismatch between two value vectors: 0
+
+ List of corresponding states: 
+	1. ( qq1000, qq1000 )	#visited: 1	2. ( qq1999, qq1999 )	#visited: 2	3. ( qq1005LELE, qq1037 )	#visited: 1
+
+ List of C-corresponding states: 
+
+
+
+ List of unconditionally equivalent (U-equivalent) paths: 
+
+
+1)
+Path of M0:
+qq1000 --> qq1999
+
+ i := 0 
+ j := 0 
+Propagated Vector
+ Condition: 
+	 True
+
+	 is equivalent to
+Path of M1:
+qq1000 --> qq1999
+
+ i := 0 
+ j := 0 
+Propagated Vector
+ Condition: 
+	 True
+
+
+2)
+Path of M0:
+qq1999 --> qq1005LELE
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+Propagated Vector
+ Condition: 
+	 True
+
+	 is equivalent to
+Path of M1:
+qq1999 --> qq1037
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )>= 0 ) 
+Propagated Vector
+ Condition: 
+	 True
+
+
+3)
+Path of M0:
+qq1999 --> qq1001 --> qq1002 --> qq1997 --> qq1999
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+ wksp := write ( wksp, 0 + 1 * i , 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )+ 1 * C3 * read ( a, 3 + 1 * j ))
+ wksp := write ( wksp, 100 + 1 * i , 0 - 1 * C0 * read ( a, 3 + 1 * j )+ 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j ))
+ j := 2 + 1 * j 
+ i := 1 + 1 * i 
+Propagated Vector
+ Condition: 
+	 True
+
+	 is equivalent to
+Path of M1:
+qq1999 --> qq1003 --> qq1007 --> qq1008 --> qq1009 --> qq1010 --> qq1014 --> qq1015 --> qq1016 --> qq1017 --> qq1999
+ ( 0 + 1 * j - 1  * ( /   -3 + 1 * n , 2 )< 0 ) 
+ sT6_25 := 0 + 1 * C3 * read ( a, 3 + 1 * j )
+ sT9_25 := 0 + 1 * C2 * read ( a, 2 + 1 * j )
+ sT12_25 := 0 + 1 * C1 * read ( a, 1 + 1 * j )
+ sT14_25 := 0 + 1 * C0 * read ( a, 0 + 1 * j )
+ sT15_25 := 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )
+ sT16_25 := 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )
+ wksp := write ( wksp, 0 + 1 * i , 0 + 1 * C0 * read ( a, 0 + 1 * j )+ 1 * C1 * read ( a, 1 + 1 * j )+ 1 * C2 * read ( a, 2 + 1 * j )+ 1 * C3 * read ( a, 3 + 1 * j ))
+ wksp := write ( wksp, 100 + 1 * i , 0 - 1 * C0 * read ( a, 3 + 1 * j )+ 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j ))
+ sT19_25 := 0 + 1 * C0 * read ( a, 3 + 1 * j )
+ sT22_25 := 0 + 1 * C1 * read ( a, 2 + 1 * j )
+ sT25_25 := 0 + 1 * C2 * read ( a, 1 + 1 * j )
+ sT27_25 := 0 + 1 * C3 * read ( a, 0 + 1 * j )
+ sT28_25 := 0 - 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j )
+ sT29_25 := 0 + 1 * C1 * read ( a, 2 + 1 * j )- 1 * C2 * read ( a, 1 + 1 * j )+ 1 * C3 * read ( a, 0 + 1 * j )
+ j := 2 + 1 * j 
+ i := 1 + 1 * i 
+Propagated Vector
+ Condition: 
+	 True
+
+
+ List of conditionally equivalent (C-equivalent) paths: 
+
+
+ Approximate number of code motions: 0
+
+Number of times correspondenceChecker called:3
+Number of times findEquivalentPath (valuePropagation) called:3
+Number of times loopInvariant called:0
+
+ User CPU time used: 0 sec and 12000 microsecs
+
+ System CPU time used: 0 sec and 36000 microsecs
+
+
+####################################################################
+

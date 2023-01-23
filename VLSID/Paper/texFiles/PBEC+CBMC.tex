@@ -1,0 +1,54 @@
+The PBECs are sound but not complete. Therefore, all the PBECs 
+report that the behaviors ``May Not be equivalent'' once
+they fail to prove the equivalence of source and transformed behaviors. Using
+the output of CBMC, we can actually make the PBEC more
+powerful. In some scenarios, the PBEC can report that the
+behaviors are ``Not equivalent'' (instead of ``May Not") along with a
+counter-example. Also, in some scenarios, the non-equivalence result reported by
+the PBEC can be proved to be a \textit{false negative} and equivalence
+checking will proceed further. In the following, we discuss how we can
+incorporate the CMBC result to improve the equivalence checking framework.
+ \begin{itemize}
+  \item {\textbf{Case~1:} \it One of the conditions mentioned in 
+  \texttt{\_\_CPROVER\_assume} statement is not 
+  satisfiable}: In this case, we report to PBEC that all
+  the possible computations represented by \textit{cTrace} are false 
+  computations.  Consequently, we need to proceed further in the 
+  equivalence checking process.
+ \item {\textbf{Case~2:} \it The unwinding assertions are valid and CBMC 
+ does not find any counter-example}: This means the values of all the live 
+ variables and output variables are the same for both \textit{cTraces}. So the non-equivalence 
+ reported by the PBEC may be a false negative. In this case, we need to proceed 
+ further in equivalence checking by declaring the corresponding path pair 
+ ($\alpha,\beta$) as an equivalent path. This actually helps the PBEC to avoid 
+ false negative results during the course of equivalence checking.
+ \item {\textbf{Case~3:} \it CBMC reports counter-example for some variables:} 
+ This means the data transformation of some variables is not equivalent 
+ in the \textit{cTraces}. 
+ 
+ {\textbf{Case~3.1:} \it A mismatch is found for an output variable}:   
+ This is surely a non-equivalence case. So the equivalence checker correctly 
+ found the non-equivalence of the behaviors. In this case, the PBEC 
+ reports that the behaviors are ``Not equivalent'' along with the 
+ counter-example. 
+
+ If a mismatch is found only for live variables (which are 
+ not output variables), then we cannot conclude definitely that the final 
+ outputs of both the behaviors will not be the same. There may be some other 
+ operations in the subsequent execution of the FSMDs which will make the 
+ behaviors equivalent. Therefore, we need to execute the two programs with the 
+ counter-example produced by CBMC and check if the outputs of the two 
+ programs are the same or not. 
+ 
+{\textbf{Case~3.2:} \it The outputs are the same}: This is not a 
+ non-equivalent case. Consequently, we need to proceed further in the 
+ equivalence checking process. 
+
+{\textbf{Case~3.3:} \it The outputs of the two 
+ programs are not the same}: This is surely a non-equivalence scenario; 
+ in this case, the equivalence checker will report the behaviors are ``Not 
+ equivalent'' along with the counter-example.
+ \item {\textbf{Case~4:} \it CBMC hits the time limit:} In this case, CBMC  
+ has failed to generate a counter-example because of time out. 
+ So no counter-example will be provided to the user. The PBEC reports the behaviors ``May Not be equivalent''. 
+ \end{itemize}

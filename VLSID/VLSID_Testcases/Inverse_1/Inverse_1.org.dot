@@ -1,0 +1,23 @@
+digraph fsmdIndot {
+
+"mod 3" [shape=note];
+q0 [shape=circle];
+q1 [shape=circle];
+q0 -> q1 [label="- | i=1,\nx=5,\ny=10"];
+q1 [shape=circle];
+q2 [shape=circle];
+q1 -> q2 [label="i<100 | -"];
+q4 [shape=circle];
+q1 -> q4 [label="!(i<100) | out=x+y"];
+q2 [shape=circle];
+q3 [shape=circle];
+q2 -> q3 [label="i%3==0 | x=x+1,\ny=y+1"];
+q3 [shape=circle];
+q2 -> q3 [label="i%3==1 | x=x-2,\ny=y*2"];
+q3 [shape=circle];
+q2 -> q3 [label="i%3==2 | x=x+1"];
+q3 [shape=circle];
+q1 [shape=circle];
+q3 -> q1 [label="- | i=i+1"];
+
+}

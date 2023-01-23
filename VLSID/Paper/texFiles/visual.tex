@@ -1,0 +1,49 @@
+\noop{
+\begin{figure*}[h]
+  \centering
+  \subfigure{\includegraphics[scale=0.1]{image/org.png}}\quad
+  \subfigure{\includegraphics[scale=0.1]{image/schd.png}}
+  \label{fig:vizexample}
+  \caption{Two FSMDs with debug traces}
+\end{figure*}
+}
+
+\noop{
+In this section, we are going to discuss on how visualization helps developers to debug a non-equivalence case in a big chunk of code. Our work is based on the value propagation method presented in \cite{tcad14}. It is implemented in such a way that it reports whether two FSMDs (original one and transformed one after scheduling) are equivalent or not. If an instance occurs where there is a mismatch between the FSMDs given to the  implemented tool, it will only give result as False depicting that equivalent path cannot be found for some path in the FSMDs. From the debuggers' point of view this information is not enough to pinpoint the reason for mismatch. In this paper, we are trying to visualize a computation/trace  starting from reset state till the mismatch path in the FSMD. The computation is will shown using a tool called Graphviz \cite{graphviz}. Graphviz is a graph visualization software which can used to represent graph and network as diagrams. For visualization, the internal data structure to store FSMD is stored in a file with \textit{dot} extension -- a format which is supported by Graphviz. 
+%This file is be used to visualize the FSMD. 
+}
+
+
+Visualization of the $cTrace$ can be a great help in case of a mismatch. 
+In this work, we show the trace starting from reset state till the mismatch path in both the FSMDs using Graphviz \cite{graphviz}. Graphviz is a graph visualization software which can be used to represent graphs  and networks as diagrams. For visualization, the internal data structure of FSMD is stored in a file with \textit{dot} extension -- a format which is supported by Graphviz.  While visualizing the FSMD using Graphviz, different colors can be used to differentiate between the U-equivalent,  candidate C-equivalent and mismatched paths. The following color coding is used to mark a $cTrace$ in the FSMD.
+\begin{enumerate}
+\item Green is used to show U-equivalent paths in an FSMD.
+\item Yellow is used to color paths which are candidate C-equivalent.
+\item Red is used to color a path in the original FSMD for which equivalence is not found and its \textit{most likely} corresponding path in the transformed FSMD (based on the similarity of the conditions of execution).
+\end{enumerate}
+
+A $cTrace$ typically consists of a green trace, followed by a yellow trace and finally ends in a red trace. The convention is that equivalence of the green trace is found in the other FSMD. 
+So, the correspondence between the green traces is shown in both the FSMDs. 
+The yellow part of the $cTrace$ says these are the candidate C-equivalent paths. This means there is some mismatch of values along this trace. The tool propagates the mismatch value along this yellow trace hoping to identify some compensating transformation which will render the current mismatches into matches in future. Again, candidate C-equivalent paths have a unique correspondence in the other FSMD. So, the correspondence between the yellow traces is shown in both the FSMDs. Then the red path, say $\alpha$, in the  original FSMD $M_0$ is the path whose equivalent path in the transformed FSMD $M_1$ is not found. The VP method identifies the potential candidate  for equivalence, say $\beta$, in $M_1$ in most of the cases (see \cite{tcad14} for detail). It fails to find $\beta$ then we can take any path from the corresponding state in $M_1$. So the correspondence between red paths is also shown in both the FSMDs. 
+
+An example is shown in Fig.~\ref{fig:visual} where paths are colored with green, yellow and red. In Fig.~\subref*{fig:ovisual} the path $\langle a0\xrightarrow{-/i=0}a1 \rangle$  is equivalent to the path $\langle b0\xrightarrow{-/b=0}b1 \rangle$ of Fig.~\subref*{fig:svisual}) hence colored green. The path $\langle a1\xrightarrow{i<=n-2/-}a3\xrightarrow{-/min=a[i]}a4\xrightarrow{-/j_star=i}a5\xrightarrow{-/j=j+1}a6\xrightarrow{j<=n-1/-}a7\xrightarrow{a[j]<min/-}a8\xrightarrow{-/min=a[j]}a9\xrightarrow{-/j_star=j}a6 \rangle$ and $\langle b2\xrightarrow{i<=n-2/-}b3\xrightarrow{-/min=sT7_11,j_star=i,j=sT6_12}b4\xrightarrow{-/sT8_12=j+1,sT9_13=a[j]}b5\xrightarrow{j<=n-1/-}b6\xrightarrow{sT9_13<min/-}b7\xrightarrow{-/min=sT9_13,j_star=j,j=sT8_12}b8\xrightarrow{-sT8_12=j+1,sT9_13=a[j]}b5 \rangle$ are yellow as they they have mismatch values. In Fig~\subref*{fig:ovisual} the path $\langle a6\xrightarrow{!(j<=n-1)/-}a11\xrightarrow{-/temp=a[i]}a12\xrightarrow{-/a[i]=a[j_star]}a13\xrightarrow{-/a[j_star]=temp}a14\xrightarrow{-/i=i+1}a1 \rangle$ does not have equivalent path in corresponding transformed FSMD, hence it is colored red.
+
+
+The visualization information can interpreted as ``if you follow the green trace followed by the yellow trace in both the FSMDs, then the equivalent path cannot be found for the red path of the original FSMD in the other FSMD.'' Moreover, as shown in Section \ref{SS:ceg}, we are also generating a counter-example which will follow the trace shown graphically. With both the information, the user should easily pinpoint the root cause of an error. It may be noted that the original equivalence tool of \cite{tcad14} only reports the red path in $M_0$ as the possible candidate of non-equivalence.
+
+
+ \begin{figure}[!t]
+ 	\centering
+ 	\subfloat[][Original FSMD]{\label{fig:ovisual}\includegraphics[scale=0.10]{org.pdf}}
+ 	\subfloat[][Transformed FSMD]{\label{fig:svisual}\includegraphics[scale=0.10]{sche.pdf}}
+ 	\caption{Two FSMD before and after scheduling}%
+ 	\label{fig:visual}%
+ 	\vspace{-0.1cm}
+ \end{figure}
+
+%\subsection{An Example}
+
+%Explain the example in figure \ref{fig:vizexample}. TO DO.
+
+
+

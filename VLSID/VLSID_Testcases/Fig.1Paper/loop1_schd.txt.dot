@@ -1,0 +1,18 @@
+digraph fsmdIndot {
+
+ "loop1.schd" [shape=note]
+q10 [shape=circle color= "yellow"];
+q13 [shape=circle color= "red"];
+q10 -> q13 [  label=" ( 0 + 1 * n < 0 )  | out  :=  -1 "];
+q11 [shape=circle color= "red"];
+q10 -> q11 [color= "yellow"  label=" ( 0 + 1 * n >= 0 )  | i  :=  0 ,x  :=  5 ,y  :=  0 "];
+q11 [shape=circle color= "red"];
+q12 [shape=circle ];
+q11 -> q12 [  label=" ( 0 + 1 * i - 1 * n <= 0 )  | y  :=  0 + 1 * i + 1 * y "];
+q13 [shape=circle color= "red"];
+q11 -> q13 [color= "red"  label=" ( 0 + 1 * i - 1 * n > 0 )  | out  :=  0 + 1 * x + 1 * y "];
+q12 [shape=circle ];
+q11 [shape=circle color= "red"];
+q12 -> q11 [  label=" | i  :=  1 + 1 * i "];
+
+}

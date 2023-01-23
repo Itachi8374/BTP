@@ -1,0 +1,138 @@
+ %\centering
+ \scalebox{0.34}{
+ \begin{tikzpicture}[%
+      >=triangle 60,              % Nice arrows; your taste may be different
+      node distance=7mm and 4mm, % Global setup of box spacing
+      every join/.style={norm},   % Default linetype for connecting boxes
+ 	   font=\Large,auto,line width=1.8pt
+      ]
+  \tikzset{
+  mybox/.style = {draw=red, fill=yellow!50, very thick,
+    rectangle, rounded corners, inner sep=1pt, inner ysep=1pt},
+ 	 rect/.style={draw,align=center,rectangle, text width=8cm,rounded corners},
+ 	 test/.style={draw, align=center,diamond, aspect=1.3, text width=8em}}
+ \node [temporal=<2-16>{semivisible}{fvisible}{semivisible},onslide=<1>{fvisible},rect] (1) {Generate $\mathit{cTrace}$ for both $M_0$ and $M_1$};
+ 
+  \node [temporal=<3-16>{semivisible}{fvisible}{semivisible},onslide=<1>{fvisible},rect,below=of 1] (12)     {k$\leftarrow$1};
+ \node [temporal=<3->{semivisible}{fvisible}{semivisible},onslide=<1>{fvisible},rect,below=of 12] (2)     {\texttt{cbmc input.c -unwind k 
+ --no-unwinding-assertions}};
+ 
+ \node [temporal=<4-16>{semivisible}{fvisible}{semivisible},onslide=<1>{fvisible},test,below=of 2]  (t1)    {timeout?};
+ 
+ \node [temporal=<5>{semivisible}{fvisible}{semivisible},onslide=<1>{fvisible},rect,below left=of t1]   (3)    {behaviors May Not be equivalent};
+ 
+ \node [temporal=<6-16>{semivisible}{fvisible}{semivisible},onslide=<1>{fvisible},test,node distance=1cm and 1.5cm,below right=of t1]  (t2) 
+ {\texttt{\_\_CPROVER\\\_assume} statement  SAT};
+ 
+ \node [temporal=<8-16>{semivisible}{fvisible}{semivisible},onslide=<1>{fvisible},test,node distance=1cm and 4cm,below left=of t2]  (t3)    {User 
+defined Assertion violated?};
+ 
+ \node [temporal=<7>{semivisible}{fvisible}{semivisible},onslide=<1>{fvisible},rect,node distance=1cm and 3cm,below right=of t2]   (4)    {behaviors 
+ May Not be equivalent};
+
+
+\node [temporal=<15-16>{semivisible}{fvisible}{semivisible},onslide=<1>{fvisible},test,node distance=1cm and 4cm,below left=of t3]  (t21) {Verify 
+ unwinding assertion};
+  
+ \node [temporal=<16>{semivisible}{fvisible}{semivisible},onslide=<1>{fvisible},rect,node distance=1cm and 5cm,below =of t21]   (6)  {Mark both path 
+ as equivalent and proceed further};
+ 
+ 
+ \node [temporal=<9-14>{semivisible}{fvisible}{semivisible},onslide=<1>{fvisible},test,node distance=1cm and 3cm,below right=of t3]  (t6)    {mismatch 
+ in o/p values?};
+ 
+ \node [temporal=<10>{semivisible}{fvisible}{semivisible},onslide=<1>{fvisible},rect,below left=of t6]  (r6)    {Report Not equivalent and provide CE 
+ as a proof};
+ 
+ \node [temporal=<11-14>{semivisible}{fvisible}{semivisible},onslide=<1>{fvisible},rect,node distance=0.5cm and 1cm,below right=of t6,] (5)     {Run two 
+ programs over CE};
+ 
+ \node [temporal=<12-14>{semivisible}{fvisible}{semivisible},onslide=<1>{fvisible},test,below=of 5]  (t4)    {mismatch in o/p values?};
+ 
+ 
+ 
+ \node [temporal=<13>{semivisible}{fvisible}{semivisible},onslide=<1>{fvisible},rect,below right=of t4]   (7)  {Mark both path as equivalent and 
+ proceed further};
+ 
+ \node [temporal=<14>{semivisible}{fvisible}{semivisible},onslide=<1>{fvisible},rect,below left=of t4]  (8)    {Report Not equivalent and provide CE 
+ as  a proof} ;
+
+\node[right=of 2,mybox,minimum height=8.5cm,minimum width=14cm,xshift=2.5cm,yshift=-1cm,onslide=<1>{invisible}]
+{
+\begin{minipage}{\textwidth}%
+\begin{overlayarea}{\textwidth}{8cm}
+\centering
+\Huge
+\begin{itemize}
+\item<2|only@2> Generate \textit{cTrace} for FSMD $M_0$ and FSMD $M_1$.
+\item<3|only@3> Initialize the unrolling factor -- $k$.
+\item<3|only@3> Run the CBMC with $k=1$.
+\item<3|only@3> \texttt{--no-unwinding-assertions}: 
+CE might be found within the small state space generated
+with the small $k$.
+\item<4-6|only@4-6> timeout?--(60 Sec).
+\item<5|only@5>{\color{green}Yes}
+\item<5|only@5>behaviors May not be equivalent.
+\item<6|only@6>{\color{red}No}
+\item<6|only@6>{$\mathtt{\_\_CPROVER\_assume}$ -- SAT?}
+\item<7|only@7>{$\mathtt{\_\_CPROVER\_assume}$ -- Not SAT}
+\item<7|only@7>False Computation.
+\item<7|only@7>behaviors May not be equivalent.
+\item<8|only@8>{$\mathtt{\_\_CPROVER\_assume}$ -- SAT}
+\item<8|only@8>User defined Assertions?
+\item<9|only@9>User defined Assertions -- Not Valid.
+\item<9-14|only@9-14>CE Found.  
+\item<9|only@9>Output Variables mismatch?.  
+\item<10|only@10>Output Variables mismatch -- Yes.  
+\item<10|only@10>behaviors are not equivalent.
+\item<11-14|only@11-14>Output Variables mismatch -- No.  
+\item<11-14|only@11-14>Run two program over CE.  
+\item<11|only@11>Output Variables mismatch?.  
+\item<12|only@12>Output Variables mismatch -- Yes.  
+\item<12|only@12>behaviors are not equivalent.
+\item<13|only@13>Output Variable mismatch -- No.  
+\item<13|only@13>Paths $\alpha$ and $\beta$ are equivalent.
+\item<14|only@14>Output Variables mismatch -- Yes.  
+\item<14|only@14>behaviors are not equivalent.
+\item<15|only@15>User defined Assertions?
+\item<15|only@15>User defined Assertions --  Valid.
+\item<15|only@15>Verify unwinding assertions --  ?.
+\item<16|only@16>Verify unwinding assertions -- Valid.
+\item<16|only@16>Paths $\alpha$ and $\beta$ are equivalent.
+\item<17|only@17>Verify unwinding assertions -- Not Valid.
+\item<17|only@17>Unroll the loop one more time.
+\item<17|only@17>Rerun the CBMC.
+
+\end{itemize}
+\end{overlayarea}
+\end{minipage}
+};
+ 
+ 
+ \draw[temporal=<3-16>{semivisible}{fvisible}{semivisible},onslide=<1>{fvisible},->] (1) -- (12);
+ \draw[temporal=<3-16>{semivisible}{fvisible}{semivisible},onslide=<1>{fvisible},->] (12) -- (2);
+ \draw[temporal=<4-16>{semivisible}{fvisible}{semivisible},onslide=<1>{fvisible},->] (2) -- (t1);
+ \draw[temporal=<5>{semivisible}{fvisible}{semivisible},onslide=<1>{fvisible},->]  (t1.180) -| node[pos=0.3,above]{Yes} node[pos=0.8,left]{\color{blue}{(Case~4)}} (3);
+ \draw[temporal=<6-16>{semivisible}{fvisible}{semivisible},onslide=<1>{fvisible},->] (t1.0) -| node[above]{No} (t2.90);
+ \draw[temporal=<7>{semivisible}{fvisible}{semivisible},onslide=<1>{fvisible},,->]  (t2.0) -| node[pos=0.3, above]{No}   node[pos=0.8,right]{\color{blue}{(Case~1)}} (4);
+ \draw[temporal=<8-16>{semivisible}{fvisible}{semivisible},onslide=<1>{fvisible},->]  (t2.180) -| node[pos=0.3,above]{Yes} (t3);
+
+ \draw[temporal=<16>{semivisible}{fvisible}{semivisible},onslide=<1>{fvisible},->]  (t21.270) -- node[pos=0.3,left]{Yes} node[pos=0.8,left]{\color{blue}{(Case~2)}} (6);
+ \draw[temporal=<17>{semivisible}{fvisible}{semivisible},onslide=<1>{fvisible},->]  (t21.180) -- ($(t21)+(-4,0.0)$) |- 
+ node[pos=0.3,above,rotate=90]{No, $k\leftarrow k+1$} (2);
+
+ \draw[temporal=<9-14>{semivisible}{fvisible}{semivisible},onslide=<1>{fvisible},->]  (t3.0) -| node[pos=0.3,above,xshift=1.4cm]{Yes (Counter-example 
+ (CE) exits)} node[pos=0.8,right]{\color{blue}{(Case~3)}}  
+ (t6);
+ 
+ \draw[temporal=<15-16>{semivisible}{fvisible}{semivisible},onslide=<1>{fvisible},->]  (t3.180) -| node[pos=0.3,above]{No} (t21);
+
+ \draw[temporal=<10>{semivisible}{fvisible}{semivisible},onslide=<1>{fvisible},->]  (t6.180) -| node[pos=0.3,above]{Yes} node[pos=0.8,left]{\color{blue}{(Case~3.1)}} (r6);
+
+ \draw[temporal=<11-13>{semivisible}{fvisible}{semivisible},onslide=<1>{fvisible},->]  (t6) -| node[pos=0.3,above]{No} (5);
+ 
+ \draw[temporal=<12-14>{semivisible}{fvisible}{semivisible},onslide=<1>{fvisible},->] (5) -- (t4);
+ \draw[temporal=<14>{semivisible}{fvisible}{semivisible},onslide=<1>{fvisible},->]  (t4.180) -| node[pos=0.3,above]{Yes} node[pos=0.8,left]{\color{blue}{(Case~3.3)}} (8);
+ \draw[temporal=<13>{semivisible}{fvisible}{semivisible},onslide=<1>{fvisible},->]  (t4.0) -| node[pos=0.3,above]{No} node[pos=0.8,right]{\color{blue}{(Case~3.2)}} (7);
+ \end{tikzpicture}
+ }

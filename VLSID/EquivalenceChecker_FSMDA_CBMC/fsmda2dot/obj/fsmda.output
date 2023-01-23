@@ -1,0 +1,1516 @@
+Grammar
+
+    0 $accept: translation_fsmd $end
+
+    1 variable: IDENTIFIER
+
+    2 variable_list: variable
+    3              | variable_list variable
+
+    4 primary_expression: variable
+    5                   | CONSTANT
+    6                   | LEFT_BR expression RIGHT_BR
+    7                   | uninterpreted_function
+    8                   | array_expression
+
+    9 array_expression: variable LEFT_SQBR expression RIGHT_SQBR
+   10                 | array_expression LEFT_SQBR expression RIGHT_SQBR
+
+   11 unary_expression: primary_expression
+   12                 | MINUS primary_expression
+
+   13 multiplicative_expression: unary_expression
+   14                          | multiplicative_expression MULT unary_expression
+   15                          | multiplicative_expression DIV unary_expression
+   16                          | multiplicative_expression MOD unary_expression
+
+   17 expression: multiplicative_expression
+   18           | expression PLUS multiplicative_expression
+   19           | expression MINUS multiplicative_expression
+
+   20 assignment_expression: variable EQUAL expression
+   21                      | array_expression EQUAL expression
+   22                      | READ LEFT_BR variable COMMA variable RIGHT_BR
+   23                      | OUT LEFT_BR variable COMMA expression RIGHT_BR
+
+   24 relational_operator: LT_OP
+   25                    | GT_OP
+   26                    | LE_OP
+   27                    | GE_OP
+   28                    | EQ_OP
+   29                    | NE_OP
+
+   30 primary_conditional_expression: expression relational_operator expression
+   31                               | NOT expression relational_operator expression
+
+   32 secondary_conditional_expression: primary_conditional_expression
+   33                                 | secondary_conditional_expression AND primary_conditional_expression
+   34                                 | secondary_conditional_expression OR primary_conditional_expression
+   35                                 | LEFT_BR secondary_conditional_expression RIGHT_BR
+   36                                 | NOT LEFT_BR secondary_conditional_expression RIGHT_BR
+
+   37 conditional_expression: MINUS
+   38                       | secondary_conditional_expression
+
+   39 state_name: IDENTIFIER
+
+   40 transitions: CONSTANT
+
+   41 operation_list: assignment_expression
+   42               | operation_list COMMA assignment_expression
+
+   43 operations: MINUS
+   44           | operation_list
+
+   45 substatement: conditional_expression SEPARATOR operations state_name
+
+   46 substatement_list: substatement
+   47                  | substatement_list substatement
+
+   48 statement: state_name transitions substatement_list SEMIC
+   49          | state_name transitions SEMIC
+
+   50 statement_list: statement
+   51               | statement_list statement
+
+   52 translation_fsmd: fsmd_name additional_declaration statement_list
+   53                 | fsmd_name statement_list
+
+   54 fsmd_name: STRING_LITERAL
+
+   55 additional_declaration: CONSTANT CONSTANT variable_list SEMIC
+   56                       | CONSTANT CONSTANT SEMIC
+
+   57 argument_list: expression
+   58              | argument_list COMMA expression
+
+   59 uninterpreted_function: function_name LEFT_BR argument_list RIGHT_BR
+
+   60 function_name: IDENTIFIER
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+error (256)
+IDENTIFIER (258) 1 39 60
+CONSTANT (259) 5 40 55 56
+STRING_LITERAL (260) 54
+LE_OP (261) 26
+GE_OP (262) 27
+EQ_OP (263) 28
+NE_OP (264) 29
+AND (265) 33
+OR (266) 34
+NOT (267) 31 36
+READ (268) 22
+OUT (269) 23
+EQUAL (270) 20 21
+COMMA (271) 22 23 42 58
+SEMIC (272) 48 49 55 56
+SEPARATOR (273) 45
+LT_OP (274) 24
+GT_OP (275) 25
+LEFT_BR (276) 6 22 23 35 36 59
+RIGHT_BR (277) 6 22 23 35 36 59
+LEFT_SQBR (278) 9 10
+RIGHT_SQBR (279) 9 10
+MULT (280) 14
+DIV (281) 15
+MOD (282) 16
+PLUS (283) 18
+MINUS (284) 12 19 37 43
+
+
+Nonterminals, with rules where they appear
+
+$accept (30)
+    on left: 0
+variable (31)
+    on left: 1, on right: 2 3 4 9 20 22 23
+variable_list (32)
+    on left: 2 3, on right: 3 55
+primary_expression (33)
+    on left: 4 5 6 7 8, on right: 11 12
+array_expression (34)
+    on left: 9 10, on right: 8 10 21
+unary_expression (35)
+    on left: 11 12, on right: 13 14 15 16
+multiplicative_expression (36)
+    on left: 13 14 15 16, on right: 14 15 16 17 18 19
+expression (37)
+    on left: 17 18 19, on right: 6 9 10 18 19 20 21 23 30 31 57 58
+assignment_expression (38)
+    on left: 20 21 22 23, on right: 41 42
+relational_operator (39)
+    on left: 24 25 26 27 28 29, on right: 30 31
+primary_conditional_expression (40)
+    on left: 30 31, on right: 32 33 34
+secondary_conditional_expression (41)
+    on left: 32 33 34 35 36, on right: 33 34 35 36 38
+conditional_expression (42)
+    on left: 37 38, on right: 45
+state_name (43)
+    on left: 39, on right: 45 48 49
+transitions (44)
+    on left: 40, on right: 48 49
+operation_list (45)
+    on left: 41 42, on right: 42 44
+operations (46)
+    on left: 43 44, on right: 45
+substatement (47)
+    on left: 45, on right: 46 47
+substatement_list (48)
+    on left: 46 47, on right: 47 48
+statement (49)
+    on left: 48 49, on right: 50 51
+statement_list (50)
+    on left: 50 51, on right: 51 52 53
+translation_fsmd (51)
+    on left: 52 53, on right: 0
+fsmd_name (52)
+    on left: 54, on right: 52 53
+additional_declaration (53)
+    on left: 55 56, on right: 52
+argument_list (54)
+    on left: 57 58, on right: 58 59
+uninterpreted_function (55)
+    on left: 59, on right: 7
+function_name (56)
+    on left: 60, on right: 59
+
+
+State 0
+
+    0 $accept: . translation_fsmd $end
+
+    STRING_LITERAL  shift, and go to state 1
+
+    translation_fsmd  go to state 2
+    fsmd_name         go to state 3
+
+
+State 1
+
+   54 fsmd_name: STRING_LITERAL .
+
+    $default  reduce using rule 54 (fsmd_name)
+
+
+State 2
+
+    0 $accept: translation_fsmd . $end
+
+    $end  shift, and go to state 4
+
+
+State 3
+
+   52 translation_fsmd: fsmd_name . additional_declaration statement_list
+   53                 | fsmd_name . statement_list
+
+    IDENTIFIER  shift, and go to state 5
+    CONSTANT    shift, and go to state 6
+
+    state_name              go to state 7
+    statement               go to state 8
+    statement_list          go to state 9
+    additional_declaration  go to state 10
+
+
+State 4
+
+    0 $accept: translation_fsmd $end .
+
+    $default  accept
+
+
+State 5
+
+   39 state_name: IDENTIFIER .
+
+    $default  reduce using rule 39 (state_name)
+
+
+State 6
+
+   55 additional_declaration: CONSTANT . CONSTANT variable_list SEMIC
+   56                       | CONSTANT . CONSTANT SEMIC
+
+    CONSTANT  shift, and go to state 11
+
+
+State 7
+
+   48 statement: state_name . transitions substatement_list SEMIC
+   49          | state_name . transitions SEMIC
+
+    CONSTANT  shift, and go to state 12
+
+    transitions  go to state 13
+
+
+State 8
+
+   50 statement_list: statement .
+
+    $default  reduce using rule 50 (statement_list)
+
+
+State 9
+
+   51 statement_list: statement_list . statement
+   53 translation_fsmd: fsmd_name statement_list .
+
+    IDENTIFIER  shift, and go to state 5
+
+    $default  reduce using rule 53 (translation_fsmd)
+
+    state_name  go to state 7
+    statement   go to state 14
+
+
+State 10
+
+   52 translation_fsmd: fsmd_name additional_declaration . statement_list
+
+    IDENTIFIER  shift, and go to state 5
+
+    state_name      go to state 7
+    statement       go to state 8
+    statement_list  go to state 15
+
+
+State 11
+
+   55 additional_declaration: CONSTANT CONSTANT . variable_list SEMIC
+   56                       | CONSTANT CONSTANT . SEMIC
+
+    IDENTIFIER  shift, and go to state 16
+    SEMIC       shift, and go to state 17
+
+    variable       go to state 18
+    variable_list  go to state 19
+
+
+State 12
+
+   40 transitions: CONSTANT .
+
+    $default  reduce using rule 40 (transitions)
+
+
+State 13
+
+   48 statement: state_name transitions . substatement_list SEMIC
+   49          | state_name transitions . SEMIC
+
+    IDENTIFIER  shift, and go to state 20
+    CONSTANT    shift, and go to state 21
+    NOT         shift, and go to state 22
+    SEMIC       shift, and go to state 23
+    LEFT_BR     shift, and go to state 24
+    MINUS       shift, and go to state 25
+
+    variable                          go to state 26
+    primary_expression                go to state 27
+    array_expression                  go to state 28
+    unary_expression                  go to state 29
+    multiplicative_expression         go to state 30
+    expression                        go to state 31
+    primary_conditional_expression    go to state 32
+    secondary_conditional_expression  go to state 33
+    conditional_expression            go to state 34
+    substatement                      go to state 35
+    substatement_list                 go to state 36
+    uninterpreted_function            go to state 37
+    function_name                     go to state 38
+
+
+State 14
+
+   51 statement_list: statement_list statement .
+
+    $default  reduce using rule 51 (statement_list)
+
+
+State 15
+
+   51 statement_list: statement_list . statement
+   52 translation_fsmd: fsmd_name additional_declaration statement_list .
+
+    IDENTIFIER  shift, and go to state 5
+
+    $default  reduce using rule 52 (translation_fsmd)
+
+    state_name  go to state 7
+    statement   go to state 14
+
+
+State 16
+
+    1 variable: IDENTIFIER .
+
+    $default  reduce using rule 1 (variable)
+
+
+State 17
+
+   56 additional_declaration: CONSTANT CONSTANT SEMIC .
+
+    $default  reduce using rule 56 (additional_declaration)
+
+
+State 18
+
+    2 variable_list: variable .
+
+    $default  reduce using rule 2 (variable_list)
+
+
+State 19
+
+    3 variable_list: variable_list . variable
+   55 additional_declaration: CONSTANT CONSTANT variable_list . SEMIC
+
+    IDENTIFIER  shift, and go to state 16
+    SEMIC       shift, and go to state 39
+
+    variable  go to state 40
+
+
+State 20
+
+    1 variable: IDENTIFIER .
+   60 function_name: IDENTIFIER .
+
+    LEFT_BR   reduce using rule 60 (function_name)
+    $default  reduce using rule 1 (variable)
+
+
+State 21
+
+    5 primary_expression: CONSTANT .
+
+    $default  reduce using rule 5 (primary_expression)
+
+
+State 22
+
+   31 primary_conditional_expression: NOT . expression relational_operator expression
+   36 secondary_conditional_expression: NOT . LEFT_BR secondary_conditional_expression RIGHT_BR
+
+    IDENTIFIER  shift, and go to state 20
+    CONSTANT    shift, and go to state 21
+    LEFT_BR     shift, and go to state 41
+    MINUS       shift, and go to state 42
+
+    variable                   go to state 26
+    primary_expression         go to state 27
+    array_expression           go to state 28
+    unary_expression           go to state 29
+    multiplicative_expression  go to state 30
+    expression                 go to state 43
+    uninterpreted_function     go to state 37
+    function_name              go to state 38
+
+
+State 23
+
+   49 statement: state_name transitions SEMIC .
+
+    $default  reduce using rule 49 (statement)
+
+
+State 24
+
+    6 primary_expression: LEFT_BR . expression RIGHT_BR
+   35 secondary_conditional_expression: LEFT_BR . secondary_conditional_expression RIGHT_BR
+
+    IDENTIFIER  shift, and go to state 20
+    CONSTANT    shift, and go to state 21
+    NOT         shift, and go to state 22
+    LEFT_BR     shift, and go to state 24
+    MINUS       shift, and go to state 42
+
+    variable                          go to state 26
+    primary_expression                go to state 27
+    array_expression                  go to state 28
+    unary_expression                  go to state 29
+    multiplicative_expression         go to state 30
+    expression                        go to state 44
+    primary_conditional_expression    go to state 32
+    secondary_conditional_expression  go to state 45
+    uninterpreted_function            go to state 37
+    function_name                     go to state 38
+
+
+State 25
+
+   12 unary_expression: MINUS . primary_expression
+   37 conditional_expression: MINUS .
+
+    IDENTIFIER  shift, and go to state 20
+    CONSTANT    shift, and go to state 21
+    LEFT_BR     shift, and go to state 46
+
+    $default  reduce using rule 37 (conditional_expression)
+
+    variable                go to state 26
+    primary_expression      go to state 47
+    array_expression        go to state 28
+    uninterpreted_function  go to state 37
+    function_name           go to state 38
+
+
+State 26
+
+    4 primary_expression: variable .
+    9 array_expression: variable . LEFT_SQBR expression RIGHT_SQBR
+
+    LEFT_SQBR  shift, and go to state 48
+
+    $default  reduce using rule 4 (primary_expression)
+
+
+State 27
+
+   11 unary_expression: primary_expression .
+
+    $default  reduce using rule 11 (unary_expression)
+
+
+State 28
+
+    8 primary_expression: array_expression .
+   10 array_expression: array_expression . LEFT_SQBR expression RIGHT_SQBR
+
+    LEFT_SQBR  shift, and go to state 49
+
+    $default  reduce using rule 8 (primary_expression)
+
+
+State 29
+
+   13 multiplicative_expression: unary_expression .
+
+    $default  reduce using rule 13 (multiplicative_expression)
+
+
+State 30
+
+   14 multiplicative_expression: multiplicative_expression . MULT unary_expression
+   15                          | multiplicative_expression . DIV unary_expression
+   16                          | multiplicative_expression . MOD unary_expression
+   17 expression: multiplicative_expression .
+
+    MULT  shift, and go to state 50
+    DIV   shift, and go to state 51
+    MOD   shift, and go to state 52
+
+    $default  reduce using rule 17 (expression)
+
+
+State 31
+
+   18 expression: expression . PLUS multiplicative_expression
+   19           | expression . MINUS multiplicative_expression
+   30 primary_conditional_expression: expression . relational_operator expression
+
+    LE_OP  shift, and go to state 53
+    GE_OP  shift, and go to state 54
+    EQ_OP  shift, and go to state 55
+    NE_OP  shift, and go to state 56
+    LT_OP  shift, and go to state 57
+    GT_OP  shift, and go to state 58
+    PLUS   shift, and go to state 59
+    MINUS  shift, and go to state 60
+
+    relational_operator  go to state 61
+
+
+State 32
+
+   32 secondary_conditional_expression: primary_conditional_expression .
+
+    $default  reduce using rule 32 (secondary_conditional_expression)
+
+
+State 33
+
+   33 secondary_conditional_expression: secondary_conditional_expression . AND primary_conditional_expression
+   34                                 | secondary_conditional_expression . OR primary_conditional_expression
+   38 conditional_expression: secondary_conditional_expression .
+
+    AND  shift, and go to state 62
+    OR   shift, and go to state 63
+
+    $default  reduce using rule 38 (conditional_expression)
+
+
+State 34
+
+   45 substatement: conditional_expression . SEPARATOR operations state_name
+
+    SEPARATOR  shift, and go to state 64
+
+
+State 35
+
+   46 substatement_list: substatement .
+
+    $default  reduce using rule 46 (substatement_list)
+
+
+State 36
+
+   47 substatement_list: substatement_list . substatement
+   48 statement: state_name transitions substatement_list . SEMIC
+
+    IDENTIFIER  shift, and go to state 20
+    CONSTANT    shift, and go to state 21
+    NOT         shift, and go to state 22
+    SEMIC       shift, and go to state 65
+    LEFT_BR     shift, and go to state 24
+    MINUS       shift, and go to state 25
+
+    variable                          go to state 26
+    primary_expression                go to state 27
+    array_expression                  go to state 28
+    unary_expression                  go to state 29
+    multiplicative_expression         go to state 30
+    expression                        go to state 31
+    primary_conditional_expression    go to state 32
+    secondary_conditional_expression  go to state 33
+    conditional_expression            go to state 34
+    substatement                      go to state 66
+    uninterpreted_function            go to state 37
+    function_name                     go to state 38
+
+
+State 37
+
+    7 primary_expression: uninterpreted_function .
+
+    $default  reduce using rule 7 (primary_expression)
+
+
+State 38
+
+   59 uninterpreted_function: function_name . LEFT_BR argument_list RIGHT_BR
+
+    LEFT_BR  shift, and go to state 67
+
+
+State 39
+
+   55 additional_declaration: CONSTANT CONSTANT variable_list SEMIC .
+
+    $default  reduce using rule 55 (additional_declaration)
+
+
+State 40
+
+    3 variable_list: variable_list variable .
+
+    $default  reduce using rule 3 (variable_list)
+
+
+State 41
+
+    6 primary_expression: LEFT_BR . expression RIGHT_BR
+   36 secondary_conditional_expression: NOT LEFT_BR . secondary_conditional_expression RIGHT_BR
+
+    IDENTIFIER  shift, and go to state 20
+    CONSTANT    shift, and go to state 21
+    NOT         shift, and go to state 22
+    LEFT_BR     shift, and go to state 24
+    MINUS       shift, and go to state 42
+
+    variable                          go to state 26
+    primary_expression                go to state 27
+    array_expression                  go to state 28
+    unary_expression                  go to state 29
+    multiplicative_expression         go to state 30
+    expression                        go to state 44
+    primary_conditional_expression    go to state 32
+    secondary_conditional_expression  go to state 68
+    uninterpreted_function            go to state 37
+    function_name                     go to state 38
+
+
+State 42
+
+   12 unary_expression: MINUS . primary_expression
+
+    IDENTIFIER  shift, and go to state 20
+    CONSTANT    shift, and go to state 21
+    LEFT_BR     shift, and go to state 46
+
+    variable                go to state 26
+    primary_expression      go to state 47
+    array_expression        go to state 28
+    uninterpreted_function  go to state 37
+    function_name           go to state 38
+
+
+State 43
+
+   18 expression: expression . PLUS multiplicative_expression
+   19           | expression . MINUS multiplicative_expression
+   31 primary_conditional_expression: NOT expression . relational_operator expression
+
+    LE_OP  shift, and go to state 53
+    GE_OP  shift, and go to state 54
+    EQ_OP  shift, and go to state 55
+    NE_OP  shift, and go to state 56
+    LT_OP  shift, and go to state 57
+    GT_OP  shift, and go to state 58
+    PLUS   shift, and go to state 59
+    MINUS  shift, and go to state 60
+
+    relational_operator  go to state 69
+
+
+State 44
+
+    6 primary_expression: LEFT_BR expression . RIGHT_BR
+   18 expression: expression . PLUS multiplicative_expression
+   19           | expression . MINUS multiplicative_expression
+   30 primary_conditional_expression: expression . relational_operator expression
+
+    LE_OP     shift, and go to state 53
+    GE_OP     shift, and go to state 54
+    EQ_OP     shift, and go to state 55
+    NE_OP     shift, and go to state 56
+    LT_OP     shift, and go to state 57
+    GT_OP     shift, and go to state 58
+    RIGHT_BR  shift, and go to state 70
+    PLUS      shift, and go to state 59
+    MINUS     shift, and go to state 60
+
+    relational_operator  go to state 61
+
+
+State 45
+
+   33 secondary_conditional_expression: secondary_conditional_expression . AND primary_conditional_expression
+   34                                 | secondary_conditional_expression . OR primary_conditional_expression
+   35                                 | LEFT_BR secondary_conditional_expression . RIGHT_BR
+
+    AND       shift, and go to state 62
+    OR        shift, and go to state 63
+    RIGHT_BR  shift, and go to state 71
+
+
+State 46
+
+    6 primary_expression: LEFT_BR . expression RIGHT_BR
+
+    IDENTIFIER  shift, and go to state 20
+    CONSTANT    shift, and go to state 21
+    LEFT_BR     shift, and go to state 46
+    MINUS       shift, and go to state 42
+
+    variable                   go to state 26
+    primary_expression         go to state 27
+    array_expression           go to state 28
+    unary_expression           go to state 29
+    multiplicative_expression  go to state 30
+    expression                 go to state 72
+    uninterpreted_function     go to state 37
+    function_name              go to state 38
+
+
+State 47
+
+   12 unary_expression: MINUS primary_expression .
+
+    $default  reduce using rule 12 (unary_expression)
+
+
+State 48
+
+    9 array_expression: variable LEFT_SQBR . expression RIGHT_SQBR
+
+    IDENTIFIER  shift, and go to state 20
+    CONSTANT    shift, and go to state 21
+    LEFT_BR     shift, and go to state 46
+    MINUS       shift, and go to state 42
+
+    variable                   go to state 26
+    primary_expression         go to state 27
+    array_expression           go to state 28
+    unary_expression           go to state 29
+    multiplicative_expression  go to state 30
+    expression                 go to state 73
+    uninterpreted_function     go to state 37
+    function_name              go to state 38
+
+
+State 49
+
+   10 array_expression: array_expression LEFT_SQBR . expression RIGHT_SQBR
+
+    IDENTIFIER  shift, and go to state 20
+    CONSTANT    shift, and go to state 21
+    LEFT_BR     shift, and go to state 46
+    MINUS       shift, and go to state 42
+
+    variable                   go to state 26
+    primary_expression         go to state 27
+    array_expression           go to state 28
+    unary_expression           go to state 29
+    multiplicative_expression  go to state 30
+    expression                 go to state 74
+    uninterpreted_function     go to state 37
+    function_name              go to state 38
+
+
+State 50
+
+   14 multiplicative_expression: multiplicative_expression MULT . unary_expression
+
+    IDENTIFIER  shift, and go to state 20
+    CONSTANT    shift, and go to state 21
+    LEFT_BR     shift, and go to state 46
+    MINUS       shift, and go to state 42
+
+    variable                go to state 26
+    primary_expression      go to state 27
+    array_expression        go to state 28
+    unary_expression        go to state 75
+    uninterpreted_function  go to state 37
+    function_name           go to state 38
+
+
+State 51
+
+   15 multiplicative_expression: multiplicative_expression DIV . unary_expression
+
+    IDENTIFIER  shift, and go to state 20
+    CONSTANT    shift, and go to state 21
+    LEFT_BR     shift, and go to state 46
+    MINUS       shift, and go to state 42
+
+    variable                go to state 26
+    primary_expression      go to state 27
+    array_expression        go to state 28
+    unary_expression        go to state 76
+    uninterpreted_function  go to state 37
+    function_name           go to state 38
+
+
+State 52
+
+   16 multiplicative_expression: multiplicative_expression MOD . unary_expression
+
+    IDENTIFIER  shift, and go to state 20
+    CONSTANT    shift, and go to state 21
+    LEFT_BR     shift, and go to state 46
+    MINUS       shift, and go to state 42
+
+    variable                go to state 26
+    primary_expression      go to state 27
+    array_expression        go to state 28
+    unary_expression        go to state 77
+    uninterpreted_function  go to state 37
+    function_name           go to state 38
+
+
+State 53
+
+   26 relational_operator: LE_OP .
+
+    $default  reduce using rule 26 (relational_operator)
+
+
+State 54
+
+   27 relational_operator: GE_OP .
+
+    $default  reduce using rule 27 (relational_operator)
+
+
+State 55
+
+   28 relational_operator: EQ_OP .
+
+    $default  reduce using rule 28 (relational_operator)
+
+
+State 56
+
+   29 relational_operator: NE_OP .
+
+    $default  reduce using rule 29 (relational_operator)
+
+
+State 57
+
+   24 relational_operator: LT_OP .
+
+    $default  reduce using rule 24 (relational_operator)
+
+
+State 58
+
+   25 relational_operator: GT_OP .
+
+    $default  reduce using rule 25 (relational_operator)
+
+
+State 59
+
+   18 expression: expression PLUS . multiplicative_expression
+
+    IDENTIFIER  shift, and go to state 20
+    CONSTANT    shift, and go to state 21
+    LEFT_BR     shift, and go to state 46
+    MINUS       shift, and go to state 42
+
+    variable                   go to state 26
+    primary_expression         go to state 27
+    array_expression           go to state 28
+    unary_expression           go to state 29
+    multiplicative_expression  go to state 78
+    uninterpreted_function     go to state 37
+    function_name              go to state 38
+
+
+State 60
+
+   19 expression: expression MINUS . multiplicative_expression
+
+    IDENTIFIER  shift, and go to state 20
+    CONSTANT    shift, and go to state 21
+    LEFT_BR     shift, and go to state 46
+    MINUS       shift, and go to state 42
+
+    variable                   go to state 26
+    primary_expression         go to state 27
+    array_expression           go to state 28
+    unary_expression           go to state 29
+    multiplicative_expression  go to state 79
+    uninterpreted_function     go to state 37
+    function_name              go to state 38
+
+
+State 61
+
+   30 primary_conditional_expression: expression relational_operator . expression
+
+    IDENTIFIER  shift, and go to state 20
+    CONSTANT    shift, and go to state 21
+    LEFT_BR     shift, and go to state 46
+    MINUS       shift, and go to state 42
+
+    variable                   go to state 26
+    primary_expression         go to state 27
+    array_expression           go to state 28
+    unary_expression           go to state 29
+    multiplicative_expression  go to state 30
+    expression                 go to state 80
+    uninterpreted_function     go to state 37
+    function_name              go to state 38
+
+
+State 62
+
+   33 secondary_conditional_expression: secondary_conditional_expression AND . primary_conditional_expression
+
+    IDENTIFIER  shift, and go to state 20
+    CONSTANT    shift, and go to state 21
+    NOT         shift, and go to state 81
+    LEFT_BR     shift, and go to state 46
+    MINUS       shift, and go to state 42
+
+    variable                        go to state 26
+    primary_expression              go to state 27
+    array_expression                go to state 28
+    unary_expression                go to state 29
+    multiplicative_expression       go to state 30
+    expression                      go to state 31
+    primary_conditional_expression  go to state 82
+    uninterpreted_function          go to state 37
+    function_name                   go to state 38
+
+
+State 63
+
+   34 secondary_conditional_expression: secondary_conditional_expression OR . primary_conditional_expression
+
+    IDENTIFIER  shift, and go to state 20
+    CONSTANT    shift, and go to state 21
+    NOT         shift, and go to state 81
+    LEFT_BR     shift, and go to state 46
+    MINUS       shift, and go to state 42
+
+    variable                        go to state 26
+    primary_expression              go to state 27
+    array_expression                go to state 28
+    unary_expression                go to state 29
+    multiplicative_expression       go to state 30
+    expression                      go to state 31
+    primary_conditional_expression  go to state 83
+    uninterpreted_function          go to state 37
+    function_name                   go to state 38
+
+
+State 64
+
+   45 substatement: conditional_expression SEPARATOR . operations state_name
+
+    IDENTIFIER  shift, and go to state 16
+    READ        shift, and go to state 84
+    OUT         shift, and go to state 85
+    MINUS       shift, and go to state 86
+
+    variable               go to state 87
+    array_expression       go to state 88
+    assignment_expression  go to state 89
+    operation_list         go to state 90
+    operations             go to state 91
+
+
+State 65
+
+   48 statement: state_name transitions substatement_list SEMIC .
+
+    $default  reduce using rule 48 (statement)
+
+
+State 66
+
+   47 substatement_list: substatement_list substatement .
+
+    $default  reduce using rule 47 (substatement_list)
+
+
+State 67
+
+   59 uninterpreted_function: function_name LEFT_BR . argument_list RIGHT_BR
+
+    IDENTIFIER  shift, and go to state 20
+    CONSTANT    shift, and go to state 21
+    LEFT_BR     shift, and go to state 46
+    MINUS       shift, and go to state 42
+
+    variable                   go to state 26
+    primary_expression         go to state 27
+    array_expression           go to state 28
+    unary_expression           go to state 29
+    multiplicative_expression  go to state 30
+    expression                 go to state 92
+    argument_list              go to state 93
+    uninterpreted_function     go to state 37
+    function_name              go to state 38
+
+
+State 68
+
+   33 secondary_conditional_expression: secondary_conditional_expression . AND primary_conditional_expression
+   34                                 | secondary_conditional_expression . OR primary_conditional_expression
+   36                                 | NOT LEFT_BR secondary_conditional_expression . RIGHT_BR
+
+    AND       shift, and go to state 62
+    OR        shift, and go to state 63
+    RIGHT_BR  shift, and go to state 94
+
+
+State 69
+
+   31 primary_conditional_expression: NOT expression relational_operator . expression
+
+    IDENTIFIER  shift, and go to state 20
+    CONSTANT    shift, and go to state 21
+    LEFT_BR     shift, and go to state 46
+    MINUS       shift, and go to state 42
+
+    variable                   go to state 26
+    primary_expression         go to state 27
+    array_expression           go to state 28
+    unary_expression           go to state 29
+    multiplicative_expression  go to state 30
+    expression                 go to state 95
+    uninterpreted_function     go to state 37
+    function_name              go to state 38
+
+
+State 70
+
+    6 primary_expression: LEFT_BR expression RIGHT_BR .
+
+    $default  reduce using rule 6 (primary_expression)
+
+
+State 71
+
+   35 secondary_conditional_expression: LEFT_BR secondary_conditional_expression RIGHT_BR .
+
+    $default  reduce using rule 35 (secondary_conditional_expression)
+
+
+State 72
+
+    6 primary_expression: LEFT_BR expression . RIGHT_BR
+   18 expression: expression . PLUS multiplicative_expression
+   19           | expression . MINUS multiplicative_expression
+
+    RIGHT_BR  shift, and go to state 70
+    PLUS      shift, and go to state 59
+    MINUS     shift, and go to state 60
+
+
+State 73
+
+    9 array_expression: variable LEFT_SQBR expression . RIGHT_SQBR
+   18 expression: expression . PLUS multiplicative_expression
+   19           | expression . MINUS multiplicative_expression
+
+    RIGHT_SQBR  shift, and go to state 96
+    PLUS        shift, and go to state 59
+    MINUS       shift, and go to state 60
+
+
+State 74
+
+   10 array_expression: array_expression LEFT_SQBR expression . RIGHT_SQBR
+   18 expression: expression . PLUS multiplicative_expression
+   19           | expression . MINUS multiplicative_expression
+
+    RIGHT_SQBR  shift, and go to state 97
+    PLUS        shift, and go to state 59
+    MINUS       shift, and go to state 60
+
+
+State 75
+
+   14 multiplicative_expression: multiplicative_expression MULT unary_expression .
+
+    $default  reduce using rule 14 (multiplicative_expression)
+
+
+State 76
+
+   15 multiplicative_expression: multiplicative_expression DIV unary_expression .
+
+    $default  reduce using rule 15 (multiplicative_expression)
+
+
+State 77
+
+   16 multiplicative_expression: multiplicative_expression MOD unary_expression .
+
+    $default  reduce using rule 16 (multiplicative_expression)
+
+
+State 78
+
+   14 multiplicative_expression: multiplicative_expression . MULT unary_expression
+   15                          | multiplicative_expression . DIV unary_expression
+   16                          | multiplicative_expression . MOD unary_expression
+   18 expression: expression PLUS multiplicative_expression .
+
+    MULT  shift, and go to state 50
+    DIV   shift, and go to state 51
+    MOD   shift, and go to state 52
+
+    $default  reduce using rule 18 (expression)
+
+
+State 79
+
+   14 multiplicative_expression: multiplicative_expression . MULT unary_expression
+   15                          | multiplicative_expression . DIV unary_expression
+   16                          | multiplicative_expression . MOD unary_expression
+   19 expression: expression MINUS multiplicative_expression .
+
+    MULT  shift, and go to state 50
+    DIV   shift, and go to state 51
+    MOD   shift, and go to state 52
+
+    $default  reduce using rule 19 (expression)
+
+
+State 80
+
+   18 expression: expression . PLUS multiplicative_expression
+   19           | expression . MINUS multiplicative_expression
+   30 primary_conditional_expression: expression relational_operator expression .
+
+    PLUS   shift, and go to state 59
+    MINUS  shift, and go to state 60
+
+    $default  reduce using rule 30 (primary_conditional_expression)
+
+
+State 81
+
+   31 primary_conditional_expression: NOT . expression relational_operator expression
+
+    IDENTIFIER  shift, and go to state 20
+    CONSTANT    shift, and go to state 21
+    LEFT_BR     shift, and go to state 46
+    MINUS       shift, and go to state 42
+
+    variable                   go to state 26
+    primary_expression         go to state 27
+    array_expression           go to state 28
+    unary_expression           go to state 29
+    multiplicative_expression  go to state 30
+    expression                 go to state 43
+    uninterpreted_function     go to state 37
+    function_name              go to state 38
+
+
+State 82
+
+   33 secondary_conditional_expression: secondary_conditional_expression AND primary_conditional_expression .
+
+    $default  reduce using rule 33 (secondary_conditional_expression)
+
+
+State 83
+
+   34 secondary_conditional_expression: secondary_conditional_expression OR primary_conditional_expression .
+
+    $default  reduce using rule 34 (secondary_conditional_expression)
+
+
+State 84
+
+   22 assignment_expression: READ . LEFT_BR variable COMMA variable RIGHT_BR
+
+    LEFT_BR  shift, and go to state 98
+
+
+State 85
+
+   23 assignment_expression: OUT . LEFT_BR variable COMMA expression RIGHT_BR
+
+    LEFT_BR  shift, and go to state 99
+
+
+State 86
+
+   43 operations: MINUS .
+
+    $default  reduce using rule 43 (operations)
+
+
+State 87
+
+    9 array_expression: variable . LEFT_SQBR expression RIGHT_SQBR
+   20 assignment_expression: variable . EQUAL expression
+
+    EQUAL      shift, and go to state 100
+    LEFT_SQBR  shift, and go to state 48
+
+
+State 88
+
+   10 array_expression: array_expression . LEFT_SQBR expression RIGHT_SQBR
+   21 assignment_expression: array_expression . EQUAL expression
+
+    EQUAL      shift, and go to state 101
+    LEFT_SQBR  shift, and go to state 49
+
+
+State 89
+
+   41 operation_list: assignment_expression .
+
+    $default  reduce using rule 41 (operation_list)
+
+
+State 90
+
+   42 operation_list: operation_list . COMMA assignment_expression
+   44 operations: operation_list .
+
+    COMMA  shift, and go to state 102
+
+    $default  reduce using rule 44 (operations)
+
+
+State 91
+
+   45 substatement: conditional_expression SEPARATOR operations . state_name
+
+    IDENTIFIER  shift, and go to state 5
+
+    state_name  go to state 103
+
+
+State 92
+
+   18 expression: expression . PLUS multiplicative_expression
+   19           | expression . MINUS multiplicative_expression
+   57 argument_list: expression .
+
+    PLUS   shift, and go to state 59
+    MINUS  shift, and go to state 60
+
+    $default  reduce using rule 57 (argument_list)
+
+
+State 93
+
+   58 argument_list: argument_list . COMMA expression
+   59 uninterpreted_function: function_name LEFT_BR argument_list . RIGHT_BR
+
+    COMMA     shift, and go to state 104
+    RIGHT_BR  shift, and go to state 105
+
+
+State 94
+
+   36 secondary_conditional_expression: NOT LEFT_BR secondary_conditional_expression RIGHT_BR .
+
+    $default  reduce using rule 36 (secondary_conditional_expression)
+
+
+State 95
+
+   18 expression: expression . PLUS multiplicative_expression
+   19           | expression . MINUS multiplicative_expression
+   31 primary_conditional_expression: NOT expression relational_operator expression .
+
+    PLUS   shift, and go to state 59
+    MINUS  shift, and go to state 60
+
+    $default  reduce using rule 31 (primary_conditional_expression)
+
+
+State 96
+
+    9 array_expression: variable LEFT_SQBR expression RIGHT_SQBR .
+
+    $default  reduce using rule 9 (array_expression)
+
+
+State 97
+
+   10 array_expression: array_expression LEFT_SQBR expression RIGHT_SQBR .
+
+    $default  reduce using rule 10 (array_expression)
+
+
+State 98
+
+   22 assignment_expression: READ LEFT_BR . variable COMMA variable RIGHT_BR
+
+    IDENTIFIER  shift, and go to state 16
+
+    variable  go to state 106
+
+
+State 99
+
+   23 assignment_expression: OUT LEFT_BR . variable COMMA expression RIGHT_BR
+
+    IDENTIFIER  shift, and go to state 16
+
+    variable  go to state 107
+
+
+State 100
+
+   20 assignment_expression: variable EQUAL . expression
+
+    IDENTIFIER  shift, and go to state 20
+    CONSTANT    shift, and go to state 21
+    LEFT_BR     shift, and go to state 46
+    MINUS       shift, and go to state 42
+
+    variable                   go to state 26
+    primary_expression         go to state 27
+    array_expression           go to state 28
+    unary_expression           go to state 29
+    multiplicative_expression  go to state 30
+    expression                 go to state 108
+    uninterpreted_function     go to state 37
+    function_name              go to state 38
+
+
+State 101
+
+   21 assignment_expression: array_expression EQUAL . expression
+
+    IDENTIFIER  shift, and go to state 20
+    CONSTANT    shift, and go to state 21
+    LEFT_BR     shift, and go to state 46
+    MINUS       shift, and go to state 42
+
+    variable                   go to state 26
+    primary_expression         go to state 27
+    array_expression           go to state 28
+    unary_expression           go to state 29
+    multiplicative_expression  go to state 30
+    expression                 go to state 109
+    uninterpreted_function     go to state 37
+    function_name              go to state 38
+
+
+State 102
+
+   42 operation_list: operation_list COMMA . assignment_expression
+
+    IDENTIFIER  shift, and go to state 16
+    READ        shift, and go to state 84
+    OUT         shift, and go to state 85
+
+    variable               go to state 87
+    array_expression       go to state 88
+    assignment_expression  go to state 110
+
+
+State 103
+
+   45 substatement: conditional_expression SEPARATOR operations state_name .
+
+    $default  reduce using rule 45 (substatement)
+
+
+State 104
+
+   58 argument_list: argument_list COMMA . expression
+
+    IDENTIFIER  shift, and go to state 20
+    CONSTANT    shift, and go to state 21
+    LEFT_BR     shift, and go to state 46
+    MINUS       shift, and go to state 42
+
+    variable                   go to state 26
+    primary_expression         go to state 27
+    array_expression           go to state 28
+    unary_expression           go to state 29
+    multiplicative_expression  go to state 30
+    expression                 go to state 111
+    uninterpreted_function     go to state 37
+    function_name              go to state 38
+
+
+State 105
+
+   59 uninterpreted_function: function_name LEFT_BR argument_list RIGHT_BR .
+
+    $default  reduce using rule 59 (uninterpreted_function)
+
+
+State 106
+
+   22 assignment_expression: READ LEFT_BR variable . COMMA variable RIGHT_BR
+
+    COMMA  shift, and go to state 112
+
+
+State 107
+
+   23 assignment_expression: OUT LEFT_BR variable . COMMA expression RIGHT_BR
+
+    COMMA  shift, and go to state 113
+
+
+State 108
+
+   18 expression: expression . PLUS multiplicative_expression
+   19           | expression . MINUS multiplicative_expression
+   20 assignment_expression: variable EQUAL expression .
+
+    PLUS   shift, and go to state 59
+    MINUS  shift, and go to state 60
+
+    $default  reduce using rule 20 (assignment_expression)
+
+
+State 109
+
+   18 expression: expression . PLUS multiplicative_expression
+   19           | expression . MINUS multiplicative_expression
+   21 assignment_expression: array_expression EQUAL expression .
+
+    PLUS   shift, and go to state 59
+    MINUS  shift, and go to state 60
+
+    $default  reduce using rule 21 (assignment_expression)
+
+
+State 110
+
+   42 operation_list: operation_list COMMA assignment_expression .
+
+    $default  reduce using rule 42 (operation_list)
+
+
+State 111
+
+   18 expression: expression . PLUS multiplicative_expression
+   19           | expression . MINUS multiplicative_expression
+   58 argument_list: argument_list COMMA expression .
+
+    PLUS   shift, and go to state 59
+    MINUS  shift, and go to state 60
+
+    $default  reduce using rule 58 (argument_list)
+
+
+State 112
+
+   22 assignment_expression: READ LEFT_BR variable COMMA . variable RIGHT_BR
+
+    IDENTIFIER  shift, and go to state 16
+
+    variable  go to state 114
+
+
+State 113
+
+   23 assignment_expression: OUT LEFT_BR variable COMMA . expression RIGHT_BR
+
+    IDENTIFIER  shift, and go to state 20
+    CONSTANT    shift, and go to state 21
+    LEFT_BR     shift, and go to state 46
+    MINUS       shift, and go to state 42
+
+    variable                   go to state 26
+    primary_expression         go to state 27
+    array_expression           go to state 28
+    unary_expression           go to state 29
+    multiplicative_expression  go to state 30
+    expression                 go to state 115
+    uninterpreted_function     go to state 37
+    function_name              go to state 38
+
+
+State 114
+
+   22 assignment_expression: READ LEFT_BR variable COMMA variable . RIGHT_BR
+
+    RIGHT_BR  shift, and go to state 116
+
+
+State 115
+
+   18 expression: expression . PLUS multiplicative_expression
+   19           | expression . MINUS multiplicative_expression
+   23 assignment_expression: OUT LEFT_BR variable COMMA expression . RIGHT_BR
+
+    RIGHT_BR  shift, and go to state 117
+    PLUS      shift, and go to state 59
+    MINUS     shift, and go to state 60
+
+
+State 116
+
+   22 assignment_expression: READ LEFT_BR variable COMMA variable RIGHT_BR .
+
+    $default  reduce using rule 22 (assignment_expression)
+
+
+State 117
+
+   23 assignment_expression: OUT LEFT_BR variable COMMA expression RIGHT_BR .
+
+    $default  reduce using rule 23 (assignment_expression)

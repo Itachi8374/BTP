@@ -1,0 +1,55 @@
+Suppose the source behavior and the transformed behavior are
+represented as FSMDs $M_0$ and $M_1$, respectively. Let us assume that the
+PBEC fails to find an equivalent for
+the path $\alpha$ of $M_0$. We now discuss how to generate a
+unique computation starting from the reset state that leads to the path
+$\alpha$. It may be noted that the EVP method maintains two lists:
+$\mathtt{EQ\_LIST}$ contains equivalent path pairs explored so far and
+$\mathtt{C\_LIST}$ contains candidates for conditionally equivalent path pairs.
+In the EVP method $\mathtt{C\_LIST}$ is obtained in a
+depth first search (DFS) manner. So, if we traverse backward from the start
+state of $\alpha$, we will obtain a sequence of paths from the set
+$\mathtt{C\_LIST}$. \textit{This trace would always be a unique trace.} Let the
+sequence be $\langle p_{0j},p_{0j+1},\dots,p_{0k},\alpha \rangle$ in FSMD
+$M_0$. The segment of the FSMD $M_0$ from the reset state $q_{00}$ to the start
+state of $p_{0j}$, (say $p_{0j}^s$,) is already proved to be equivalent to its
+corresponding part in FSMD $M_1$. However, there may be many paths from
+$q_{00}$ to $p_{0j}^s$. For our purpose, we can choose one of the paths  from
+this segment. Let us choose the sequence $\langle
+p_{00},p_{01},\dots,p_{0i}\rangle$ where $p_{00}$ starts from the state
+$q_{00}$ and the path $p_{0i}$ ends at $p_{0j}^s$. Therefore, the sequence
+$\mathit{cTrace}=\langle
+p_{00},p_{01},\dots,p_{0i},p_{0j},p_{0j+1},\dots,p_{0k},\alpha\rangle$ is the
+\textit{cTrace} in the FSMD $M_0$ that we are interested in. From
+$\mathtt{EQ\_LIST}$, we will obtain the paths corresponding to
+$p_{00},p_{01},\dots,p_{0i}$ in FSMD $M_1$. Let the corresponding paths be
+$p_{10},p_{11},\dots,p_{1i}$, respectively. Similarly, the corresponding paths
+of $p_{0j},p_{0j+1},\dots,p_{0k}$ in the FSMD $M_1$ can be found using
+$\mathtt{C\_LIST}$. Let the corresponding paths be
+$p_{1j},p_{1j+1},\dots,p_{1k}$, respectively. The \textit{potential}
+corresponding path of $\alpha$ can also be obtained in the FSMD $M_1$; let it
+be $\beta$.  The EVP method identifies the potential candidate for equivalence,
+$\beta$, in $M_1$ in most of the cases (see~\cite{Chouksey18} for details). It
+fails to find $\beta$ only if there does not exist any path from the
+corresponding state in $M_1$ whose condition of execution matches even partially
+with that of $\alpha$. In this case, we can take any path from the
+corresponding state in $M_1$. Therefore, the corresponding $cTrace$ in FSMD
+$M_1$ is $~\langle
+p_{10},p_{11},\dots,p_{1i},p_{1j},p_{1j+1},\dots,p_{1k},\beta\rangle$.
+\begin{example} 
+Consider the input behavior $M_0$ and its transformed behavior
+$M_1$ shown in Fig.~\ref{Fig:NonEqui}. The operation $x\Leftarrow 5$, a loop
+invariant for input behavior $M_0$, is placed after the loop body in the
+transformed behavior $M_1$. Note that the input behavior $M_0$ and the
+transformed behavior $M_1$, shown in Fig.~\ref{Fig:NonEqui}, are not equivalent
+since there is mismatch in values of the  $\mathit{out}$ variable. The EVP
+method reports that behaviors ``May Not be equivalent". The EVP method also
+reports that the path pairs $(p_{00},p_{10})$ and $(p_{01},p_{11})$ are
+U-equivalent, the path pair $(p_{02},p_{12})$ is a candidate for C-equivalence and the path pair
+$(p_{03},p_{13})$ is not equivalent.  During the course of equivalence checking
+the EVP method stores these U-equivalent and candidate for C-equivalent path pairs in the
+$\mathtt{EQ\_LIST}$ and $\mathtt{C\_LIST}$ list, respectively. 
+As explained in Sec.~\ref{Sec:CTrace}, using these lists the
+generated \textit{cTrace} of $M_0$ and $M_1$ is shown in Fig.~\subref*{SubFig:CM0}
+and Fig.~\subref*{SubFig:CM1}, respectively.
+\end{example} 

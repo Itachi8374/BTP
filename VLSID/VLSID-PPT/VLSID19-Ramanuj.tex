@@ -1,0 +1,93 @@
+\documentclass[presentation]{beamer}
+\usetheme{CambridgeUS}
+\setbeamertemplate{navigation symbols}{}
+\usepackage{tikz,pgf}
+\usepackage{threeparttable}%tableNotes
+\usepackage{colortbl}%rowcolor
+\usepackage{calligra}%Thank You Font
+\usepackage{mathtools}
+\usepackage{multirow}
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+\usetikzlibrary{shapes,arrows,chains,calc,trees,backgrounds,fit,decorations.markings,automata,positioning}
+\lstset{%
+  basicstyle = \linespread{1.1}\ttfamily\scriptsize,
+  tabsize          = 2,     % tab space width
+  numbers          = left,  % display line numbers on the left
+  commentstyle     = \color{blue},      % comment color
+  keywordstyle     = \color{red},       % keyword color
+  keywords=[2]{assert},
+  stringstyle      = \color{DarkRed},    % string color
+  showstringspaces = false, 
+  escapechar=!,             % do not mark spaces in strings
+  keywordstyle=[2]{\color{blue!80!black}},
+  xleftmargin=.05\textwidth
+}
+\definecolor{green}{rgb}{0.01, 0.7, 0.01}
+\definecolor{bole}{rgb}{0.47, 0.27, 0.23}
+\definecolor{boston}{rgb}{0.8, 0.0, 0.0}
+\definecolor{prune}{rgb}{0.44, 0.11, 0.11}
+\setbeamertemplate{headline}{}
+
+\tikzset{onslide/.code args={<#1>#2}{%
+		\only<#1>{\pgfkeysalso{#2}} % \pgfkeysalso doesn't change the path
+}}
+\tikzset{temporal/.code args={<#1>#2#3#4}{%
+		\temporal<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}}{\pgfkeysalso{#4}} % \pgfkeysalso doesn't change the path
+}}
+\tikzstyle{invisible}=[opacity=0,text opacity=0]
+\tikzstyle{fvisible}=[opacity=1,text opacity=1]
+\tikzstyle{semivisible}=[opacity=0.2,text opacity=0.2]
+
+\newtcbox{\xmybox}[1][blue]{on line,
+	arc=1pt,colback=#1!10!white,colframe=#1,
+	before upper={\rule[0pt]{0pt}{0pt}},boxrule=1pt,
+	boxsep=0pt,left=0pt,right=0pt,top=0pt,bottom=0pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title[VLSID 2019]{Improving Performance of a Path-Based
+Equivalence Checker using Counter-Examples}
+\author[{R. Chouksey et al.}]{\rmfamily Ramanuj Chouksey, Chandan Karfa, and Purandar Bhaduri}
+\institute[IIT Guwahati]{Indian Institute of Technology Guwahati}
+\date[\tiny\today]{\tiny\today}
+
+\begin{document}
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+
+\section{High-level Synthesis (HLS)}
+\input{texFiles/HLS.tex}
+\section{Path-based Equivalence Checker (PBEC)}
+\input{texFiles/PBEC.tex}
+\section{Overall Approach}
+\begin{frame}{Overall Approach}
+In the case of nonequivalence reported by PBEC
+\begin{enumerate}
+\item Counter Trace ({\color{blue}$\mathit{cTrace}$}) {\color{blue}generation}. 
+\item {\color{blue}Modeling} the $\mathit{cTrace}$ to generate counter example using {\color{blue}CBMC}.
+\item {\color{blue}Incorporate} the results with PBEC.
+\end{enumerate}
+\end{frame}
+%\subsection{$\mathit{cTrace}$ Generation}
+\input{texFiles/cTrace}
+%\subsection{Counter Example Generation}
+\input{texFiles/CBMC}
+%\subsection{Incorporating the Results}
+\input{texFiles/resultsCBMC}
+\section{Experimental Results}
+\input{texFiles/experiment}
+\section{Conclusion \& Future Work}
+\input{texFiles/conclusion}
+\begin{frame}{}
+\centering
+{\calligra\fontsize{40}{60}\selectfont Thank\,you!}
+\end{frame}
+\end{document}

@@ -1,0 +1,175 @@
+\begin{figure*}[!t]
+\subfloat[Source behavior $M_0$]
+{	
+		\label{SubFig:M0}
+			\linespread{1.5}
+			\scalebox{0.65}{
+				\begin{tikzpicture}[line width=1.5pt,place/.style={circle,draw}]
+				%%%%%%%%%%%%%%%%%%%%%%%%%%%M0%%%%%%%%%%%%%%%%%%%%%%
+					\node[fill=gray!20] (1) at (0,1)   [place] {$q_{00}$};
+					\node[fill=gray!20] (2) at (0,-2)   [place] {$q_{01}$};
+					\node (3) at (-1.5,-5)   [place] {$q_{02}$};
+					\node (5) at (1.5,-5)   [place] {$q_{03}$};
+					
+					\draw [>=latex,->,draw=green](1) to [align=center] node[pos=0.5,left] {\footnotesize $n\geq 0/$\\[-0.3cm] \footnotesize $i\Leftarrow 0,$\\[-0.3cm]\footnotesize $x\Leftarrow 0,$\\[-0.3cm]\footnotesize $y\Leftarrow 0$} 
+					node[pos=0.4,right]{$p_{01}$} (2);
+					
+					\draw [>=latex,->,draw=yellow](2)  [align=center] to  node[pos=0.6,right] {\footnotesize$i\leq n/$\\[-0.2cm]\footnotesize $\boxed{\mathbf{x\Leftarrow 5}},$\\[-0.3cm]\footnotesize $y\Leftarrow y+5$}(3);
+					
+					\draw [>=latex,->, draw=yellow](3) [align=center] .. controls (-3,-2) and (-0.8,-2) ..  node[pos=0.3,left] {\rotatebox[origin=c]{90}{\footnotesize -/\footnotesize$i\Leftarrow i+1$}} 	node[pos=0.3,right,xshift=0.3cm]{$p_{02}$}(2);
+					
+					\draw [>=latex,->,draw=red](2)  [align=center] --node[pos=0.5,right]{\footnotesize$\neg i\leq n/$\\[-0.2cm]\footnotesize{\boxed{\mathbf{out\Leftarrow x+y}}}}
+					node[pos=0.8,right]{$p_{03}$}(5);
+					
+					\draw [>=latex,->,draw=green](1)  [align=center] .. controls (2,1) and (5,-4) ..  
+					node[pos=0.4,left] {\footnotesize $\neg n\geq 0$/\\[-0.3cm]\footnotesize$out\Leftarrow -1$} node[pos=0.4,right]{$p_{00}$} (5);
+									
+				\end{tikzpicture}
+				}
+	}	\hspace{-2cm}
+	\subfloat[Transformed behavior $M_1$]
+	{	
+			\label{SubFig:M1}
+			\linespread{1.5}
+			\scalebox{0.65}{
+				\begin{tikzpicture}[line width=1.5pt,place/.style={circle,draw}]
+				%%%%%%%%%%%%%%%%%%%%%%%%%%%M0%%%%%%%%%%%%%%%%%%%%%%
+					\node[fill=gray!20] (1) at (0,1)   [place] {$q_{10}$};
+					\node[fill=gray!20] (2) at (0,-2)   [place] {$q_{11}$};
+					\node (3) at (-1.5,-5)   [place] {$q_{12}$};
+					\node (5) at (1.5,-5)   [place] {$q_{13}$};
+					
+					\draw [>=latex,->,draw=green](1) to [align=center] node[pos=0.5,left] {\footnotesize $n\geq 0/$\\[-0.3cm] \footnotesize $i\Leftarrow 0,$\\[-0.3cm]\footnotesize $x\Leftarrow 0,$\\[-0.3cm]\footnotesize $y\Leftarrow 0$}
+					node[pos=0.4,right]{$p_{11}$}
+					(2);
+					
+					\draw[>=latex,->,draw=yellow](2)  [align=center] to  node[pos=0.6,right] {\footnotesize$i\leq n/$\\[-0.3cm]\footnotesize $y\Leftarrow y+5$}(3);
+					
+					\draw [>=latex,->,draw=yellow](3) [align=center] .. controls (-3,-2) and (-0.8,-2) ..  
+					node[pos=0.3,left] {\rotatebox[origin=c]{90}{\footnotesize -/\footnotesize$i\Leftarrow i+1$}}
+					node[pos=0.3,right,xshift=0.3cm]{$p_{12}$}(2);
+					
+					\draw [>=latex,->,draw=red](2)  [align=center] --node[pos=0.3,right,]{\footnotesize$\neg i\leq n/$\\[-0.2cm]\footnotesize $\boxed{\mathbf{x\Leftarrow 5}},$\\[-0.1cm]\footnotesize
+					${\boxed{\mathbf{out\Leftarrow x+y+1}}}$}
+					node[pos=0.8,right]{$p_{13}$}
+					(5);
+					
+					\draw [>=latex,->,draw=green](1)  [align=center] .. controls (2,1) and (5,-4) ..  
+					node[pos=0.4,left] {\footnotesize $\neg n\geq 0$/\\[-0.3cm]\footnotesize$out\Leftarrow -1$} node[pos=0.4,right]{$p_{10}$} (5);
+					
+				\end{tikzpicture}
+				}
+	}	\hspace{-1.5cm}			
+	\subfloat[\textit{cTrace} of $M_0$]
+	{
+			\label{SubFig:CM0}	
+			\linespread{1.5}
+			\scalebox{0.65}{
+				\begin{tikzpicture}[line width=1.5pt,place/.style={circle,draw}]
+				%%%%%%%%%%%%%%%%%%%%%%%%%%%M0%%%%%%%%%%%%%%%%%%%%%%
+					\node[fill=gray!20] (1) at (0,1)   [place] {$q_{00}$};
+					\node[fill=gray!20] (2) at (0,-2)   [place] {$q_{01}$};
+					\node (3) at (-1.5,-5)   [place] {$q_{02}$};
+					\node (5) at (1.5,-5)   [place] {$q_{03}$};
+					
+					\draw [>=latex,->,draw=green](1) to [align=center] node[pos=0.5,left] 
+					{\footnotesize $n\geq 0/$\\[-0.3cm] \footnotesize $i\Leftarrow 
+					0,$\\[-0.3cm]\footnotesize $x\Leftarrow 0,$\\[-0.3cm]\footnotesize 
+					$y\Leftarrow 0$} 
+					node[pos=0.4,right]{$p_{01}$} (2);
+					
+					\draw [>=latex,->,draw=yellow](2)  [align=center] to  
+					node[pos=0.6,right] {\footnotesize$i\leq n/$\\[-0.2cm]\footnotesize 
+					$\boxed{\mathbf{x\Leftarrow 5}},$\\[-0.3cm]\footnotesize $y\Leftarrow 
+					y+5$}(3);
+					
+					\draw [>=latex,->, draw=yellow](3) [align=center] .. controls (-3,-2) 
+					and (-0.8,-2) ..  node[pos=0.3,left] 
+					{\rotatebox[origin=c]{90}{\footnotesize -/\footnotesize$i\Leftarrow 
+					i+1$}} 	node[pos=0.3,right,xshift=0.3cm]{$p_{02}$}(2);
+					
+					\draw [>=latex,->,draw=red](2)  [align=center] 
+					--node[pos=0.5,right]{\footnotesize$\neg i\leq 
+					n/$\\[-0.2cm]\footnotesize{\boxed{\mathbf{out\Leftarrow x+y}}}}
+					node[pos=0.8,right]{$p_{03}$}(5);				
+				\end{tikzpicture}
+				}
+	}	\hspace{-1.0cm}
+	\subfloat[\textit{cTrace} of $M_1$]
+	{
+			\label{SubFig:CM1}	
+			\linespread{1.5}
+			\scalebox{0.65}{
+				\begin{tikzpicture}[line width=1.5pt,place/.style={circle,draw}]
+				%%%%%%%%%%%%%%%%%%%%%%%%%%%M0%%%%%%%%%%%%%%%%%%%%%%
+					\node[fill=gray!20] (1) at (0,1)   [place] {$q_{10}$};
+					\node[fill=gray!20] (2) at (0,-2)   [place] {$q_{11}$};
+					\node (3) at (-1.5,-5)   [place] {$q_{12}$};
+					\node (5) at (1.5,-5)   [place] {$q_{13}$};
+					
+					\draw [>=latex,->,draw=green](1) to [align=center] node[pos=0.5,left] 
+					{\footnotesize $n\geq 0/$\\[-0.3cm] \footnotesize $i\Leftarrow 
+					0,$\\[-0.3cm]\footnotesize $x\Leftarrow 0,$\\[-0.3cm]\footnotesize 
+					$y\Leftarrow 0$}
+					node[pos=0.4,right]{$p_{11}$}
+					(2);
+					
+					\draw[>=latex,->,draw=yellow](2)  [align=center] to  
+					node[pos=0.6,right] {\footnotesize$i\leq n/$\\[-0.3cm]\footnotesize 
+					$y\Leftarrow y+5$}(3);
+					
+					\draw [>=latex,->,draw=yellow](3) [align=center] .. controls (-3,-2) 
+					and (-0.8,-2) ..  
+					node[pos=0.3,left] {\rotatebox[origin=c]{90}{\footnotesize 
+					-/\footnotesize$i\Leftarrow i+1$}}
+					node[pos=0.3,right,xshift=0.3cm]{$p_{12}$}(2);
+					
+					\draw [>=latex,->,draw=red](2)  [align=center] 
+					--node[pos=0.3,right,]{\footnotesize$\neg i\leq 
+					n/$\\[-0.2cm]\footnotesize $\boxed{\mathbf{x\Leftarrow 
+					5}},$\\[-0.1cm]\footnotesize
+					${\boxed{\mathbf{out\Leftarrow x+y+1}}}$}
+					node[pos=0.8,right]{$p_{13}$}
+					(5);
+				\end{tikzpicture}
+				}
+	}
+	\caption[]{Counter-trace Genegartion} 
+					\label{Fig:NonEqui}
+	\end{figure*}
+\begin{comment}
+	\begin{figure}[!t]
+			\scalebox{0.7}{
+		\begin{tikzpicture}[list/.style={rectangle split, rectangle split parts=2,
+						    draw, rectangle split horizontal}, >=stealth]
+						  
+						  \node (A) {EQ\_LIST = };
+						 	\node[list,right=of A,xshift=-1cm,] (A2) {$(P_{00},P_{10})$};
+						  \node[list,right=of A2] (A3) {$(P_{01},P_{11})$};
+							\node[right=of A3,draw,inner sep=6pt] (A31) {};
+				
+							\node[below=of A,yshift=0.6cm,xshift=0.145cm] (B) {C\_LIST = 
+							};			  
+							\node[list,right=of B,xshift=-1cm,] (B2) {$(P_{02},P_{12})$};
+							\node[right=of B2,draw,inner sep=6pt] (B21) {};
+						  				  
+						 
+						  \draw(A31.north east) -- (A31.south west);
+						  \draw(A31.north west) -- (A31.south east);
+						
+							\draw(B21.north east) -- (B21.south west);
+							\draw(B21.north west) -- (B21.south east);
+						  			
+						  
+						  \draw[*->] let \p1 = (A2.two), \p2 = (A2.center) in (\x1,\y2) -- 
+						  (A3);
+						  \draw[*->] let \p1 = (A3.two), \p2 = (A3.center) in (\x1,\y2) -- 
+						  (A31);
+						  \draw[*->] let \p1 = (B2.two), \p2 = (B2.center) in (\x1,\y2) -- 
+						  (B21);
+						\end{tikzpicture}
+						}
+			\caption[]{List maintained during equivalence checking}
+			\label{Fig:CList}
+		\end{figure}															
+\end{comment}

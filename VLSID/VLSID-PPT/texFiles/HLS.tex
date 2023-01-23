@@ -1,0 +1,89 @@
+\begin{frame}{High-level Synthesis (HLS)}
+\begin{tikzpicture}
+\tikzset{
+mybox/.style = {fill=blue!30,
+    rectangle, rounded corners, inner sep=0pt, inner ysep=1pt, text width=5cm, minimum height=0.3cm, align=center,node distance={0.7cm},font=\bfseries\small},
+  back group/.style={fill=yellow!20,rounded corners, draw=black!50, densely dashed, inner xsep=5pt, inner ysep=10pt}
+}
+\node[inner sep=0pt](0) {\bfseries\large Behavioral specification (c,c++)};
+\node[mybox,below=of 0] (1) {Preprocessing};
+\node[mybox,below=of 1] (2) {Scheduling};
+\node[mybox,below=of 2] (3) {Allocation \& Binding};
+\node[mybox,below=of 3] (4) {Data-path \&\\ Controller generator};
+\node[below=of 4, inner sep=0pt,node distance =0pt,yshift=4pt] (5) {\bfseries\large RTL (VHDL, Verilog)};
+\node[temporal=<2-3>{invisible}{fvisible}{fvisible},mybox,right=of 1, xshift=0.5cm,yshift=-5pt] (6) {Scheduling\\ Verification};
+\node[temporal=<2>{invisible}{fvisible}{semivisible},mybox,below=of 6,yshift=-0.1cm] (7) {Allocation \& Binding\\ Verification};
+\node[temporal=<2>{invisible}{fvisible}{semivisible},mybox,below=of 7,yshift=-0.05cm] (8) {Data-path \& Controller\\ Verification};
+\draw[->,>=latex] (0)--(1);
+\draw[->,>=latex] (1)--(2);
+\draw[->,>=latex] (2)--(3);
+\draw[->,>=latex] (3)--(4);
+\draw[->,>=latex] (4)--(5);
+\draw[temporal=<2-3>{invisible}{fvisible}{semivisible},->,>=latex] (2.300)--++(0,-0.15)--++(3,0)--++(0,.6)-|coordinate[pos=1](b6)(6);
+\draw[temporal=<2-3>{invisible}{fvisible}{semivisible},->,>=latex] (0.0)-|(6);
+\draw[temporal=<2>{invisible}{fvisible}{semivisible},->,>=latex] (b6)--++(0,-0.15)-|(7);
+\draw[temporal=<2>{invisible}{fvisible}{semivisible},->,>=latex] (3.300)--++(0,-0.05)-|coordinate[pos=1] (b7)(7);
+\draw[temporal=<2>{invisible}{fvisible}{semivisible},->,>=latex] (b7)--++(0,-0.05)-|(8);
+\draw[temporal=<2>{invisible}{fvisible}{semivisible},->,>=latex] (4.300)--++(0,-0.07)-| (8);
+
+\begin{scope}[on background layer]
+  \node[back group] (bk1)  [fit=(1) (2) (3) (4)] {};
+  \end{scope}
+\begin{scope}[on background layer]
+  \node[temporal=<2-3>{invisible}{fvisible}{semivisible},back group,fill=green!20] (bk2)  [fit=(6) (7) (8)] {};
+  \end{scope}
+\node[temporal=<2-3>{invisible}{fvisible}{semivisible},below=of bk2,yshift=1cm] {\small Phase-wise verification of HLS};
+\node[below=of bk1,xshift=1.2cm,yshift=1cm] {\small Synthesis tool};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}[t,fragile]
+\frametitle<1-2>{Verification of HLS}
+\frametitle<3-4>{Verification of HLS:Correct by Construction}
+\frametitle<5-6>{Verification of HLS:Translation Validation}
+\frametitle<7->{Motivation}
+\begin{tikzpicture}
+\tikzset{
+mybox/.style = {draw=red, fill=yellow!50, very thick,
+    rectangle, rounded corners, inner sep=2pt, inner ysep=4pt},
+fstyle/.style={font=\bfseries\large,align=center,line width=0.2mm},
+rect/.style={font=\bfseries\large,inner sep=0pt,rectangle,rounded corners,draw,minimum width=2cm, minimum height=2cm, text width=3.4cm, align=center,line width=0.2mm}
+}
+\node[temporal=<3-4>{fvisible}{semivisible}{fvisible},rect,fill=blue!30] (0) {Input Program (Specification)};
+\node[temporal=<5->{fvisible}{semivisible}{fvisible},rect,right=1cm of 0,minimum height=1cm,fill=green!30] (1) {Transformations};
+\node[temporal=<3-4>{fvisible}{semivisible}{fvisible},rect,right=1cm of 1,fill=blue!30] (2) {Transformed Program\\(Implementation)};
+
+\node[temporal=<2>{invisible}{fvisible}{invisible},font=\bfseries,below= of 0,xshift=4.5cm,text width=\textwidth,align=center,fill=yellow] (3){Is the Specification ``functionally equivalent'' to Implementation?};
+
+
+\node[temporal=<5->{invisible}{fvisible}{invisible},below=of 1,yshift=-0.5cm,rect,minimum height=1cm,fill=orange!15](5){Equivalence Checker (EC)};
+\node[temporal=<5-6>{invisible}{fvisible}{invisible},left=of 5,text width=4cm,mybox,xshift=0.8cm,yshift=-0.4cm] (11) {$\bullet$ For each translation\\ $\bullet$ Does guarantee that any errors in translation will be caught when tool runs };
+\node[temporal=<6>{invisible}{fvisible}{invisible},right=of 5,text width=4cm,mybox,xshift=-0.8cm,yshift=-0.4cm,] (12) {$\bullet$ Provide very little information in the case of nonequivalence\\ $\bullet$ Not sufficient for debugging purpose};
+\node[temporal=<5->{invisible}{fvisible}{invisible},below left=of 5,xshift=2.5cm] (13) {\bfseries\large\color{green}Yes};
+\node[temporal=<5-6>{invisible}{fvisible}{invisible},below right=of 5, xshift=-2.5cm] (14) {\bfseries\large\color{red}May Not};
+\draw[draw=blue,temporal=<5->{invisible}{fvisible}{invisible},->,dotted] [line width=0.05cm](5) -- (13);
+\draw[draw=blue,temporal=<5->{invisible}{fvisible}{invisible},->,dotted] [line width=0.05cm](5) -- (14);
+\node[cross out,draw=black,temporal=<7->{invisible}{fvisible}{invisible},below right=of 5, xshift=-2.5cm] (15) {\bfseries\large\color{red}May Not};
+\node[temporal=<7->{invisible}{fvisible}{invisible},below right=of 14, xshift=-.5cm] (16) {\bfseries\large\color{red}May Not};
+\node[temporal=<7->{invisible}{fvisible}{invisible},below left=of 14, xshift=2cm,text width=5cm,align=center] (17) {\bfseries\large\color{red}No with\\Counter Example (CE)};
+\draw[draw=blue,temporal=<7->{invisible}{fvisible}{invisible},->,dotted] [line width=0.05cm](15) -- (16);
+\draw[draw=blue,temporal=<7->{invisible}{fvisible}{invisible},->,dotted] [line width=0.05cm](15) -- (17);
+\node[temporal=<7->{invisible}{fvisible}{invisible},left=of 5,text width=4cm,mybox,xshift=0.8cm,yshift=-0.4cm] (18) {$\bullet$ CE will reproduce the non-equivalence\\$\bullet$ Improve the performance of a EC};
+\node[temporal=<7->{invisible}{fvisible}{invisible},right=of 5,text width=4cm,mybox,xshift=-0.8cm,yshift=-0.4cm,] (19) {$\bullet$ CE helps to identify some false negative cases of a EC};
+
+\node[temporal=<3-4>{invisible}{fvisible}{invisible},below=of 1,yshift=-0.1cm, regular polygon,regular polygon sides=6,draw,fstyle,fill=red!30](4){Checker};
+\node[temporal=<3-4>{invisible}{fvisible}{invisible},left=of 4,text width=4cm,mybox,xshift=0.5cm] (7) {$\bullet$ Once and for all\\ $\bullet$ HLS tool always produce correct results};
+\node[temporal=<4>{invisible}{fvisible}{invisible},mybox,right=of 4,xshift=-0.5cm,text width=4cm] (8) {$\bullet$ Large and Complex software system\\ $\bullet$ Difficult to prove correctness};
+\node[temporal=<3-4>{invisible}{fvisible}{invisible},below left=of 4,xshift=1.7cm] (9) {\bfseries\large\color{green}Yes};
+\node[temporal=<3-4>{invisible}{fvisible}{invisible},below right=of 4, xshift=-1.7cm] (10) {\bfseries\large\color{red}No};
+\draw[draw=blue,temporal=<3-4>{invisible}{fvisible}{invisible},->,dotted] [line width=0.05cm](4) -- (9);
+\draw[draw=blue,temporal=<3-4>{invisible}{fvisible}{invisible},->,dotted] [line width=0.05cm](4) -- (10);
+
+
+\draw[draw=blue,temporal=<3-4>{fvisible}{semivisible}{fvisible},->][line width=0.1cm] ($(0) + (1.8,0)$) -- ($(1)+(-1.8,0)$);
+\draw[draw=blue,temporal=<3-4>{fvisible}{semivisible}{fvisible},->][line width=0.1cm] ($(1) + (1.8,0)$) -- ($(2)+(-1.8,0)$);
+\draw [draw=blue,temporal=<5->{invisible}{fvisible}{invisible},line width=0.05cm](0.270)-- ++(0,-0.3) -|coordinate[pos=0.25] (b2) (2);
+\draw[draw=blue,->,temporal=<3-4>{invisible}{fvisible}{invisible},line width=0.05cm](1) -- (4);
+\draw[draw=blue,temporal=<5->{invisible}{fvisible}{invisible},->] [line width=0.05cm](b2) -- (5);
+\end{tikzpicture}
+\end{frame}

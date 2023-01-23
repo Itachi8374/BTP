@@ -1,0 +1,52 @@
+\begin{figure}[!h]
+\begin{center}
+\begin{lstlisting}[language=C,
+,escapechar = ~,numbers=left,
+tabsize=2,basicstyle = \linespread{1.2}\ttfamily\scriptsize, linewidth = 
+.6\linewidth,xleftmargin=.04\textwidth] 
+#include<assert.h>
+void main()
+{
+  int i_s,x_s,y_s,n,out_s;
+  int i_t,x_t,y_t,out_t;
+  __CPROVER_assume(n>=0);
+  assert(!(n>=0));
+  // cTrace for M0
+  if(n>=0)
+  {
+    i_s=0;x_s=0;y_s=0;
+    __CPROVER_assume(i_s<=n);
+    assert(!(i_s<=n));
+    while(i_s<=n)
+    {
+      x_s=5;
+      y_s=y_s+5;
+      i_s=i_s+1;
+    }
+    out_s=x_s+y_s;
+  }
+  //cTrace for M1
+  if(n>=0)
+  {
+    i_t=0;x_t=0;y_t=0;
+    __CPROVER_assume(i_t<=n);
+    assert(!(i_t<=n));
+    while(i_t<=n)
+    {
+      y_t=y_t+5;
+      i_t=i_t+1;
+    }
+    x_t=5;
+    out_t=x_t+y_t+1;
+  }
+  assert(x_s = x_t);// Live Variable
+  assert(y_s = y_t);// Live Variable
+  assert(out_s = out_t);// Output Variable
+}
+\end{lstlisting}
+\end{center}
+%\caption{CBMC Input}
+\caption{CBMC input for the \textit{cTraces} shown in Fig.~\protect\subref*{SubFig:CM0} and Fig.~\protect\subref*{SubFig:CM1}}	
+\label{Fig:CBMCInput}
+\end{figure}
+

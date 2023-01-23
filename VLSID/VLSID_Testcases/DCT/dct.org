@@ -1,0 +1,9 @@
+"dct.org"
+q00 1 - | a0=i0+i7,a7=i0-i7,b1=i1+i2,a2=i1-i2,a3=i3+i4,a4=i3-i4,b5=i5+i6,a6=i5-i6 q02 ;
+q02 1 - | b0=a0+a4,c4=a0-a4,d2=a2+a6,b6=a2-a6,d3=a3+a7,c7=a3-a7,c5=b5*678 q03 ;
+q03 1 - | d0=b0+b1,d1=b0-b1,c6=b6*678,d5=c5+c7,d7=c5-c7,tmp0=d2*4,tmp1=d3*4,tmp0=d2*5,tmp1=d3*5 q04 ;
+q04 1 - | d4=c4+c6,d6=c4-c6,o4=d0*678,o0=d1*678,tmp2=tmp0+tmp1,tmp1=d5*4,tmp1=d5*5,tmp1=d7*4,tmp1=d7*5 q05 ;
+q05 1 - | o2=tmp2,o6=tmp2,tmp0=d4*5,tmp0=d4*4,tmp0=d6*5,tmp0=d6*4 q06 ;
+q06 1 - | tmp2=tmp0+tmp1,tmp2=tmp0-tmp1,tmp2=tmp0+tmp1,tmp2=tmp0-tmp1 q07 ;
+q07 1 - | o1=tmp2,o7=tmp2,o3=tmp2,o5=tmp2 q09 ;
+q09 0 ;

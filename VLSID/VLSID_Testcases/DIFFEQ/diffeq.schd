@@ -1,0 +1,10 @@
+"DIFFEQ.SCHD"
+q00 1 - | i=0 q01 ;
+q01 2 x<a | sT1_9=x+dx,sT3_9=u*dx,sT4_9=y*3,sT5_9=x*3 q02 !x<a | - q013 ;
+q02 1 - | t4=sT3_9*sT5_9,t1=sT3_9,t2=sT5_9,t3=sT4_9,x=sT1_9,i=i+1 q03 ;
+q03 1 - | t6=u-t4,t5=dx*sT4_9 q04 ;
+q04 1 - | u=t6-t5 q05 ;
+q05 1 - | y1=u*dx q06  ;
+q06 1 - | y=y+y1 q01 ;
+q013 1 - | xout=x,yout=y,uout=u q015 ;
+q015 0 ;

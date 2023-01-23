@@ -1,0 +1,49 @@
+digraph fsmdIndot {
+
+ "DIFFEQ.ORG" [shape=note]
+q00 [shape=circle color= "green"];
+q01 [shape=circle color= "green"];
+q00 -> q01 [color= "green"  label=" | i  :=  0 "];
+q01 [shape=circle color= "green"];
+q013 [shape=circle color= "green"];
+q01 -> q013 [color= "green"  label=" ( 0 - 1 * a + 1 * x >= 0 )  | xout  :=  0 + 1 * x "];
+q02 [shape=circle color= "green"];
+q01 -> q02 [color= "green"  label=" ( 0 - 1 * a + 1 * x < 0 )  | t1  :=  0 + 1 * u * dx "];
+q02 [shape=circle color= "green"];
+q03 [shape=circle color= "green"];
+q02 -> q03 [color= "green"  label=" | t2  :=  0 + 3 * x "];
+q013 [shape=circle color= "green"];
+q014 [shape=circle color= "green"];
+q013 -> q014 [color= "green"  label=" | yout  :=  0 + 1 * y "];
+q03 [shape=circle color= "green"];
+q04 [shape=circle color= "green"];
+q03 -> q04 [color= "green"  label=" | t3  :=  0 + 3 * y "];
+q04 [shape=circle color= "green"];
+q05 [shape=circle color= "green"];
+q04 -> q05 [color= "green"  label=" | t4  :=  0 + 1 * t1 * t2 "];
+q05 [shape=circle color= "green"];
+q06 [shape=circle color= "green"];
+q05 -> q06 [color= "green"  label=" | t5  :=  0 + 1 * dx * t3 "];
+q06 [shape=circle color= "green"];
+q07 [shape=circle color= "green"];
+q06 -> q07 [color= "green"  label=" | t6  :=  0 + 1 * u - 1 * t4 "];
+q07 [shape=circle color= "green"];
+q08 [shape=circle color= "green"];
+q07 -> q08 [color= "green"  label=" | u  :=  0 - 1 * t5 + 1 * t6 "];
+q08 [shape=circle color= "green"];
+q09 [shape=circle color= "green"];
+q08 -> q09 [color= "green"  label=" | y1  :=  0 + 1 * u * dx "];
+q09 [shape=circle color= "green"];
+q010 [shape=circle color= "green"];
+q09 -> q010 [color= "green"  label=" | y  :=  0 + 1 * y + 1 * y1 "];
+q010 [shape=circle color= "green"];
+q011 [shape=circle color= "green"];
+q010 -> q011 [color= "green"  label=" | x  :=  0 + 1 * x + 1 * dx "];
+q011 [shape=circle color= "green"];
+q01 [shape=circle color= "green"];
+q011 -> q01 [color= "green"  label=" | i  :=  1 + 1 * i "];
+q014 [shape=circle color= "green"];
+q015 [shape=circle color= "green"];
+q014 -> q015 [color= "green"  label=" | uout  :=  0 + 1 * u "];
+
+}

@@ -1,0 +1,14 @@
+"MODN.schd"
+q10 1 - | ext1=0,s=0,i=0 q11 ;
+q11 2 i<=15 | - q12 
+      !i<=15 | - q17 ;
+q12 1 - | t=b+2,i=i+1 q13 ;
+q13 2 t==1 | s=a+s q14 
+      t!=1 | - q14 ;
+q14 2 s>=n | s=s-n+1 q15 
+      !s>=n | - q15 ;
+q15 1 - | a=a*2,b=b*2 q16 ;
+q16 2 a>=n | a=a-n q11 
+    a<n | b=t+1,a=t+1 q11 ;
+q17 1 - | ext1=5,ext2=ext1,sout=s q18 ;
+q18 0 ;

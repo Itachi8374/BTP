@@ -1,0 +1,18 @@
+digraph fsmdIndot {
+
+ "loop1.org" [shape=note]
+q00 [shape=circle color= "yellow"];
+q03 [shape=circle color= "red"];
+q00 -> q03 [  label=" ( 0 + 1 * n < 0 )  | out  :=  -1 "];
+q01 [shape=circle color= "red"];
+q00 -> q01 [color= "yellow"  label=" ( 0 + 1 * n >= 0 )  | i  :=  0 ,x  :=  0 ,y  :=  0 "];
+q01 [shape=circle color= "red"];
+q02 [shape=circle ];
+q01 -> q02 [  label=" ( 0 + 1 * i - 1 * n <= 0 )  | x  :=  5 ,y  :=  0 + 1 * i + 1 * y "];
+q03 [shape=circle color= "red"];
+q01 -> q03 [color= "red"  label=" ( 0 + 1 * i - 1 * n > 0 )  | out  :=  0 + 1 * x + 1 * y "];
+q02 [shape=circle ];
+q01 [shape=circle color= "red"];
+q02 -> q01 [  label=" | i  :=  1 + 1 * i "];
+
+}

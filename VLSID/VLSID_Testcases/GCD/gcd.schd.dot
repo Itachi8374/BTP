@@ -1,0 +1,24 @@
+digraph fsmdIndot {
+
+"GCD.schd" [shape=note];
+q10 [shape=circle];
+q1m [shape=circle];
+q10 -> q1m [label="- | y0=p0,\ny1=p1,\nres=1"];
+q1m [shape=circle];
+q12 [shape=circle];
+q1m -> q12 [label="y1==y2 | yout=y1*res"];
+q11 [shape=circle];
+q1m -> q11 [label="!y1==y2 | temp1=y1%2,\ntemp2=y2%2"];
+q11 [shape=circle];
+q1m [shape=circle];
+q11 -> q1m [label="temp1==0&&temp2==0 | res=res*2"];
+q1m [shape=circle];
+q11 -> q1m [label="temp1==0&&!temp2==0 | y1=y1*2"];
+q1m [shape=circle];
+q11 -> q1m [label="!temp1==0&&temp2==0 | y2=y2*2"];
+q1m [shape=circle];
+q11 -> q1m [label="!temp1==0&&!temp2==0&&y1>y2 | y1=y1-y2"];
+q1m [shape=circle];
+q11 -> q1m [label="!temp1==0&&!temp2==0&&!y1>y2 | y2=y2-y1"];
+
+}

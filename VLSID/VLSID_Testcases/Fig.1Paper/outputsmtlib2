@@ -1,0 +1,18 @@
+(declare-fun i () Int)
+(declare-fun n () Int)
+
+(assert(= i 0) )
+
+(assert (not 
+(=> 
+(>= 
+(+ 0 
+(* 1 n)
+) 0) 
+(<= 
+(- 
+(+ 0 
+(* 1 i)
+) 
+(* 1 n)
+) 0))  ))

@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{High-level Synthesis (HLS)}{3}{0}{1}
+\beamer@sectionintoc {2}{Path-based Equivalence Checker (PBEC)}{13}{0}{2}
+\beamer@sectionintoc {3}{Overall Approach}{16}{0}{3}
+\beamer@sectionintoc {4}{Experimental Results}{50}{0}{4}
+\beamer@sectionintoc {5}{Conclusion \& Future Work}{54}{0}{5}

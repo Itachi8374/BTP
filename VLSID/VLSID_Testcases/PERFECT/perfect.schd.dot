@@ -1,0 +1,20 @@
+digraph fsmdIndot {
+
+"PERFECT.schd" [shape=note];
+q10 [shape=circle];
+q11 [shape=circle];
+q10 -> q11 [label="- | ext1=0,\nsum=1,\ni=2"];
+q11 [shape=circle];
+q12 [shape=circle];
+q11 -> q12 [label="i<n | temp=n%i"];
+q15 [shape=circle];
+q11 -> q15 [label="!i<n&&!sum==n | ext1=5,\next2=ext1,\nout=0"];
+q15 [shape=circle];
+q11 -> q15 [label="!i<n&&sum==n | ext1=5,\next2=ext1,\nout=1"];
+q12 [shape=circle];
+q11 [shape=circle];
+q12 -> q11 [label="temp==1 | sum=sum+i,\ni=i+1"];
+q11 [shape=circle];
+q12 -> q11 [label="!temp==1 | i=i+1"];
+
+}

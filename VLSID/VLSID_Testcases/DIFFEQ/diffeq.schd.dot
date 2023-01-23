@@ -1,0 +1,31 @@
+digraph fsmdIndot {
+
+ "DIFFEQ.SCHD" [shape=note]
+q00 [shape=circle color= "green"];
+q01 [shape=circle color= "green"];
+q00 -> q01 [color= "green"  label=" | i  :=  0 "];
+q01 [shape=circle color= "green"];
+q013 [shape=circle color= "green"];
+q01 -> q013 [color= "green"  label=" ( 0 - 1 * a + 1 * x >= 0 )  | "];
+q02 [shape=circle color= "green"];
+q01 -> q02 [color= "green"  label=" ( 0 - 1 * a + 1 * x < 0 )  | sT1_9  :=  0 + 1 * x + 1 * dx ,sT3_9  :=  0 + 1 * u * dx ,sT4_9  :=  0 + 3 * y ,sT5_9  :=  0 + 3 * x "];
+q02 [shape=circle color= "green"];
+q03 [shape=circle color= "green"];
+q02 -> q03 [color= "green"  label=" | t4  :=  0 + 1 * sT3_9 * sT5_9 ,t1  :=  0 + 1 * sT3_9 ,t2  :=  0 + 1 * sT5_9 ,t3  :=  0 + 1 * sT4_9 ,x  :=  0 + 1 * sT1_9 ,i  :=  1 + 1 * i "];
+q013 [shape=circle color= "green"];
+q015 [shape=circle color= "green"];
+q013 -> q015 [color= "green"  label=" | xout  :=  0 + 1 * x ,yout  :=  0 + 1 * y ,uout  :=  0 + 1 * u "];
+q03 [shape=circle color= "green"];
+q04 [shape=circle color= "green"];
+q03 -> q04 [color= "green"  label=" | t6  :=  0 + 1 * u - 1 * t4 ,t5  :=  0 + 1 * dx * sT4_9 "];
+q04 [shape=circle color= "green"];
+q05 [shape=circle color= "green"];
+q04 -> q05 [color= "green"  label=" | u  :=  0 - 1 * t5 + 1 * t6 "];
+q05 [shape=circle color= "green"];
+q06 [shape=circle color= "green"];
+q05 -> q06 [color= "green"  label=" | y1  :=  0 + 1 * u * dx "];
+q06 [shape=circle color= "green"];
+q01 [shape=circle color= "green"];
+q06 -> q01 [color= "green"  label=" | y  :=  0 + 1 * y + 1 * y1 "];
+
+}

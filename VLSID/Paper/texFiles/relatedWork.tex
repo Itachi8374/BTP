@@ -1,0 +1,33 @@
+\begin{comment}
+A path based equivalence checking method for FSMDs was presented in~\cite{KimKM04} to validate the scheduling step of HLS.
+	This work assumes that the control structure of an input behaviour is not
+	modified and operations are not moved from one basic block to
+	another during the synthesis process. The authors extend their work in~\cite{kim-glsvlsi08} to verify
+	speculative code motions by concatenating critical paths. An FSMD based
+	equivalence checking method presented in the paper~	\cite{karfaTcad08} is applicable even when the basic structure
+	is changed by the scheduler. This method supports only uniform code
+	motion techniques. The work reported in~\cite{LeeSHJ11} improved the equivalence
+	checking method of~\cite{karfaTcad08} to deal with
+	code transformations employing speculation and global common
+	sub-expression extraction. The enhanced method of~\cite{karfaTcad08} presented in~\cite{karfaTodaes12} can
+	handle both uniform and non-uniform code motions applied during the
+	scheduling phase of HLS. All these methods~\cite{kunduTcad10,kim-glsvlsi08,LeeSHJ11,karfaTodaes12} cannot handle code motions across loops. A
+	value propagation based equivalence checking method (VP method) is presented in~\cite{tcad14} for validating code motions across loops.
+	The VP method is also capable of handling control structure modification of input behaviour and uniform and non-uniform code motions.
+	The VP method can also verify optimizations like CSE, copy propagation, constant propagation and algebraic transformations applied during scheduling.
+
+	Software model checking \cite{Jhala:2009}  are based on the extraction of a labeled transition system from the code, followed by the verification of temporal properties by model checking the transition system (i.e., by exploring the model exhaustively). If a violation is detected, the model checker generates a concrete
+	counter-example through which the bug can be conveniently identified. The design validation \cite{liu2011,li2012,farahmandi2016} involves checking that the physical design does indeed meet its specification.  A good set of tests can help the verification engineer to find the source of problems.	But there is no work which generates the counter-example in the context of path based equivalence checking.  The non-equivalence information provided by equivalence checker can be used to generate a counter-trace. The counter-example generated using this counter-trace will be helpful to handle the non-equivalence scenario.
+\end{comment}
+
+The basic path-based equivalence checking of the scheduling step of
+HLS was first proposed in \cite{KimKM04}. 
+The PBEC is further enhanced to handle control structure modification and 
+uniform code motions in \cite{Karfa08}, non-uniform code motion in \cite{Karfa12}, 
+speculative code motions in \cite{KimM08}, code motions across loops in \cite{Banerjee14}, 
+for better correlation of corresponding paths using machine learning in \cite{HuLL16}, 
+and to handle false computations and code  motions involving loops in \cite{Chouksey18}.
+
+In software model checking \cite{Jhala:2009}, if the property of a program fails then model checkers 
+generates a counter-example and helps in understanding the root cause of violation of the property.
+In this work we utilize the counter-example generation procedure in a PBEC framework to improve its performance.

@@ -1,0 +1,51 @@
+This section briefly explains the FSMD model and the EVP method\cite{Chouksey18}.
+The details can be found in \cite{Chouksey18,Banerjee14}.
+
+An FSMD is defined as a 7-tuple $\langle Q, q_0, I, V, O, f:Q\times 2^S \rightarrow Q,
+h:Q\times 2^S \rightarrow U \rangle$, where $Q$ is the finite set of
+states, $q_0$ is the reset state, $I$ is the set of input variables, $V$ is the
+set of storage variables, $O$ is the set of output variables, $f$ is the state
+transition function, $h$ is the update function of the output and the storage
+variables. Here $U$ represents a set of storage and output assignments and $S$
+represents a set of relations over arithmetic expressions and Boolean literals.
+
+A computation of an FSMD is a finite walk from the reset state $q_0$ to itself,
+and $q_0$ should not occur in between.  The papers \cite{Chouksey18,Banerjee14}
+breaks down an FSMD into smaller segments by introducing cutpoints so that each
+loop in an FSMD is cut at at least one cutpoint.  A {\em path} $\alpha $ is a
+finite sequence of states from a cutpoint to another cutpoint without an
+intermediate occurrence of a cutpoint.  The {\em condition of execution
+$R_{\alpha}$} of a path $\alpha$ is a logical expression over $I \bigcup V$
+such that $R_\alpha$ is satisfied by the (initial) data state of the path iff
+the path $\alpha$ is traversed.  The {\em data transformation $r_{\alpha}$} of
+a path $\alpha$ over $V$ is the tuple $\langle s_\alpha, \theta_\alpha
+\rangle$; the first member $s_\alpha$ represents the value of the variables
+$v_i$ after the execution of the path in terms of the initial data state of the
+path; the second member $\theta_\alpha$ represents the output list along the
+path $\alpha$. Two paths $\alpha$ and $\beta$ are equivalent denoted by
+$\alpha\simeq\beta$ if $R_{\alpha}\equiv R_{\beta}$ and $r_{\alpha}=r_{\beta}$.
+A finite set of paths $P=\{ \alpha_1, \alpha_2, \ldots, \alpha_k \}$ is said to
+be a path cover of an FSMD $M$ if any computation $\mu$ of $M$ can be looked
+upon as a concatenation of paths from $P$ \cite{Floyd67}. 
+
+An FSMD $M_0$ is contained in another FSMD $M_1$, symbolically $M_0 \sqsubseteq
+M_1$, if there exists a finite path cover $P_0=\{ \alpha_1, \alpha_2, \ldots,
+\alpha_l \}$ of $M_0$ for which there exists a set $P_1 = \{ \beta_1, \beta_2,
+\ldots,$ $\beta_l \}$ of paths of $M_1$ such that $\alpha_i \simeq \beta_i$,
+$1\leq i \leq l$.  Two FSMDs $M_0$ and $M_1$ are said to be
+computationally equivalent ($M_0 \equiv M_1$), if $M_0 \sqsubseteq M_1$ and
+$M_1 \sqsubseteq M_0$.
+
+The EVP method \cite{Chouksey18} is based on propagating the mismatched
+variable values (as \textit{propagated vectors}) over a path to the subsequent
+paths until the values match or the final path segments end in the reset
+state without a match.  During the course of equivalence checking of
+two behaviors, two paths, $\alpha$ and $\beta$ say, (one from each behavior)
+are compared with respect to their corresponding propagated vectors for finding
+path equivalence. If $R_{\beta}\equiv R_{\alpha}$ and $r_{\beta}=r_{\alpha}$ ,
+then these paths are declared as unconditionally equivalent (U-equivalent,
+represented as $\alpha \simeq \beta$); if some mismatch is detected in data
+transformation, then they are declared to be conditionally equivalent
+(C-equivalent, represented as $\alpha \simeq_c \beta$), if their final
+state-pair always eventually lead to some U-equivalent paths; otherwise they
+are declared to be not equivalent.

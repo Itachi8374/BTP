@@ -1,0 +1,26 @@
+digraph fsmdIndot {
+
+"PERFECT.org" [shape=note];
+q00 [shape=circle];
+q01 [shape=circle];
+q00 -> q01 [label="- | ext1=5,\nsum=1,\ni=2"];
+q01 [shape=circle];
+q02 [shape=circle];
+q01 -> q02 [label="i<n | temp=n%i"];
+q04 [shape=circle];
+q01 -> q04 [label="!i<n | -"];
+q02 [shape=circle];
+q03 [shape=circle];
+q02 -> q03 [label="temp==1 | sum=sum+i"];
+q01 [shape=circle];
+q02 -> q01 [label="!temp==1 | i=i+1"];
+q03 [shape=circle];
+q01 [shape=circle];
+q03 -> q01 [label="- | i=i+1"];
+q04 [shape=circle];
+q05 [shape=circle];
+q04 -> q05 [label="sum==n | ext2=ext1,\nout=1"];
+q05 [shape=circle];
+q04 -> q05 [label="!sum==n | ext2=ext1,\nout=0"];
+
+}

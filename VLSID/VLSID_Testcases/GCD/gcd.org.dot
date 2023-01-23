@@ -1,0 +1,36 @@
+digraph fsmdIndot {
+
+"GCD.org" [shape=note];
+q00 [shape=circle];
+q01 [shape=circle];
+q00 -> q01 [label="- | y0=p0,\ny1=p1,\nres=1"];
+q01 [shape=circle];
+q06 [shape=circle];
+q01 -> q06 [label="y1==y2 | -"];
+q02 [shape=circle];
+q01 -> q02 [label="!y1==y2 | temp1=y1%2,\ntemp2=y2%2"];
+q02 [shape=circle];
+q03 [shape=circle];
+q02 -> q03 [label="temp1==0 | -"];
+q04 [shape=circle];
+q02 -> q04 [label="!temp1==0 | -"];
+q03 [shape=circle];
+q01 [shape=circle];
+q03 -> q01 [label="temp2==0 | res=res*2"];
+q01 [shape=circle];
+q03 -> q01 [label="!temp2==0 | y1=y1*2"];
+q04 [shape=circle];
+q01 [shape=circle];
+q04 -> q01 [label="temp2==0 | y2=y2*2"];
+q05 [shape=circle];
+q04 -> q05 [label="!temp2==0 | -"];
+q05 [shape=circle];
+q01 [shape=circle];
+q05 -> q01 [label="y1>y2 | y1=y1-y2"];
+q01 [shape=circle];
+q05 -> q01 [label="!y1>y2 | y2=y2-y1"];
+q06 [shape=circle];
+q0e [shape=circle];
+q06 -> q0e [label="- | yout=y1*res"];
+
+}

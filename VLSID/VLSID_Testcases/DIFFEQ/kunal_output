@@ -1,0 +1,1378 @@
+
+Calling Parser....
+File opening: diffeq.org
+
+
+  "DIFFEQ.ORG" FSMD states and its transitions are displayed below  
+
+
+
+ State name is  q00 
+
+Status of VAPFLAG: False
+
+   q00   to   -->q01
+
+i  :=  0 
+
+
+ State name is  q01 
+
+Status of VAPFLAG: False
+
+   q01   to   -->q013
+ ( 0 - 1 * a + 1 * x >= 0 ) 
+xout  :=  0 + 1 * x 
+
+   q01   to   -->q02
+ ( 0 - 1 * a + 1 * x < 0 ) 
+t1  :=  0 + 1 * u * dx 
+
+
+ State name is  q02 
+
+Status of VAPFLAG: False
+
+   q02   to   -->q03
+
+t2  :=  0 + 3 * x 
+
+
+ State name is  q013 
+
+Status of VAPFLAG: False
+
+   q013   to   -->q014
+
+yout  :=  0 + 1 * y 
+
+
+ State name is  q03 
+
+Status of VAPFLAG: False
+
+   q03   to   -->q04
+
+t3  :=  0 + 3 * y 
+
+
+ State name is  q04 
+
+Status of VAPFLAG: False
+
+   q04   to   -->q05
+
+t4  :=  0 + 1 * t1 * t2 
+
+
+ State name is  q05 
+
+Status of VAPFLAG: False
+
+   q05   to   -->q06
+
+t5  :=  0 + 1 * dx * t3 
+
+
+ State name is  q06 
+
+Status of VAPFLAG: False
+
+   q06   to   -->q07
+
+t6  :=  0 + 1 * u - 1 * t4 
+
+
+ State name is  q07 
+
+Status of VAPFLAG: False
+
+   q07   to   -->q08
+
+u  :=  0 - 1 * t5 + 1 * t6 
+
+
+ State name is  q08 
+
+Status of VAPFLAG: False
+
+   q08   to   -->q09
+
+y1  :=  0 + 1 * u * dx 
+
+
+ State name is  q09 
+
+Status of VAPFLAG: False
+
+   q09   to   -->q010
+
+y  :=  0 + 1 * y + 1 * y1 
+
+
+ State name is  q010 
+
+Status of VAPFLAG: False
+
+   q010   to   -->q011
+
+x  :=  0 + 1 * x + 1 * dx 
+
+
+ State name is  q011 
+
+Status of VAPFLAG: False
+
+   q011   to   -->q01
+
+i  :=  1 + 1 * i 
+
+
+ State name is  q014 
+
+Status of VAPFLAG: False
+
+   q014   to   -->q015
+
+uout  :=  0 + 1 * u 
+
+
+ State name is  q015 
+
+Status of VAPFLAG: False
+
+Calling Parser....
+File opening: diffeq.schd
+
+
+  "DIFFEQ.SCHD" FSMD states and its transitions are displayed below  
+
+
+
+ State name is  q00 
+
+Status of VAPFLAG: False
+
+   q00   to   -->q01
+
+i  :=  0 
+
+
+ State name is  q01 
+
+Status of VAPFLAG: False
+
+   q01   to   -->q013
+ ( 0 - 1 * a + 1 * x >= 0 ) 
+
+   q01   to   -->q02
+ ( 0 - 1 * a + 1 * x < 0 ) 
+sT1_9  :=  0 + 1 * x + 1 * dx 
+sT3_9  :=  0 + 1 * u * dx 
+sT4_9  :=  0 + 3 * y 
+sT5_9  :=  0 + 3 * x 
+
+
+ State name is  q02 
+
+Status of VAPFLAG: False
+
+   q02   to   -->q03
+
+t4  :=  0 + 1 * sT3_9 * sT5_9 
+t1  :=  0 + 1 * sT3_9 
+t2  :=  0 + 1 * sT5_9 
+t3  :=  0 + 1 * sT4_9 
+x  :=  0 + 1 * sT1_9 
+i  :=  1 + 1 * i 
+
+
+ State name is  q013 
+
+Status of VAPFLAG: False
+
+   q013   to   -->q015
+
+xout  :=  0 + 1 * x 
+yout  :=  0 + 1 * y 
+uout  :=  0 + 1 * u 
+
+
+ State name is  q03 
+
+Status of VAPFLAG: False
+
+   q03   to   -->q04
+
+t6  :=  0 + 1 * u - 1 * t4 
+t5  :=  0 + 1 * dx * sT4_9 
+
+
+ State name is  q04 
+
+Status of VAPFLAG: False
+
+   q04   to   -->q05
+
+u  :=  0 - 1 * t5 + 1 * t6 
+
+
+ State name is  q05 
+
+Status of VAPFLAG: False
+
+   q05   to   -->q06
+
+y1  :=  0 + 1 * u * dx 
+
+
+ State name is  q06 
+
+Status of VAPFLAG: False
+
+   q06   to   -->q01
+
+y  :=  0 + 1 * y + 1 * y1 
+
+
+ State name is  q015 
+
+Status of VAPFLAG: False
+
+ FSMDs read successfully 
+
+ vars of : V0_V1  
+ -
+ -
+ 0
+ 0
+ i
+ x
+ a
+ u
+ dx
+ t1
+ xout
+ 3
+ t2
+ y
+ t3
+ t4
+ t5
+ t6
+ y1
+ 1
+ yout
+ uout
+
+ vars of : V1_minus_V0_V1 
+ sT1_9 
+ sT3_9 
+ sT4_9 
+ sT5_9 
+
+
+Displaying all paths of M0
+
+
+
+ Displaying all the paths of the path list 
+
+  0  0 q00 --> 1 q01 
+
+
+
+ i := 0 
+
+
+  1  1 q01 --> 3 q013 --> 13 q014 --> 14 q015 
+
+ ( 0 - 1 * a + 1 * x >= 0 ) 
+
+ xout := 0 + 1 * x 
+ yout := 0 + 1 * y 
+ uout := 0 + 1 * u 
+
+
+  2  1 q01 --> 2 q02 --> 4 q03 --> 5 q04 --> 6 q05 --> 7 q06 --> 8 q07 --> 9 q08 --> 10 q09 --> 11 q010 --> 12 q011 --> 1 q01 
+
+ ( 0 - 1 * a + 1 * x < 0 ) 
+
+ t1 := 0 + 1 * u * dx 
+ t2 := 0 + 3 * x 
+ t3 := 0 + 3 * y 
+ t4 := 0 + 3 * u * x * dx 
+ t5 := 0 + 3 * y * dx 
+ t6 := 0 + 1 * u - 3 * u * x * dx 
+ u := 0 + 1 * u - 3 * u * x * dx - 3 * y * dx 
+ y1 := 0 - 3 * u * x * dx * dx + 1 * u * dx - 3 * y * dx * dx 
+ y := 0 - 3 * u * x * dx * dx + 1 * u * dx + 1 * y - 3 * y * dx * dx 
+ x := 0 + 1 * x + 1 * dx 
+ i := 1 + 1 * i 
+
+
+In liveVariableAnalysis
+
+In updateLivenessInfo
+
+Out of updateLivenessInfo
+
+In updateLivenessInfo
+
+Out of updateLivenessInfo
+
+In updateLivenessInfo
+
+Out of updateLivenessInfo
+
+Out of liveVariableAnalysis
+
+Displaying the CFG along with Live Variable Analysis
+
+ i := 0 
+Use: 
+Def: i  
+Live_s: x  a  y  u  dx  
+Live_f: x  a  y  u  dx  i  
+-----
+
+ ( 0 - 1 * a + 1 * x >= 0 ) 
+ xout := 0 + 1 * x 
+ yout := 0 + 1 * y 
+ uout := 0 + 1 * u 
+Use: x  a  y  u  
+Def: xout  yout  uout  
+Live_s: x  a  y  u  
+Live_f: 
+-----
+
+ ( 0 - 1 * a + 1 * x < 0 ) 
+ t1 := 0 + 1 * u * dx 
+ t2 := 0 + 3 * x 
+ t3 := 0 + 3 * y 
+ t4 := 0 + 3 * u * x * dx 
+ t5 := 0 + 3 * y * dx 
+ t6 := 0 + 1 * u - 3 * u * x * dx 
+ u := 0 + 1 * u - 3 * u * x * dx - 3 * y * dx 
+ y1 := 0 - 3 * u * x * dx * dx + 1 * u * dx - 3 * y * dx * dx 
+ y := 0 - 3 * u * x * dx * dx + 1 * u * dx + 1 * y - 3 * y * dx * dx 
+ x := 0 + 1 * x + 1 * dx 
+ i := 1 + 1 * i 
+Use: x  a  u  dx  y  i  
+Def: t1  t2  t3  t4  t5  t6  u  y1  y  x  i  
+Live_s: x  a  u  dx  y  i  
+Live_f: x  a  y  u  dx  i  
+-----
+
+
+
+Displaying all paths of M1
+
+
+
+ Displaying all the paths of the path list 
+
+  0  0 q00 --> 1 q01 
+
+
+
+ i := 0 
+
+
+  1  1 q01 --> 3 q013 --> 8 q015 
+
+ ( 0 - 1 * a + 1 * x >= 0 ) 
+
+ xout := 0 + 1 * x 
+ yout := 0 + 1 * y 
+ uout := 0 + 1 * u 
+
+
+  2  1 q01 --> 2 q02 --> 4 q03 --> 5 q04 --> 6 q05 --> 7 q06 --> 1 q01 
+
+ ( 0 - 1 * a + 1 * x < 0 ) 
+
+ sT1_9 := 0 + 1 * x + 1 * dx 
+ sT3_9 := 0 + 1 * u * dx 
+ sT4_9 := 0 + 3 * y 
+ sT5_9 := 0 + 3 * x 
+ t4 := 0 + 3 * u * x * dx 
+ t1 := 0 + 1 * u * dx 
+ t2 := 0 + 3 * x 
+ t3 := 0 + 3 * y 
+ x := 0 + 1 * x + 1 * dx 
+ i := 1 + 1 * i 
+ t6 := 0 + 1 * u - 3 * u * x * dx 
+ t5 := 0 + 3 * y * dx 
+ u := 0 + 1 * u - 3 * u * x * dx - 3 * y * dx 
+ y1 := 0 - 3 * u * x * dx * dx + 1 * u * dx - 3 * y * dx * dx 
+ y := 0 - 3 * u * x * dx * dx + 1 * u * dx + 1 * y - 3 * y * dx * dx 
+
+
+In liveVariableAnalysis
+
+In updateLivenessInfo
+
+Out of updateLivenessInfo
+
+In updateLivenessInfo
+
+Out of updateLivenessInfo
+
+In updateLivenessInfo
+
+Out of updateLivenessInfo
+
+Out of liveVariableAnalysis
+
+Displaying the CFG along with Live Variable Analysis
+
+ i := 0 
+Use: 
+Def: i  
+Live_s: x  a  y  u  dx  
+Live_f: x  a  y  u  dx  i  
+-----
+
+ ( 0 - 1 * a + 1 * x >= 0 ) 
+ xout := 0 + 1 * x 
+ yout := 0 + 1 * y 
+ uout := 0 + 1 * u 
+Use: x  a  y  u  
+Def: xout  yout  uout  
+Live_s: x  a  y  u  
+Live_f: 
+-----
+
+ ( 0 - 1 * a + 1 * x < 0 ) 
+ sT1_9 := 0 + 1 * x + 1 * dx 
+ sT3_9 := 0 + 1 * u * dx 
+ sT4_9 := 0 + 3 * y 
+ sT5_9 := 0 + 3 * x 
+ t4 := 0 + 3 * u * x * dx 
+ t1 := 0 + 1 * u * dx 
+ t2 := 0 + 3 * x 
+ t3 := 0 + 3 * y 
+ x := 0 + 1 * x + 1 * dx 
+ i := 1 + 1 * i 
+ t6 := 0 + 1 * u - 3 * u * x * dx 
+ t5 := 0 + 3 * y * dx 
+ u := 0 + 1 * u - 3 * u * x * dx - 3 * y * dx 
+ y1 := 0 - 3 * u * x * dx * dx + 1 * u * dx - 3 * y * dx * dx 
+ y := 0 - 3 * u * x * dx * dx + 1 * u * dx + 1 * y - 3 * y * dx * dx 
+Use: x  a  dx  u  y  i  
+Def: sT1_9  sT3_9  sT4_9  sT5_9  t4  t1  t2  t3  x  i  t6  t5  u  y1  y  
+Live_s: x  a  dx  u  y  i  
+Live_f: x  a  y  u  dx  i  
+-----
+
+Symbol 0: 	 - 	 0
+Symbol 1: 	 i 	 57
+Symbol 2: 	 x 	 72
+Symbol 3: 	 a 	 49
+Symbol 4: 	 u 	 69
+Symbol 5: 	 dx 	 592
+Symbol 6: 	 t1 	 681
+Symbol 7: 	 xout 	 79058
+Symbol 8: 	 t2 	 682
+Symbol 9: 	 y 	 73
+Symbol 10: 	 t3 	 683
+Symbol 11: 	 t4 	 684
+Symbol 12: 	 t5 	 685
+Symbol 13: 	 t6 	 686
+Symbol 14: 	 y1 	 731
+Symbol 15: 	 yout 	 80058
+Symbol 16: 	 uout 	 76058
+Symbol 17: 	 sT1_9 	 706579
+Symbol 18: 	 sT3_9 	 706779
+Symbol 19: 	 sT4_9 	 706879
+Symbol 20: 	 sT5_9 	 706979
+
+
+Through Queue: 0
+
+ In correspondenceChecker( q00, q00 )
+Checking condition for path with index 0
+
+ In compatibleConditions() with arguments
+ First Condition:
+ Second Condition:
+ In compatibleConditions() with arguments
+ First Condition:
+ Second Condition:
+ In correspondenceChecker( q00, q00 ) with path_id: 0
+
+ In findEquivalentPath(.., .., q00, ..)
+
+Beta:
+ i := 0 
+PV_Beta:
+Propagated Vector
+ Condition: 
+	 True
+
+PV_Alpha:
+Propagated Vector
+ Condition: 
+	 True
+
+ In createDummyPath()
+
+ i := 0 
+Propagated Vector
+ Condition: 
+	 True
+
+WARNING: In createDummyNode() with NULL expression
+
+ Displaying the dummy path created
+
+ End of displaying the dummy path created
+
+ Displaying concatenated path
+
+ i := 0 
+ End of displaying concatenated path
+
+ In compatibleConditions() with arguments
+ First Condition:
+ Second Condition:
+ In compatibleConditions() with arguments
+ First Condition:
+ Second Condition:
+ In compatibleConditions() with arguments
+ First Condition:
+ Second Condition:
+ Comparing beta with path alpha with id: 0
+
+ In createDummyPath()
+
+ i := 0 
+Propagated Vector
+ Condition: 
+	 True
+
+WARNING: In createDummyNode() with NULL expression
+
+ Displaying the dummy path created
+
+ End of displaying the dummy path created
+
+ Displaying concatenated path
+
+ i := 0 
+ End of displaying concatenated path
+
+ In compatibleConditions() with arguments
+ First Condition:
+ Second Condition:
+ Result of checkCondition(): 1
+
+ In valuePropagation()
+
+ i := 0 
+Propagated Vector
+ Condition: 
+	 True
+
+ i := 0 
+Propagated Vector
+ Condition: 
+	 True
+
+ In createDummyPath()
+
+ i := 0 
+Propagated Vector
+ Condition: 
+	 True
+
+WARNING: In createDummyNode() with NULL expression
+
+ Displaying the dummy path created
+
+ End of displaying the dummy path created
+
+ Displaying concatenated path
+
+ i := 0 
+ End of displaying concatenated path
+
+ In createDummyPath()
+
+ i := 0 
+Propagated Vector
+ Condition: 
+	 True
+
+WARNING: In createDummyNode() with NULL expression
+
+ Displaying the dummy path created
+
+ End of displaying the dummy path created
+
+ Displaying concatenated path
+
+ i := 0 
+ End of displaying concatenated path
+Modified paths
+Path beta'
+
+ i := 0 
+Path alpha'
+
+ i := 0 
+ Vectors to be propagated
+
+Propagated Vector
+ Condition: 
+	 True
+
+Propagated Vector
+ Condition: 
+	 True
+
+ Out of countMismatch, #mismatches = 0
+
+ Back from findEquivalentPath() to correspondenceChecker()
+ indexOfP0: 0, indexOfP1: 0
+ Beta path:
+q00 --> q01
+
+ i := 0 
+Propagated Vector
+ Condition: 
+	 True
+
+
+ Alpha path:
+q00 --> q01
+
+ i := 0 
+Propagated Vector
+ Condition: 
+	 True
+
+Out of equivalentPropagatedVector() with TRUE indicating Case 1.1
+
+ Updating E_u
+Enqueueing ( q01, q01 ) in eta
+
+
+ Out of already_present_queue with return value FALSE
+
+ Updating E_c
+
+ Out of correspondenceChecker( q00, q00 ) with return value 1
+
+
+Through Queue: 0
+
+ In correspondenceChecker( q01, q01 )
+Checking condition for path with index 1
+
+ In compatibleConditions() with arguments
+ First Condition:
+ Second Condition: ( 0 - 1 * a + 1 * x >= 0 ) 
+ In compatibleConditions() with arguments
+ First Condition:
+ Second Condition: ( 0 - 1 * a + 1 * x >= 0 ) 
+ In correspondenceChecker( q01, q01 ) with path_id: 1
+
+ In findEquivalentPath(.., .., q01, ..)
+
+Beta: ( 0 - 1 * a + 1 * x >= 0 ) 
+ xout := 0 + 1 * x 
+ yout := 0 + 1 * y 
+ uout := 0 + 1 * u 
+PV_Beta:
+Propagated Vector
+ Condition: 
+	 True
+
+PV_Alpha:
+Propagated Vector
+ Condition: 
+	 True
+
+ In createDummyPath()
+ ( 0 - 1 * a + 1 * x >= 0 ) 
+ xout := 0 + 1 * x 
+ yout := 0 + 1 * y 
+ uout := 0 + 1 * u 
+Propagated Vector
+ Condition: 
+	 True
+
+WARNING: In createDummyNode() with NULL expression
+
+ Displaying the dummy path created
+
+ End of displaying the dummy path created
+
+ Displaying concatenated path
+ ( 0 - 1 * a + 1 * x >= 0 ) 
+ xout := 0 + 1 * x 
+ yout := 0 + 1 * y 
+ uout := 0 + 1 * u 
+ End of displaying concatenated path
+
+ In compatibleConditions() with arguments
+ First Condition: ( 0 - 1 * a + 1 * x >= 0 ) 
+ Second Condition:
+ In compatibleConditions() with arguments
+ First Condition: ( 0 - 1 * a + 1 * x >= 0 ) 
+ Second Condition: ( 0 - 1 * a + 1 * x >= 0 ) 
+ Out of compatibleConditions() with return value 1
+
+ In compatibleConditions() with arguments
+ First Condition:
+ Second Condition: ( 0 - 1 * a + 1 * x >= 0 ) 
+ Comparing beta with path alpha with id: 1
+
+ In createDummyPath()
+ ( 0 - 1 * a + 1 * x >= 0 ) 
+ xout := 0 + 1 * x 
+ yout := 0 + 1 * y 
+ uout := 0 + 1 * u 
+Propagated Vector
+ Condition: 
+	 True
+
+WARNING: In createDummyNode() with NULL expression
+
+ Displaying the dummy path created
+
+ End of displaying the dummy path created
+
+ Displaying concatenated path
+ ( 0 - 1 * a + 1 * x >= 0 ) 
+ xout := 0 + 1 * x 
+ yout := 0 + 1 * y 
+ uout := 0 + 1 * u 
+ End of displaying concatenated path
+
+ In compatibleConditions() with arguments
+ First Condition: ( 0 - 1 * a + 1 * x >= 0 ) 
+ Second Condition: ( 0 - 1 * a + 1 * x >= 0 ) 
+ Out of compatibleConditions() with return value 1
+
+ Result of checkCondition(): 1
+
+ In valuePropagation()
+ ( 0 - 1 * a + 1 * x >= 0 ) 
+ xout := 0 + 1 * x 
+ yout := 0 + 1 * y 
+ uout := 0 + 1 * u 
+Propagated Vector
+ Condition: 
+	 True
+ ( 0 - 1 * a + 1 * x >= 0 ) 
+ xout := 0 + 1 * x 
+ yout := 0 + 1 * y 
+ uout := 0 + 1 * u 
+Propagated Vector
+ Condition: 
+	 True
+
+ In createDummyPath()
+ ( 0 - 1 * a + 1 * x >= 0 ) 
+ xout := 0 + 1 * x 
+ yout := 0 + 1 * y 
+ uout := 0 + 1 * u 
+Propagated Vector
+ Condition: 
+	 True
+
+WARNING: In createDummyNode() with NULL expression
+
+ Displaying the dummy path created
+
+ End of displaying the dummy path created
+
+ Displaying concatenated path
+ ( 0 - 1 * a + 1 * x >= 0 ) 
+ xout := 0 + 1 * x 
+ yout := 0 + 1 * y 
+ uout := 0 + 1 * u 
+ End of displaying concatenated path
+
+ In createDummyPath()
+ ( 0 - 1 * a + 1 * x >= 0 ) 
+ xout := 0 + 1 * x 
+ yout := 0 + 1 * y 
+ uout := 0 + 1 * u 
+Propagated Vector
+ Condition: 
+	 True
+
+WARNING: In createDummyNode() with NULL expression
+
+ Displaying the dummy path created
+
+ End of displaying the dummy path created
+
+ Displaying concatenated path
+ ( 0 - 1 * a + 1 * x >= 0 ) 
+ xout := 0 + 1 * x 
+ yout := 0 + 1 * y 
+ uout := 0 + 1 * u 
+ End of displaying concatenated path
+Modified paths
+Path beta'
+ ( 0 - 1 * a + 1 * x >= 0 ) 
+ xout := 0 + 1 * x 
+ yout := 0 + 1 * y 
+ uout := 0 + 1 * u 
+Path alpha'
+ ( 0 - 1 * a + 1 * x >= 0 ) 
+ xout := 0 + 1 * x 
+ yout := 0 + 1 * y 
+ uout := 0 + 1 * u 
+ Vectors to be propagated
+
+Propagated Vector
+ Condition: 
+ ( 0 - 1 * a + 1 * x >= 0 ) 
+Propagated Vector
+ Condition: 
+ ( 0 - 1 * a + 1 * x >= 0 ) 
+ Out of countMismatch, #mismatches = 0
+
+ Back from findEquivalentPath() to correspondenceChecker()
+ indexOfP0: 1, indexOfP1: 1
+ Beta path:
+q01 --> q013 --> q014 --> q015
+ ( 0 - 1 * a + 1 * x >= 0 ) 
+ xout := 0 + 1 * x 
+ yout := 0 + 1 * y 
+ uout := 0 + 1 * u 
+Propagated Vector
+ Condition: 
+ ( 0 - 1 * a + 1 * x >= 0 ) 
+
+ Alpha path:
+q01 --> q013 --> q015
+ ( 0 - 1 * a + 1 * x >= 0 ) 
+ xout := 0 + 1 * x 
+ yout := 0 + 1 * y 
+ uout := 0 + 1 * u 
+Propagated Vector
+ Condition: 
+ ( 0 - 1 * a + 1 * x >= 0 ) 
+Out of equivalentPropagatedVector() with TRUE indicating Case 1.1
+
+ Updating E_u
+Enqueueing ( q015, q015 ) in eta
+
+
+ Out of already_present_queue with return value FALSE
+
+ Updating E_c
+Checking condition for path with index 2
+
+ In compatibleConditions() with arguments
+ First Condition:
+ Second Condition: ( 0 - 1 * a + 1 * x < 0 ) 
+ In compatibleConditions() with arguments
+ First Condition:
+ Second Condition: ( 0 - 1 * a + 1 * x < 0 ) 
+ In correspondenceChecker( q01, q01 ) with path_id: 2
+
+ In findEquivalentPath(.., .., q01, ..)
+
+Beta: ( 0 - 1 * a + 1 * x < 0 ) 
+ t1 := 0 + 1 * u * dx 
+ t2 := 0 + 3 * x 
+ t3 := 0 + 3 * y 
+ t4 := 0 + 3 * u * x * dx 
+ t5 := 0 + 3 * y * dx 
+ t6 := 0 + 1 * u - 3 * u * x * dx 
+ u := 0 + 1 * u - 3 * u * x * dx - 3 * y * dx 
+ y1 := 0 - 3 * u * x * dx * dx + 1 * u * dx - 3 * y * dx * dx 
+ y := 0 - 3 * u * x * dx * dx + 1 * u * dx + 1 * y - 3 * y * dx * dx 
+ x := 0 + 1 * x + 1 * dx 
+ i := 1 + 1 * i 
+PV_Beta:
+Propagated Vector
+ Condition: 
+	 True
+
+PV_Alpha:
+Propagated Vector
+ Condition: 
+	 True
+
+ In createDummyPath()
+ ( 0 - 1 * a + 1 * x < 0 ) 
+ t1 := 0 + 1 * u * dx 
+ t2 := 0 + 3 * x 
+ t3 := 0 + 3 * y 
+ t4 := 0 + 3 * u * x * dx 
+ t5 := 0 + 3 * y * dx 
+ t6 := 0 + 1 * u - 3 * u * x * dx 
+ u := 0 + 1 * u - 3 * u * x * dx - 3 * y * dx 
+ y1 := 0 - 3 * u * x * dx * dx + 1 * u * dx - 3 * y * dx * dx 
+ y := 0 - 3 * u * x * dx * dx + 1 * u * dx + 1 * y - 3 * y * dx * dx 
+ x := 0 + 1 * x + 1 * dx 
+ i := 1 + 1 * i 
+Propagated Vector
+ Condition: 
+	 True
+
+WARNING: In createDummyNode() with NULL expression
+
+ Displaying the dummy path created
+
+ End of displaying the dummy path created
+
+ Displaying concatenated path
+ ( 0 - 1 * a + 1 * x < 0 ) 
+ t1 := 0 + 1 * u * dx 
+ t2 := 0 + 3 * x 
+ t3 := 0 + 3 * y 
+ t4 := 0 + 3 * u * x * dx 
+ t5 := 0 + 3 * y * dx 
+ t6 := 0 + 1 * u - 3 * u * x * dx 
+ u := 0 + 1 * u - 3 * u * x * dx - 3 * y * dx 
+ y1 := 0 - 3 * u * x * dx * dx + 1 * u * dx - 3 * y * dx * dx 
+ y := 0 - 3 * u * x * dx * dx + 1 * u * dx + 1 * y - 3 * y * dx * dx 
+ x := 0 + 1 * x + 1 * dx 
+ i := 1 + 1 * i 
+ End of displaying concatenated path
+
+ In compatibleConditions() with arguments
+ First Condition: ( 0 - 1 * a + 1 * x >= 0 ) 
+ Second Condition:
+ In compatibleConditions() with arguments
+ First Condition: ( 0 - 1 * a + 1 * x >= 0 ) 
+ Second Condition: ( 0 - 1 * a + 1 * x < 0 ) 
+ Out of compatibleConditions() with return value 0
+
+ In compatibleConditions() with arguments
+ First Condition: ( 0 - 1 * a + 1 * x < 0 ) 
+ Second Condition:
+ In compatibleConditions() with arguments
+ First Condition: ( 0 - 1 * a + 1 * x < 0 ) 
+ Second Condition: ( 0 - 1 * a + 1 * x < 0 ) 
+ Out of compatibleConditions() with return value 1
+
+ In compatibleConditions() with arguments
+ First Condition:
+ Second Condition: ( 0 - 1 * a + 1 * x < 0 ) 
+ Comparing beta with path alpha with id: 2
+
+ In createDummyPath()
+ ( 0 - 1 * a + 1 * x < 0 ) 
+ sT1_9 := 0 + 1 * x + 1 * dx 
+ sT3_9 := 0 + 1 * u * dx 
+ sT4_9 := 0 + 3 * y 
+ sT5_9 := 0 + 3 * x 
+ t4 := 0 + 3 * u * x * dx 
+ t1 := 0 + 1 * u * dx 
+ t2 := 0 + 3 * x 
+ t3 := 0 + 3 * y 
+ x := 0 + 1 * x + 1 * dx 
+ i := 1 + 1 * i 
+ t6 := 0 + 1 * u - 3 * u * x * dx 
+ t5 := 0 + 3 * y * dx 
+ u := 0 + 1 * u - 3 * u * x * dx - 3 * y * dx 
+ y1 := 0 - 3 * u * x * dx * dx + 1 * u * dx - 3 * y * dx * dx 
+ y := 0 - 3 * u * x * dx * dx + 1 * u * dx + 1 * y - 3 * y * dx * dx 
+Propagated Vector
+ Condition: 
+	 True
+
+WARNING: In createDummyNode() with NULL expression
+
+ Displaying the dummy path created
+
+ End of displaying the dummy path created
+
+ Displaying concatenated path
+ ( 0 - 1 * a + 1 * x < 0 ) 
+ sT1_9 := 0 + 1 * x + 1 * dx 
+ sT3_9 := 0 + 1 * u * dx 
+ sT4_9 := 0 + 3 * y 
+ sT5_9 := 0 + 3 * x 
+ t4 := 0 + 3 * u * x * dx 
+ t1 := 0 + 1 * u * dx 
+ t2 := 0 + 3 * x 
+ t3 := 0 + 3 * y 
+ x := 0 + 1 * x + 1 * dx 
+ i := 1 + 1 * i 
+ t6 := 0 + 1 * u - 3 * u * x * dx 
+ t5 := 0 + 3 * y * dx 
+ u := 0 + 1 * u - 3 * u * x * dx - 3 * y * dx 
+ y1 := 0 - 3 * u * x * dx * dx + 1 * u * dx - 3 * y * dx * dx 
+ y := 0 - 3 * u * x * dx * dx + 1 * u * dx + 1 * y - 3 * y * dx * dx 
+ End of displaying concatenated path
+
+ In compatibleConditions() with arguments
+ First Condition: ( 0 - 1 * a + 1 * x < 0 ) 
+ Second Condition: ( 0 - 1 * a + 1 * x < 0 ) 
+ Out of compatibleConditions() with return value 1
+
+ Result of checkCondition(): 1
+
+ In valuePropagation()
+ ( 0 - 1 * a + 1 * x < 0 ) 
+ t1 := 0 + 1 * u * dx 
+ t2 := 0 + 3 * x 
+ t3 := 0 + 3 * y 
+ t4 := 0 + 3 * u * x * dx 
+ t5 := 0 + 3 * y * dx 
+ t6 := 0 + 1 * u - 3 * u * x * dx 
+ u := 0 + 1 * u - 3 * u * x * dx - 3 * y * dx 
+ y1 := 0 - 3 * u * x * dx * dx + 1 * u * dx - 3 * y * dx * dx 
+ y := 0 - 3 * u * x * dx * dx + 1 * u * dx + 1 * y - 3 * y * dx * dx 
+ x := 0 + 1 * x + 1 * dx 
+ i := 1 + 1 * i 
+Propagated Vector
+ Condition: 
+	 True
+ ( 0 - 1 * a + 1 * x < 0 ) 
+ sT1_9 := 0 + 1 * x + 1 * dx 
+ sT3_9 := 0 + 1 * u * dx 
+ sT4_9 := 0 + 3 * y 
+ sT5_9 := 0 + 3 * x 
+ t4 := 0 + 3 * u * x * dx 
+ t1 := 0 + 1 * u * dx 
+ t2 := 0 + 3 * x 
+ t3 := 0 + 3 * y 
+ x := 0 + 1 * x + 1 * dx 
+ i := 1 + 1 * i 
+ t6 := 0 + 1 * u - 3 * u * x * dx 
+ t5 := 0 + 3 * y * dx 
+ u := 0 + 1 * u - 3 * u * x * dx - 3 * y * dx 
+ y1 := 0 - 3 * u * x * dx * dx + 1 * u * dx - 3 * y * dx * dx 
+ y := 0 - 3 * u * x * dx * dx + 1 * u * dx + 1 * y - 3 * y * dx * dx 
+Propagated Vector
+ Condition: 
+	 True
+
+ In createDummyPath()
+ ( 0 - 1 * a + 1 * x < 0 ) 
+ t1 := 0 + 1 * u * dx 
+ t2 := 0 + 3 * x 
+ t3 := 0 + 3 * y 
+ t4 := 0 + 3 * u * x * dx 
+ t5 := 0 + 3 * y * dx 
+ t6 := 0 + 1 * u - 3 * u * x * dx 
+ u := 0 + 1 * u - 3 * u * x * dx - 3 * y * dx 
+ y1 := 0 - 3 * u * x * dx * dx + 1 * u * dx - 3 * y * dx * dx 
+ y := 0 - 3 * u * x * dx * dx + 1 * u * dx + 1 * y - 3 * y * dx * dx 
+ x := 0 + 1 * x + 1 * dx 
+ i := 1 + 1 * i 
+Propagated Vector
+ Condition: 
+	 True
+
+WARNING: In createDummyNode() with NULL expression
+
+ Displaying the dummy path created
+
+ End of displaying the dummy path created
+
+ Displaying concatenated path
+ ( 0 - 1 * a + 1 * x < 0 ) 
+ t1 := 0 + 1 * u * dx 
+ t2 := 0 + 3 * x 
+ t3 := 0 + 3 * y 
+ t4 := 0 + 3 * u * x * dx 
+ t5 := 0 + 3 * y * dx 
+ t6 := 0 + 1 * u - 3 * u * x * dx 
+ u := 0 + 1 * u - 3 * u * x * dx - 3 * y * dx 
+ y1 := 0 - 3 * u * x * dx * dx + 1 * u * dx - 3 * y * dx * dx 
+ y := 0 - 3 * u * x * dx * dx + 1 * u * dx + 1 * y - 3 * y * dx * dx 
+ x := 0 + 1 * x + 1 * dx 
+ i := 1 + 1 * i 
+ End of displaying concatenated path
+
+ In createDummyPath()
+ ( 0 - 1 * a + 1 * x < 0 ) 
+ sT1_9 := 0 + 1 * x + 1 * dx 
+ sT3_9 := 0 + 1 * u * dx 
+ sT4_9 := 0 + 3 * y 
+ sT5_9 := 0 + 3 * x 
+ t4 := 0 + 3 * u * x * dx 
+ t1 := 0 + 1 * u * dx 
+ t2 := 0 + 3 * x 
+ t3 := 0 + 3 * y 
+ x := 0 + 1 * x + 1 * dx 
+ i := 1 + 1 * i 
+ t6 := 0 + 1 * u - 3 * u * x * dx 
+ t5 := 0 + 3 * y * dx 
+ u := 0 + 1 * u - 3 * u * x * dx - 3 * y * dx 
+ y1 := 0 - 3 * u * x * dx * dx + 1 * u * dx - 3 * y * dx * dx 
+ y := 0 - 3 * u * x * dx * dx + 1 * u * dx + 1 * y - 3 * y * dx * dx 
+Propagated Vector
+ Condition: 
+	 True
+
+WARNING: In createDummyNode() with NULL expression
+
+ Displaying the dummy path created
+
+ End of displaying the dummy path created
+
+ Displaying concatenated path
+ ( 0 - 1 * a + 1 * x < 0 ) 
+ sT1_9 := 0 + 1 * x + 1 * dx 
+ sT3_9 := 0 + 1 * u * dx 
+ sT4_9 := 0 + 3 * y 
+ sT5_9 := 0 + 3 * x 
+ t4 := 0 + 3 * u * x * dx 
+ t1 := 0 + 1 * u * dx 
+ t2 := 0 + 3 * x 
+ t3 := 0 + 3 * y 
+ x := 0 + 1 * x + 1 * dx 
+ i := 1 + 1 * i 
+ t6 := 0 + 1 * u - 3 * u * x * dx 
+ t5 := 0 + 3 * y * dx 
+ u := 0 + 1 * u - 3 * u * x * dx - 3 * y * dx 
+ y1 := 0 - 3 * u * x * dx * dx + 1 * u * dx - 3 * y * dx * dx 
+ y := 0 - 3 * u * x * dx * dx + 1 * u * dx + 1 * y - 3 * y * dx * dx 
+ End of displaying concatenated path
+Modified paths
+Path beta'
+ ( 0 - 1 * a + 1 * x < 0 ) 
+ t1 := 0 + 1 * u * dx 
+ t2 := 0 + 3 * x 
+ t3 := 0 + 3 * y 
+ t4 := 0 + 3 * u * x * dx 
+ t5 := 0 + 3 * y * dx 
+ t6 := 0 + 1 * u - 3 * u * x * dx 
+ u := 0 + 1 * u - 3 * u * x * dx - 3 * y * dx 
+ y1 := 0 - 3 * u * x * dx * dx + 1 * u * dx - 3 * y * dx * dx 
+ y := 0 - 3 * u * x * dx * dx + 1 * u * dx + 1 * y - 3 * y * dx * dx 
+ x := 0 + 1 * x + 1 * dx 
+ i := 1 + 1 * i 
+Path alpha'
+ ( 0 - 1 * a + 1 * x < 0 ) 
+ sT1_9 := 0 + 1 * x + 1 * dx 
+ sT3_9 := 0 + 1 * u * dx 
+ sT4_9 := 0 + 3 * y 
+ sT5_9 := 0 + 3 * x 
+ t4 := 0 + 3 * u * x * dx 
+ t1 := 0 + 1 * u * dx 
+ t2 := 0 + 3 * x 
+ t3 := 0 + 3 * y 
+ x := 0 + 1 * x + 1 * dx 
+ i := 1 + 1 * i 
+ t6 := 0 + 1 * u - 3 * u * x * dx 
+ t5 := 0 + 3 * y * dx 
+ u := 0 + 1 * u - 3 * u * x * dx - 3 * y * dx 
+ y1 := 0 - 3 * u * x * dx * dx + 1 * u * dx - 3 * y * dx * dx 
+ y := 0 - 3 * u * x * dx * dx + 1 * u * dx + 1 * y - 3 * y * dx * dx 
+sT1_9 := 0 + 1 * x + 1 * dx occurs in alpha only
+sT1_9 is Not Live
+
+sT3_9 := 0 + 1 * u * dx occurs in alpha only
+sT3_9 is Not Live
+
+sT4_9 := 0 + 3 * y occurs in alpha only
+sT4_9 is Not Live
+
+sT5_9 := 0 + 3 * x occurs in alpha only
+sT5_9 is Not Live
+
+ Vectors to be propagated
+
+Propagated Vector
+ Condition: 
+ ( 0 - 1 * a + 1 * x < 0 ) 
+Propagated Vector
+ Condition: 
+ ( 0 - 1 * a + 1 * x < 0 ) 
+ Out of countMismatch, #mismatches = 0
+
+ Back from findEquivalentPath() to correspondenceChecker()
+ indexOfP0: 2, indexOfP1: 2
+ Beta path:
+q01 --> q02 --> q03 --> q04 --> q05 --> q06 --> q07 --> q08 --> q09 --> q010 --> q011 --> q01
+ ( 0 - 1 * a + 1 * x < 0 ) 
+ t1 := 0 + 1 * u * dx 
+ t2 := 0 + 3 * x 
+ t3 := 0 + 3 * y 
+ t4 := 0 + 3 * u * x * dx 
+ t5 := 0 + 3 * y * dx 
+ t6 := 0 + 1 * u - 3 * u * x * dx 
+ u := 0 + 1 * u - 3 * u * x * dx - 3 * y * dx 
+ y1 := 0 - 3 * u * x * dx * dx + 1 * u * dx - 3 * y * dx * dx 
+ y := 0 - 3 * u * x * dx * dx + 1 * u * dx + 1 * y - 3 * y * dx * dx 
+ x := 0 + 1 * x + 1 * dx 
+ i := 1 + 1 * i 
+Propagated Vector
+ Condition: 
+ ( 0 - 1 * a + 1 * x < 0 ) 
+
+ Alpha path:
+q01 --> q02 --> q03 --> q04 --> q05 --> q06 --> q01
+ ( 0 - 1 * a + 1 * x < 0 ) 
+ sT1_9 := 0 + 1 * x + 1 * dx 
+ sT3_9 := 0 + 1 * u * dx 
+ sT4_9 := 0 + 3 * y 
+ sT5_9 := 0 + 3 * x 
+ t4 := 0 + 3 * u * x * dx 
+ t1 := 0 + 1 * u * dx 
+ t2 := 0 + 3 * x 
+ t3 := 0 + 3 * y 
+ x := 0 + 1 * x + 1 * dx 
+ i := 1 + 1 * i 
+ t6 := 0 + 1 * u - 3 * u * x * dx 
+ t5 := 0 + 3 * y * dx 
+ u := 0 + 1 * u - 3 * u * x * dx - 3 * y * dx 
+ y1 := 0 - 3 * u * x * dx * dx + 1 * u * dx - 3 * y * dx * dx 
+ y := 0 - 3 * u * x * dx * dx + 1 * u * dx + 1 * y - 3 * y * dx * dx 
+Propagated Vector
+ Condition: 
+ ( 0 - 1 * a + 1 * x < 0 ) 
+Out of equivalentPropagatedVector() with TRUE indicating Case 1.1
+
+ Updating E_u
+Enqueueing ( q01, q01 ) in eta
+
+
+ Out of already_present_queue with return value TRUE because match is found for entry number: 1
+
+ Updating E_c
+
+ Out of correspondenceChecker( q01, q01 ) with return value 1
+
+
+Through Queue: 0
+
+ In correspondenceChecker( q015, q015 )
+
+ Out of correspondenceChecker( q015, q015 ) with return value 1
+
+
+
+
+###################### Verification Report #######################
+
+
+ M0 ("DIFFEQ.ORG") and M1 ("DIFFEQ.SCHD") are equivalent.
+
+ No. of states in M0: 15, and No. of states in M1: 9
+
+ No. of paths in the path cover of M0: 3, and No. of paths in the path cover of M1: 3
+
+ No. of null paths in the path cover of M0: 0, and No. of null paths in the path cover of M1: 0
+
+ Maximum depth of recursion: 0
+
+ Maximum mismatch between two value vectors: 0
+
+ List of corresponding states: 
+	1. ( q00, q00 )	#visited: 1	2. ( q01, q01 )	#visited: 2	3. ( q015, q015 )	#visited: 1
+
+ List of C-corresponding states: 
+
+
+
+ List of unconditionally equivalent (U-equivalent) paths: 
+
+
+1)
+Path of M0:
+q00 --> q01
+
+ i := 0 
+Propagated Vector
+ Condition: 
+	 True
+
+	 is equivalent to
+Path of M1:
+q00 --> q01
+
+ i := 0 
+Propagated Vector
+ Condition: 
+	 True
+
+
+2)
+Path of M0:
+q01 --> q013 --> q014 --> q015
+ ( 0 - 1 * a + 1 * x >= 0 ) 
+ xout := 0 + 1 * x 
+ yout := 0 + 1 * y 
+ uout := 0 + 1 * u 
+Propagated Vector
+ Condition: 
+	 True
+
+	 is equivalent to
+Path of M1:
+q01 --> q013 --> q015
+ ( 0 - 1 * a + 1 * x >= 0 ) 
+ xout := 0 + 1 * x 
+ yout := 0 + 1 * y 
+ uout := 0 + 1 * u 
+Propagated Vector
+ Condition: 
+	 True
+
+
+3)
+Path of M0:
+q01 --> q02 --> q03 --> q04 --> q05 --> q06 --> q07 --> q08 --> q09 --> q010 --> q011 --> q01
+ ( 0 - 1 * a + 1 * x < 0 ) 
+ t1 := 0 + 1 * u * dx 
+ t2 := 0 + 3 * x 
+ t3 := 0 + 3 * y 
+ t4 := 0 + 3 * u * x * dx 
+ t5 := 0 + 3 * y * dx 
+ t6 := 0 + 1 * u - 3 * u * x * dx 
+ u := 0 + 1 * u - 3 * u * x * dx - 3 * y * dx 
+ y1 := 0 - 3 * u * x * dx * dx + 1 * u * dx - 3 * y * dx * dx 
+ y := 0 - 3 * u * x * dx * dx + 1 * u * dx + 1 * y - 3 * y * dx * dx 
+ x := 0 + 1 * x + 1 * dx 
+ i := 1 + 1 * i 
+Propagated Vector
+ Condition: 
+	 True
+
+	 is equivalent to
+Path of M1:
+q01 --> q02 --> q03 --> q04 --> q05 --> q06 --> q01
+ ( 0 - 1 * a + 1 * x < 0 ) 
+ sT1_9 := 0 + 1 * x + 1 * dx 
+ sT3_9 := 0 + 1 * u * dx 
+ sT4_9 := 0 + 3 * y 
+ sT5_9 := 0 + 3 * x 
+ t4 := 0 + 3 * u * x * dx 
+ t1 := 0 + 1 * u * dx 
+ t2 := 0 + 3 * x 
+ t3 := 0 + 3 * y 
+ x := 0 + 1 * x + 1 * dx 
+ i := 1 + 1 * i 
+ t6 := 0 + 1 * u - 3 * u * x * dx 
+ t5 := 0 + 3 * y * dx 
+ u := 0 + 1 * u - 3 * u * x * dx - 3 * y * dx 
+ y1 := 0 - 3 * u * x * dx * dx + 1 * u * dx - 3 * y * dx * dx 
+ y := 0 - 3 * u * x * dx * dx + 1 * u * dx + 1 * y - 3 * y * dx * dx 
+Propagated Vector
+ Condition: 
+	 True
+
+
+ List of conditionally equivalent (C-equivalent) paths: 
+
+
+ Approximate number of code motions: 0
+
+Number of times correspondenceChecker called:3
+Number of times findEquivalentPath (valuePropagation) called:3
+Number of times loopInvariant called:0
+
+ User CPU time used: 0 sec and 12000 microsecs
+
+ System CPU time used: 0 sec and 16000 microsecs
+
+
+####################################################################
+

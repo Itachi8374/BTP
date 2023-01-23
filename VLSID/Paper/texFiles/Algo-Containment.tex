@@ -1,0 +1,23 @@
+%-----------Algorithm Containment---------------
+\begin{algorithm}[!t] 
+\scriptsize
+\SetArgSty{textup} % to avoid italic font Identify the cutpoints in
+$M_0$ and $M_1$ and compute their path cover $P_0$ and $P_1$;
+$W_{csp}$ is a set of corresponding state pairs and initially
+contains $(q_{00},q_{10})$\; 
+\ForEach{$(q_{0i},q_{1j})\in W_{csp}$} 
+{
+	\If{$\mathtt{correspondenceChecker}$
+          ($M_0,M_1,q_{0i},q_{1j},P_0,P_1,W_{\mathit{csp}}$)
+	returns ``\textit{failure"}\label{line:containmentFail}
+	} 
+	{ 
+		Report ``unable to decide $M_0\sqsubseteq M_1$" and
+		exit;	
+	}			
+
+} 
+Report ``$M_0\sqsubseteq M_1$";\label{line:containmentsucc}
+\caption{$\mathtt{containmentChecker}$($M_0$,$M_1$)} 
+\label{Algo:Containment} 
+\end{algorithm} 

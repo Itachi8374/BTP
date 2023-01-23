@@ -1,0 +1,73 @@
+We have taken the source code of the EVP method and have implemented our counter-example
+generation procedure on top of it. Once the EVP method fails to prove the
+equivalence, a \textit{cTrace} is automatically generated
+using $\mathtt{EQ\_LIST}$ and $\mathtt{C\_LIST}$ of the EVP method as discussed
+in Sec.~\ref{Sec:CTrace}.  We have then translated the two corresponding
+\textit{cTraces} as an input to CBMC. For our experiment, we used CBMC version
+5.8 \cite{Clarke04CBMC}. The benchmarks are taken from \cite{Banerjee14}.  The benchmarks are
+run on a 1.8 GHz Intel i5 processor with 8 GB of RAM with a timeout limit of 60
+seconds. The results of our experimentation are tabulated in Table~\ref{Table:res}. 
+We have manually introduced few changes like addition, multiplication
+or subtraction of a constant to some of the variables in the benchmarks 
+tabulated in rows 3–6 of Table~\ref{Table:res} so that
+source and transformed behaviors become non-equivalent.  For each benchmark, we
+have reported the number of paths in the path cover, the number of states in the
+source and transformed behaviors, the equivalence decision taken by the EVP method and our method,
+the run time in milliseconds (ms) of the EVP method and our method, and the number of lines in the C program given as
+an input to CBMC.
+
+For the benchmarks DIFFEQ and LRU, both the EVP method and our method report
+equivalence which is denoted as `E' in Table~\ref{Table:res}. The objective is to make sure
+that our implementation does not have any side effect on the existing method.
+In the benchmarks reported in rows 3--6, the EVP method fails to prove the equivalence of
+source and transformed behaviors. It reports that the behaviors ``May Not be
+equivalent". This is reported as `MNE' in Table~\ref{Table:res}. In these
+cases, CBMC finds the mismatch in the values of output variable and generates a suitable
+counter-example with $k=2$ loop unwindings.  Hence, our method concludes that the behaviors are ``Not
+equivalent" which is denoted as `NE' in Table~\ref{Table:res}. The time required by our
+method is a little high compared to the EVP method in the case of non-equivalence as
+we need to run CBMC on the \textit{cTrace}. This experiment shows
+that with the help of our counter-example generation scheme a PBEC can take
+strong decisions about the non-equivalence of behaviors. Moreover, the counter-example
+provided by the PBEC will help the user to debug the root cause of the non-equivalence.
+
+In our second experiment, we try to explore the false negative scenario of the EVP
+method.  For this purpose, we have taken the example given in
+\cite{Banerjee18} and the result is tabulated in row~7 of 
+Table~\ref{Table:res}. This test case involves the inverse operation \cite{Banerjee18}.
+ For this test case, the EVP method reports that the behaviors ``May
+Not be equivalent". However CBMC  does not generate any counter-example and
+case~2 as discussed in Sec~\ref{Sec:EVP+CE} arises here.  CBMC reports that
+\textit{cTrace} corresponding to these behaviors are equivalent. Our method
+still reports ``May Not be equivalent" since we have not implemented proceed further scenarios
+in the EVP. This experiment exposes a false
+negative case of the EVP method. It would be an interesting future work to
+enhance the EVP to handle the test cases which involves inverse operations.
+\begin{table}[!t]
+\caption{Experimental Results}
+\label{Table:res}
+\setlength\tabcolsep{3pt} % default value: 6pt
+  \centering
+  \begin{tabular}{|l|c|c|c|c|c|c|c|c|}
+    \hline
+    \multirow{2}{*}{Benchmarks} &
+    \multirow{2}{*}{\#Path} &
+    \multicolumn{2}{c|}{\#State} &
+    \multicolumn{2}{c|}{Decision} &
+    \multicolumn{2}{c|}{Time (ms)} &
+    \multirow{2}{*}{Lines}\\\cline{3-8}
+    &&$M_0$&$M_1$&EVP&Our&EVP&Our&\\\hline
+    DIFFEQ&3&15&9&E&E&25&25&-\\  
+    LRU&39&33&32&E&E&1038&1038&-\\  
+    DCT&1&8&16&MNE&NE&85&766&185\\ %output change
+    PERFECT&7&6&4&MNE&NE&56&227&74\\  %live Variable change
+    MODN&9&8&9&MNE&NE&66&890&137\\ %live Variable Change
+    GCD&11&8&4&MNE&NE&31&100&97\\\hline 
+    Test Case\cite{Banerjee18}&6&5&5&MNE&MNE&20&26&32\\\hline 
+  \end{tabular}
+  \end{table} 
+
+
+
+
+

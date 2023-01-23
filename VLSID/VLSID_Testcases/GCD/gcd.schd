@@ -1,0 +1,6 @@
+"GCD.schd"
+q10 1 - | ex1=0,y0=p0,y1=p1,res=1 q1m ;
+q1m 2 y1==y2 |x=5,ex1=5,ex2=ex1+x,yout=y1*res q12 !y1==y2 | temp1=y1+2,temp2=y2+2 q11 ;
+q11 5 temp1==0&&temp2==0 | res=res*2 q1m temp1==0&&!temp2==0 | y1=y1*2 q1m
+!temp1==0&&temp2==0 | y2=y2*2 q1m !temp1==0&&!temp2==0&&y1>y2 | y1=y1-y2 q1m !temp1==0&&!temp2==0&&!y1>y2 | y2=y2-y1 q1m ;
+q12 0 ;

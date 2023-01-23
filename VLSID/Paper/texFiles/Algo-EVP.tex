@@ -1,0 +1,31 @@
+%---------------The EVP Algo----------------------------
+\begin{algorithm}[!t]
+\small
+\SetArgSty{textup} % to avoid italic font 
+\ForEach{path $\beta:(q_{0i}\Rightarrow q_{0m})$ in $P_0$}
+{
+  \uIf{path $\alpha:(q_{1j}\Rightarrow q_{1n})$ can be found in $P_1$ such that $\beta\simeq\alpha$} 
+	  {
+      $W_{csp}=W_{csp}\cup \{(q_{0m},q_{1n})\}$;\\
+      Insert $(\alpha,\beta)$ in $\mathtt{EQ\_LIST}$.   
+    }
+  \uElseIf{path $\alpha:(q_{1j}\Rightarrow q_{1n})$ can be found in $P_1$ such that $\beta\simeq_c\alpha$} 
+		{
+			\uIf{$q_{0m}$ or $q_{1n}$ is reset state} 
+			  {\KwRet{\textit{failure}};}			
+			\Else
+				{
+          Insert $(\alpha,\beta)$ in $\mathtt{C\_LIST}$.\\   
+          \label{line:cLIST} 
+          $\mathtt{correspondenceChecker}(M_0,M_1,q_{0m},q_{1n},P_0,P_1,\newline W_{csp})$\;
+          \label{line:DFS} 
+        }
+		} 
+	\Else{\KwRet{\textit{failure}}\label{Line:EVPFail};}
+}
+$\mathtt{EQ\_LIST}=\mathtt{EQ\_LIST}\cup\{\text{Last member of }\mathtt{C\_LIST\}}$\\
+$\mathtt{C\_LIST}=\mathtt{C\_LIST}\setminus\{\text{Last member of }\mathtt{C\_LIST}\}$\\ 
+\KwRet{\textit{success}}; 
+\caption{$\mathtt{correspondenceChecker}(M_0,M_1,q_{0i},q_{1j},P_0,P_1,\newline W_{csp})$}
+\label{Algo:EVP} 
+\end{algorithm}

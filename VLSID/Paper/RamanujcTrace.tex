@@ -1,0 +1,82 @@
+\documentclass[conference,10pt]{IEEEtran}
+\usepackage{cite}
+\usepackage{textcomp}
+\usepackage[pdftex]{graphicx}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage[boxed,ruled,linesnumbered,longend]{algorithm2e}
+\usetikzlibrary{shapes,arrows,chains}
+\usepackage{alltt}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{verbatim}
+\usepackage{listings}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\SetCommentSty{mycommfont}
+\usetikzlibrary{shapes,arrows,chains,calc,trees,backgrounds,fit,decorations.markings,automata,positioning}
+\usepackage[boxed,ruled,linesnumbered,longend]{algorithm2e}
+\newcommand\mycommfont[1]{\footnotesize\textcolor{blue}{#1}}
+\SetCommentSty{mycommfont}
+\ifCLASSOPTIONcompsoc
+\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf,subrefformat=parens,labelformat=parens]{subfig}
+\else
+\usepackage[caption=false,font=footnotesize,subrefformat=parens,labelformat=parens]{subfig}
+\fi
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{proposition}{Proposition}
+\def \path {\Longrightarrow}
+\begin{document} 
+\title{Improving Performance of a Path-Based Equivalence Checker using Counter-Examples}
+\author{\IEEEauthorblockN{Ramanuj Chouksey\IEEEauthorrefmark{1},
+Chandan Karfa\IEEEauthorrefmark{2} and
+Purandar Bhaduri\IEEEauthorrefmark{3}}
+\IEEEauthorblockA{Department of Computer Science and Engineering,\\
+Indian Institute of Technology Guwahati, 781039, India\\
+Email: \IEEEauthorrefmark{1}r.chouksey@iitg.ac.in,
+\IEEEauthorrefmark{2}ckarfa@iitg.ac.in,
+\IEEEauthorrefmark{3}pbhaduri@iitg.ac.in}}
+\maketitle 
+\begin{abstract}  
+\input{texFiles/abstract.tex}
+\end{abstract}
+\begin{IEEEkeywords} Equivalence Checking, Finite State Machine with Datapath (FSMD), CBMC, Counter-example Generation.  
+\end{IEEEkeywords}
+\IEEEpeerreviewmaketitle
+\section{Introduction}\label{Sec:intro}
+\input{texFiles/introduction}
+\section{The FSMD model and path-based equivalence checking}\label{Sec:prelim}
+\input{texFiles/prelims}
+\input{tikz/ctrace.tikz}
+\section{Counter-trace generation \label{Sec:CTrace}}
+\input{texFiles/counterTrace}
+\section{Counter example generation using counter-trace\label{Sec:CE}}
+\input{tikz/CBMC.tex}
+\input{tikz/CFG.tex}
+\input{texFiles/smtFormulaGeneration}
+\section{Incorporation of Results in Equivalence Checking Framework\label{Sec:incorpoResult}}
+\input{texFiles/PBEC+CBMC.tex}
+\section{Overall equivalence checking framework\label{Sec:EVP+CE}}
+\input{texFiles/Algo-CE.tex} 
+\input{texFiles/Algo-CE+EVP.tex} 
+\input{texFiles/overallMethod.tex}
+\section{Experimental Result\label{Sec:Exp}}
+\input{texFiles/experiment.tex}
+\section{Related Work\label{Sec:Rework}}
+\input{texFiles/relatedwork.tex}
+\section{Conclusion\label{Sec:conclusion}}
+\input{texFiles/conclusion.tex}
+\section*{Acknowledgment}
+This work is
+partially supported by DST, Govt.\ of India (Project code: ECR/2017/000492).
+The authors would like to acknowledge Dr.\ Kunal Banerjee, currently 
+at Intel Labs, Bangalore, India, for his useful insights during the formulation of this work. 
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv,allShortReference} 
+\end{document}
+

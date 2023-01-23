@@ -1,0 +1,7 @@
+"PERFECT.org"
+q00 1 - | ext1=5,sum=1,i=2 q01 ;
+q01 2 i<n | temp=n%i q02 !i<n | - q04 ;
+q02 2 temp==1 | sum=sum+i q03 !temp==1 | i=i+1 q01 ;
+q03 1 - | i=i+1 q01 ;
+q04 2 sum==n | ext2=ext1,out=1 q05 !sum==n | ext2=ext1, out=0 q05 ;
+q05 0 ;

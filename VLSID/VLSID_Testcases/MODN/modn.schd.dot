@@ -1,0 +1,37 @@
+digraph fsmdIndot {
+
+"MODN.schd" [shape=note];
+q10 [shape=circle];
+q11 [shape=circle];
+q10 -> q11 [label="- | ext1=0,\ns=0,\ni=0"];
+q11 [shape=circle];
+q12 [shape=circle];
+q11 -> q12 [label="i<=15 | -"];
+q17 [shape=circle];
+q11 -> q17 [label="!i<=15 | -"];
+q12 [shape=circle];
+q13 [shape=circle];
+q12 -> q13 [label="- | t=b+2,\ni=i+1"];
+q13 [shape=circle];
+q14 [shape=circle];
+q13 -> q14 [label="t==1 | s=a+s"];
+q14 [shape=circle];
+q13 -> q14 [label="t!=1 | -"];
+q14 [shape=circle];
+q15 [shape=circle];
+q14 -> q15 [label="s>=n | s=s-n+1"];
+q15 [shape=circle];
+q14 -> q15 [label="!s>=n | -"];
+q15 [shape=circle];
+q16 [shape=circle];
+q15 -> q16 [label="- | a=a*2,\nb=b*2"];
+q16 [shape=circle];
+q11 [shape=circle];
+q16 -> q11 [label="a>=n | a=a-n"];
+q11 [shape=circle];
+q16 -> q11 [label="a<n | b=t+1,\na=t+1"];
+q17 [shape=circle];
+q18 [shape=circle];
+q17 -> q18 [label="- | ext1=5,\next2=ext1,\nsout=s"];
+
+}

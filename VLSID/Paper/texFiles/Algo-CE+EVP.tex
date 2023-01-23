@@ -1,0 +1,62 @@
+ %---------------The VP Algo----------------------------
+ 	\begin{algorithm}[!t]
+  \scriptsize
+ 		\SetArgSty{textup} % to avoid italic font 
+ 		\ForEach{path $\alpha:(q_{0i}\Rightarrow q_{0m})$ in $P_0$} 
+ 		{	\uIf
+ 			{
+ 				path $\beta:(q_{1j}\Rightarrow q_{1n})$ can be found in
+ 				$P_1$ such that $\alpha\simeq\beta$
+ 			} 
+ 			{
+ 				$W_{csp}=W_{csp}\cup \{(q_{0m},q_{1n})\}$;\\ 
+ 				Insert $(\alpha,\beta)$ in EQ\_LIST.
+ 			}
+ 			\uElseIf
+ 			{
+ 				path $\beta:(q_{1j}\Rightarrow q_{1n})$ can be found in $P_1$
+ 				such that $\alpha\simeq_c\beta$
+ 			} 
+ 			{
+ 				\uIf
+ 				{
+ 					$q_{0m}$ or $q_{1n}$ is reset state
+ 				} 
+ 				{
+ 					\KwRet{\textit{failure}}; 
+ 				}			
+ 				\Else 
+ 				{
+ 					Insert $(\alpha,\beta)$ in C\_LIST.\\
+ 					$\mathtt{correspondenceChecker}(M_0,M_1,q_{0m},q_{1n},\newline P_0,P_1, 
+ 					W_{csp})$\;
+ 						
+ 				}	
+ 			} 
+ 			\Else 
+ 			{ 
+ 				$\langle\bar{v},Equiv,falseComp\rangle$$\leftarrow$ 
+ 				$\mathtt{counterExmapleGenerator}$($M_0$, $M_1$, $\alpha$,  $\beta$, 
+ 			 $\mathtt{EQ\_LIST, C\_LIST}$)\label{Line:counter}\;
+ 			 \uIf{$\mathit{falseComp}==\mathtt{True}$}
+ 			 {Proceed Further  \tcc{Case~1}}
+ 			 \uElseIf{$\bar{v}\neq\mathtt{NULL}$}
+ 			 {	\KwRet{\textit{Not equivalent}}; \tcc{Case~3.1}}
+			\uElseIf{$\bar{v}==\mathtt{NULL}$ and $\mathit{Equiv}==\mathtt{True}$}
+ 				{Proceed Further \tcc{Case~2}} 
+ 				\label{step:fail}
+  	\uElseIf{$\bar{v}==\mathtt{NULL}$ and $\mathit{Equiv}==\mathtt{False}$}
+ 				{Proceed Further \tcc{Case~3.2}} 
+ 				\label{step:fail}
+ 			\Else	
+ 			 {\KwRet{\textit{May Not be Equivalent}}; \tcc{Case~4}}
+ 			}
+ 					
+ 		} 
+  $\mathtt{EQ\_LIST}=\mathtt{EQ\_LIST}\cup\{\text{Last member of }\mathtt{C\_LIST\}}$\\
+  $\mathtt{C\_LIST}=\mathtt{C\_LIST}\setminus\{\text{Last member of }\mathtt{C\_LIST}\}$\\ 
+ 		\KwRet{\textit{success}}; 
+ 	 \caption{$\mathtt{correspondenceChecker}(M_{0},M_{1},q_{0i},q_{1j},\newline,
+ 	 P_0,P_1,W_{csp})$}
+ 		\label{Algo:correspondenceChecker} 
+ 	\end{algorithm}

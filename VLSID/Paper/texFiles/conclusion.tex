@@ -1,0 +1,13 @@
+In this paper, we have presented a counter-example generation mechanism for the
+PBEC reported in~\cite{Chouksey18}.  A similar counter-example generation
+mechanism can also be developed for other reported equivalence checking methods
+as well. The idea is to reuse the equivalence information of a PBEC 
+to generate a counter-trace efficiently and then use CBMC to generate
+a counter-example. We have also shown that a path-based equivalence
+checking method can be further strengthened with the counter-example generation
+mechanism. As shown in the experiments, the EVP method can take stronger equivalence
+decision with help of counter-examples. Our counter-example generation mechanism
+identifies a false negative result of the EVP method. In the future, we plan to
+enhance the EVP method to handle the `proceed further' (i.e., false
+negative cases) scenarios identified by our counter-example generation
+mechanism.

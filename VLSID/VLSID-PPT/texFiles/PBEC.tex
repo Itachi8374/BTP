@@ -1,0 +1,75 @@
+\begin{frame}{Path-based Equivalence Checkers (PBEC)--Related Works}
+\begin{itemize}
+\item C.~Karfa et al, ``\textit{An equivalence-checking method
+    for scheduling verification in high-level synthesis},''IEEE TCAD, (2008).
+\item Lee et al, ``\textit{Equivalence checking of scheduling with speculative code transformations in high-level 
+    synthesis}'', ASP-DAC (2011).
+\item K.~Banerjee et al, ``\textit{Verification of code
+      motion techniques using value propagation}'', IEEE TCAD, (2014). {\color{blue}[VP Method]}
+\item J. Hu et al ``Equivalence checking between SLM and RTL
+using machine learning techniques," ISQED (2016).
+\item R.~Chouksey et al, ``\textit{Translation validation of code motion
+transformations involving loops}'', IEEE TCAD, (2018). {\color{blue}[EVP Method]}
+\end{itemize}
+\end{frame}
+\begin{frame}{PBEC}
+\begin{itemize}
+\item Behaviors are represented by {\color{blue} Finite State Machine with Data (FSMD)}. 
+\item Decompose each FSMD using {\color{blue} cutpoints}.
+\item {\color{blue}Path}: Finite sequence of states from a cutpoint to another cutpoint.
+\item {\color{blue}Equivalence of FSMDs} is established by showing path level equivalence between two FSMDs.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Representing a program using FSMD}
+  \hspace*{0.5cm}
+  \noindent\begin{minipage}[\textheight]{0.3\textwidth}
+  \centering
+  \begin{lstlisting}[language=C,
+  ,numbers = none, escapechar = !,
+  basicstyle = \ttfamily\bfseries, linewidth = .6\linewidth, basicstyle=\small] 
+!\tikz[remember picture] \node [] (a1){};!if(n!$\geq$!0){
+  x=0,y=0;!\tikz[remember picture] \node [] (a2){};!
+!\tikz[remember picture] \node [] (b1){};!for(i=0;i!$\leq$!n;i++){
+  x=5;
+  y=y+i;}!\tikz[remember picture] \node [] (b2){};!
+!\tikz[remember picture] \node [] (c1){};!out=x+y;}!\tikz[remember picture] \node [] (c2){};!
+!\tikz[remember picture] \node [] (d1){};!else
+out=-1;!\tikz[remember picture] \node [] (d2){};!
+  \end{lstlisting}
+  \end{minipage}
+  \hspace*{2cm}
+  \noindent\begin{minipage}[\textheight]{0.46\textwidth}
+  \linespread{1.5}
+  \scalebox{0.8}{
+  \begin{tikzpicture}[line width=1.5pt,place/.style={circle,draw,minimum size=8mm}]
+    \node[fill=gray!20] (1) at (0,1)   [place] {$q_{00}$};
+    \node[fill=gray!20] (2) at (0,-2)   [place] {$q_{01}$};
+    \node (3) at (-1.5,-5)   [place] {$q_{02}$};
+    \node (5) at (1.5,-5)   [place] {$q_{03}$};
+    
+    \draw [>=latex,->,draw=green](1) to [align=center] node[pos=0.5,left] {\footnotesize $n\geq 0/$\\[-0.3cm] \footnotesize $i\Leftarrow 0,$\\[-0.3cm]\footnotesize $x\Leftarrow 0,$\\[-0.3cm]\footnotesize $y\Leftarrow 0$}(2);
+    
+    \draw [>=latex,->,draw=yellow](2)  [align=center] to  node[pos=0.6,right] {\footnotesize$i\leq n/$\\[-0.3cm]\footnotesize $x\Leftarrow 5,$\\[-0.3cm]\footnotesize $y\Leftarrow y+i$}(3);
+    
+    \draw [>=latex,->,draw=yellow](3) [align=center] .. controls (-4,-2) and (-1,-2) ..  
+    node[pos=0.3,left] {\footnotesize -/\footnotesize$i\Leftarrow i+1$}(2);
+    
+    \draw [>=latex,->,draw=blue](2)  [align=center] --node[pos=0.5,right]{\footnotesize$\neg i\leq n/$\\[-0.3cm]\footnotesize$out\Leftarrow x+y$}(5);
+    
+    \draw [>=latex,->,draw=boston](1)  [align=center] .. controls (2,1) and (4,-4) ..  
+    node[pos=0.4,left] {\footnotesize $\neg n\geq 0$/\\[-0.3cm]\footnotesize$out\Leftarrow -1$} (5);
+    
+    %\draw [>=latex,->](5) .. controls (6,-4)  and (2,2) .. node[pos=0.6,right] {\footnotesize $-/-$} (1); 
+  \end{tikzpicture}
+  }
+  \end{minipage}
+  \begin{tikzpicture}[remember picture, overlay]
+  \draw[->,thick,draw=green] ($(a1)+(-0.2,0.3)$) rectangle ($(a2)+(0.2,-0.2)$);
+  \draw[->,thick,draw=yellow] ($(b1)+(-0.2,0.16)$) rectangle ($(b2)+(2.3,-0.2)$);
+  \draw[->,draw=blue,thick] ($(c1)+(-0.2,0.16)$) rectangle ($(c2)+(0.2,-0.2)$);
+  \draw[->,draw=boston,thick] ($(d1)+(-0.2,0.16)$) rectangle ($(d2)+(0.2,-0.2)$);
+  \end{tikzpicture}
+\end{frame}
+
+

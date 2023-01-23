@@ -1,0 +1,34 @@
+digraph fsmdIndot {
+
+"MODN.org" [shape=note];
+q00 [shape=circle];
+q01 [shape=circle];
+q00 -> q01 [label="- | ext1=5,\ns=0,\ni=0"];
+q01 [shape=circle];
+q02 [shape=circle];
+q01 -> q02 [label="i<=15 | i=i+1,\nt=b+2"];
+q07 [shape=circle];
+q01 -> q07 [label="!i<=15 | ext2=ext1,\nsout=s"];
+q02 [shape=circle];
+q03 [shape=circle];
+q02 -> q03 [label="t==1 | s=s+a"];
+q03 [shape=circle];
+q02 -> q03 [label="!t==1 | -"];
+q03 [shape=circle];
+q04 [shape=circle];
+q03 -> q04 [label="s>=n | s=s-n"];
+q04 [shape=circle];
+q03 -> q04 [label="!s>=n | -"];
+q04 [shape=circle];
+q05 [shape=circle];
+q04 -> q05 [label="- | ST5_12=a*2,\nb=b*2"];
+q05 [shape=circle];
+q06 [shape=circle];
+q05 -> q06 [label="- | ST6_15=ST5_12-n,\na=ST5_12"];
+q06 [shape=circle];
+q01 [shape=circle];
+q06 -> q01 [label="a>=n | a=a-n"];
+q01 [shape=circle];
+q06 -> q01 [label="!a>=n | b=t+1,\na=t+1"];
+
+}

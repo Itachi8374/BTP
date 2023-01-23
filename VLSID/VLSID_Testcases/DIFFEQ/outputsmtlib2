@@ -1,0 +1,14 @@
+(declare-fun i () Int)
+(declare-fun a () Int)
+(declare-fun x () Int)
+
+(assert(= i 0) )
+
+(assert (not 
+(< 
+(+ 
+(- 0 
+(* 1 a)
+) 
+(* 1 x)
+) 0)  ))

@@ -1,0 +1,9 @@
+"GCD.org"
+q00 1 - | y0=p0,y1=p1,res=1 q01 ;
+q01 2 y1==y2 | - q06 !y1==y2 | temp1=y1+2,temp2=y2+2,x=5 q02 ;
+q02 2 temp1==0 | - q03 !temp1==0 | - q04 ;
+q03 2 temp2==0 | res=res*2 q01 !temp2==0 | y1=y1*2 q01 ;
+q04 2 temp2==0 | y2=y2*2 q01 !temp2==0 | - q05 ;
+q05 2 y1>y2 | y1=y1-y2 q01 !y1>y2 | y2=y2-y1 q01 ;
+q06 1 - | ex2=ex1+x,yout=y1*res q0e ;
+q0e 0 ;          

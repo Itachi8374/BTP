@@ -1,0 +1,5 @@
+"PERFECT.schd"
+q10 1 - | ext1=0,sum=1,i=2 q11 ;
+q11 3 i<n | temp=n%i q12 !i<n&&!sum==n | ext1=5,ext2=ext1,out=0 q15 !i<n&&sum==n |  ext1=5,ext2=ext1,out=1 q15 ;
+q12 2 temp==1 | sum=sum+i+3,i=i+1 q11 !temp==1 | i=i+1 q11 ;
+q15 0 ;
