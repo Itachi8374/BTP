@@ -167,6 +167,15 @@ typedef struct path_nodes_struct
 
 }PATH_NODE;
 
+// this stores path pairs
+typedef struct path_pair_secure
+{
+	int p0;
+	int p1;
+	boolean isLoop;
+	struct path_pair_secure* next;
+} PATH_PAIR_S;
+
 
 typedef struct ralpha_node
 {
@@ -256,7 +265,7 @@ typedef struct pathlist_struct
 	unsigned int offset_null_path;
 	//value propagation code end
 
-	PATH_ST paths[1000];
+	PATH_ST paths[100];
 	FSMD    *fsmd;
 }PATHS_LIST;
 
@@ -590,4 +599,12 @@ boolean equalLV( LV*, LV* );
 //Function to determine output variable
 boolean isOutputVar( int, var_list );
 
+void fetch_expression( NC *, int *, int );
+int search_primary_in_sum( NC *, NC *, int  );
+void PreAnalysis(FSMD* , var_list* , PATHS_LIST *);
+void XYZ(FSMD* , PATHS_LIST *, var_list* , FSMD* , PATHS_LIST *, var_list* , int *);
+int yyerror(char*);
+int yylex(void);
+
+PATH_PAIR_S* initS(int , int , boolean , PATH_PAIR_S* ); 
 #endif

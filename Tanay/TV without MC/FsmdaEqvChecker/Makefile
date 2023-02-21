@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-g -c
+CFLAGS=-g -c -mmacosx-version-min=10.0
 INCLUDES=-I ./include/
 LEX=flex
 LFLAGS=

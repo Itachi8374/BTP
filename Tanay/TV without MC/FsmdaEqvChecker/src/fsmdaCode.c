@@ -16,6 +16,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "FsmdaHeader.h"
+#include "ctraceCBMC.c"
 
 int count_extend = 0, count_iteration = 0;
 int nmodelCheck = 0;
@@ -4633,7 +4634,17 @@ int recursion = 0;
 int ptr = 0;
 int vis1[100];
 int candidate[1000];
-void graphTraversal(FSMD* M1, PATHS_LIST *pl, int final, int end, var_list* V1, int explicitleakage[2][mx][mx], int implicitleakage[2][mx][mx], int netDependency[2][mx][mx], int netN[2][mx][mx], FSMD* M2, PATHS_LIST *pl1, var_list* V2, int * matching, int insecure){
+
+PATH_PAIR_S* initS(int p0, int p1, boolean isLoop, PATH_PAIR_S* next){
+	PATH_PAIR_S* pathPair = (PATH_PAIR_S*)malloc(sizeof(PATH_PAIR_S));
+	pathPair->p0 = p0;
+	pathPair->p1 = p1;
+	pathPair->isLoop = isLoop;
+	pathPair->next = next;
+	return pathPair;
+}
+
+void graphTraversal(FSMD* M1, PATHS_LIST *pl, int final, int end, var_list* V1, int explicitleakage[2][mx][mx], int implicitleakage[2][mx][mx], int netDependency[2][mx][mx], int netN[2][mx][mx], FSMD* M2, PATHS_LIST *pl1, var_list* V2, int * matching, int insecure,PATH_PAIR_S*  pathPairs[3]){
 	//graphTraversal(FSMD* M1, PATHS_LIST *pl, int final, int end, var_list* V, int explicitleakage[sz][sz], int implicitleakage[sz][sz], int netDependency[sz][sz], int netN[sz][sz])
 	if (vis[end] == 1){
 		return;
@@ -4685,6 +4696,10 @@ void graphTraversal(FSMD* M1, PATHS_LIST *pl, int final, int end, var_list* V1, 
 						candidate[i] = 0;
 				}
 			}
+		}else{
+			
+			printf("******************INSECURE PATH********************\n");
+			cTraceUsingCBMC(M1,M2,pl,pl1,pathPairs[2],pathPairs[0],pathPairs[1],V1,V2);
 		}
 
 		vis[end] = 0;
@@ -4712,6 +4727,7 @@ void graphTraversal(FSMD* M1, PATHS_LIST *pl, int final, int end, var_list* V1, 
 		}
 	}
 	int i;
+
 	for (i = 0; i < pl->numpaths; i++){
 		if (pl->paths[i].start != end){
 			continue;
@@ -4719,7 +4735,7 @@ void graphTraversal(FSMD* M1, PATHS_LIST *pl, int final, int end, var_list* V1, 
 	
 		
 		if (M1->states[pl->paths[i].start].isLoop == 1){
-	
+			printf("THIS IS LOOP STATE: %d\n\n\n\n", end);
 			printf("tt = %d\n", tt);
 			int j, k;
 			int outward[20];
@@ -5259,6 +5275,8 @@ void graphTraversal(FSMD* M1, PATHS_LIST *pl, int final, int end, var_list* V1, 
 			}
 
 			if (transformed == 0 && original == 0){
+				PATH_PAIR_S* tempPair = initS(i,i, 1, pathPairs[0]);
+				pathPairs[0] = tempPair;
 					for (j = 0; j < gammaLoop[0][idx].numberOfPaths; j++){
 						S[gammaLoop[0][idx].pathIndices[j]] ++;
 						ss ++;
@@ -5269,6 +5287,8 @@ void graphTraversal(FSMD* M1, PATHS_LIST *pl, int final, int end, var_list* V1, 
 				
 				
 					if (rs == 1){
+						PATH_PAIR_S* tempPair = initS(i,i, 1, pathPairs[1]);
+						pathPairs[1] = tempPair;
 						for (j = 0; j < gammaLoop[0][idx].numberOfPaths; j++){
 							RS[gammaLoop[0][idx].pathIndices[j]] ++;
 							// rss ++;
@@ -5278,6 +5298,9 @@ void graphTraversal(FSMD* M1, PATHS_LIST *pl, int final, int end, var_list* V1, 
 						update = 1;
 					}
 					else{
+						printf("CHANGED HERE>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
+						PATH_PAIR_S* tempPair = initS(i,i,1,pathPairs[2]);
+						pathPairs[2] = tempPair;
 						for (j = 0; j < gammaLoop[0][idx].numberOfPaths; j++){
 							candidate[gammaLoop[0][idx].pathIndices[j]] ++;
 							//ss ++;
@@ -5294,7 +5317,7 @@ void graphTraversal(FSMD* M1, PATHS_LIST *pl, int final, int end, var_list* V1, 
 				printf("outward == %s\n", M1->states[outward[j]].state_id);
 				
 			
-				graphTraversal(M1, pl, final, outward[j], V1, explicitleakage, implicitleakage, netDependency, netN, M2, pl1, V2, matching, insecure);
+				graphTraversal(M1, pl, final, outward[j], V1, explicitleakage, implicitleakage, netDependency, netN, M2, pl1, V2, matching, insecure, pathPairs);
 			}
 			if (goFurther == 0){
 				
@@ -5315,6 +5338,7 @@ void graphTraversal(FSMD* M1, PATHS_LIST *pl, int final, int end, var_list* V1, 
 			
 		}
 		else{
+			printf("THIS IS STATE: %d\n\n\n\n", end);
 			// Check dependency matrix and find whether any variable in condition can be extended to high input 
 			
 			// Copying previous dependency in temporary array
@@ -5659,6 +5683,9 @@ void graphTraversal(FSMD* M1, PATHS_LIST *pl, int final, int end, var_list* V1, 
 			}
 			//RS[i]++;
 			if (transformed == 0 && original == 0){
+				printf("CHANGED HERE>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
+				PATH_PAIR_S* tempPair = initS(i,i,0,pathPairs[0]);
+				pathPairs[0] = tempPair;
 				S[i] ++;
 				ss ++;
 			}
@@ -5666,11 +5693,15 @@ void graphTraversal(FSMD* M1, PATHS_LIST *pl, int final, int end, var_list* V1, 
 			
 			
 				if (rs == 1){
+					PATH_PAIR_S* tempPair = initS(i,i,0,pathPairs[1]);
+					pathPairs[1] = tempPair;
 					RS[i]++;
 					rss++;
 					insecure = 0;
 				}
 				else{
+					PATH_PAIR_S* tempPair = initS(i,i,0,pathPairs[2]);
+					pathPairs[2] = tempPair;
 					candidate[i] ++;
 					
 					insecure = 1;
@@ -5705,7 +5736,7 @@ void graphTraversal(FSMD* M1, PATHS_LIST *pl, int final, int end, var_list* V1, 
 			}*/
 			
 			if (goFurther){
-				graphTraversal(M1, pl, final, pl->paths[i].end, V1, explicitleakage, implicitleakage, netDependency, netN, M2, pl1, V2, matching, insecure);
+				graphTraversal(M1, pl, final, pl->paths[i].end, V1, explicitleakage, implicitleakage, netDependency, netN, M2, pl1, V2, matching, insecure, pathPairs);
 			}
 			else{
 				queue[tt].state = pl->paths[i].end;
@@ -5776,6 +5807,10 @@ void XYZ(FSMD* M1, PATHS_LIST *pl1, var_list* V1, FSMD* M2, PATHS_LIST *pl2, var
    	int qq;
    	queue[0].state = 0;
    	tt = 1;
+	PATH_PAIR_S* pathPairs[3];
+	for(int i=0;i<3; ++i){
+		pathPairs[i] = initS(0,0,0,(PATH_PAIR_S*)NULL);
+	}
    	for (ptr = 0; ptr < tt; ptr++)
    	{
    		if (vis1[queue[ptr].state] == 1){
@@ -5798,8 +5833,9 @@ void XYZ(FSMD* M1, PATHS_LIST *pl1, var_list* V1, FSMD* M2, PATHS_LIST *pl2, var
 			for (j = 0; j < 100; j++){
 				vis[j] = 0;
 			}
-			printf("GOING INSIDE\n");
-			graphTraversal(M1, pl1, lastState, queue[ptr].state, V1, implicitleakage, explicitleakage, netDependency, netN, M2, pl2, V2, matching, 0);
+			printf("GOING INSIDE %d\n", queue[ptr].state);
+			
+			graphTraversal(M1, pl1, lastState, queue[ptr].state, V1, implicitleakage, explicitleakage, netDependency, netN, M2, pl2, V2, matching, 0, pathPairs);
 			
 		}
 	

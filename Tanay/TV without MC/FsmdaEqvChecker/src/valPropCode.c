@@ -3420,6 +3420,7 @@ int main( int argc, char* argv[] )
 
 	NO_OF_VARIABLES = stab.numsymbols;
 	printf("REached here5\n");
+
 	containmentChecker(M0, M1); //V0 and V1 are globally defined
 	printf("REached here6\n");
 	//return containmentChecker(M0, M1);
