@@ -1,0 +1,10 @@
+"PERFECT_nu.org"
+q00 1 - | sum=1,i=2 q01;
+q01 2 (i<n) | ST1_8=n%i q02 
+     !(i<n) | - q04;
+q02 2 (ST1_8==0) | sum=sum+i q03 
+     !(ST1_8==0) | i=i+1 q01;
+q03 1 - | i=i+1 q01;
+q04 2 (sum==n) | out=1 q05 
+     !(sum==n) | out=0 q05;
+q05 0;

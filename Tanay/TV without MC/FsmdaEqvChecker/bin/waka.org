@@ -1,0 +1,12 @@
+"waka.org"
+q00 1 - | out30=0,t5=in3-in4,t6=in7+in8,out13=in14-in15,t11=t6+in12 q01;
+q01 2 (in2==in1) | t16=t11-in17 q07 
+     !(in2==in1) | t18=in19+in20 q02;
+q02 2 (in9<in10) | t21=t11+in22,t23=t5-in24 q03 
+     !(in9<in10) | t26=t5+t18 q05;
+q03 1 - | t25=t21+t23 q04;
+q04 1 - | t26=t25+in27 q05;
+q05 1 - | t16=t26-in28 q06;
+q06 1 - | out30=t26+in29 q07;
+q07 1 - | out31=t16+in32 q08;
+q08 0;
