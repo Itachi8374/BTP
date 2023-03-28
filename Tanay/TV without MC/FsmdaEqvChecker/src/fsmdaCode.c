@@ -4644,9 +4644,9 @@ PATH_PAIR_S* initS(int p0, int p1, boolean isLoop, PATH_PAIR_S* next){
 	return pathPair;
 }
 
-void graphTraversal(FSMD* M1, PATHS_LIST *pl, int final, int end, var_list* V1, int explicitleakage[2][mx][mx], int implicitleakage[2][mx][mx], int netDependency[2][mx][mx], int netN[2][mx][mx], FSMD* M2, PATHS_LIST *pl1, var_list* V2, int * matching, int insecure,PATH_PAIR_S*  pathPairs[3]){
+void graphTraversal(FSMD* M1, PATHS_LIST *pl, int final, int end, var_list* V1, int explicitleakage[2][mx][mx], int implicitleakage[2][mx][mx], int netDependency[2][mx][mx], int netN[2][mx][mx], FSMD* M2, PATHS_LIST *pl1, var_list* V2, int * matching, int* insecure,PATH_PAIR_S*  pathPairs[3]){
 	//graphTraversal(FSMD* M1, PATHS_LIST *pl, int final, int end, var_list* V, int explicitleakage[sz][sz], int implicitleakage[sz][sz], int netDependency[sz][sz], int netN[sz][sz])
-	if (vis[end] == 1){
+	if (vis[end] == 1 || *insecure){
 		return;
 	}
 	printf("I AM INSIDE\n");
@@ -4697,8 +4697,17 @@ void graphTraversal(FSMD* M1, PATHS_LIST *pl, int final, int end, var_list* V1, 
 				}
 			}
 		}else{
-			
+			for(int i=0; i<3; ++i){
+				printf("%d\n", i+1);
+				PATH_PAIR_S* temp = pathPairs[i];
+				while(temp!=NULL){
+					printf("%d %d\n", pl->paths[temp->p0].start, pl->paths[temp->p1].end);
+					temp = temp->next;
+				}
+				printf("\n");
+			}
 			printf("******************INSECURE PATH********************\n");
+			*insecure = 1;
 			cTraceUsingCBMC(M1,M2,pl,pl1,pathPairs[2],pathPairs[0],pathPairs[1],V1,V2);
 		}
 
@@ -4729,7 +4738,7 @@ void graphTraversal(FSMD* M1, PATHS_LIST *pl, int final, int end, var_list* V1, 
 	int i;
 
 	for (i = 0; i < pl->numpaths; i++){
-		if (pl->paths[i].start != end){
+		if (pl->paths[i].start != end || (*insecure)){
 			continue;
 		}
 	
@@ -5307,7 +5316,6 @@ void graphTraversal(FSMD* M1, PATHS_LIST *pl, int final, int end, var_list* V1, 
 							update = 1;
 						}
 						//candidate[i] ++;
-						insecure = 1;
 					}
 				}
 			
@@ -5318,6 +5326,10 @@ void graphTraversal(FSMD* M1, PATHS_LIST *pl, int final, int end, var_list* V1, 
 				
 			
 				graphTraversal(M1, pl, final, outward[j], V1, explicitleakage, implicitleakage, netDependency, netN, M2, pl1, V2, matching, insecure, pathPairs);
+				if(*insecure)return;
+				if(rs==1){
+					pathPairs[1] = pathPairs[1]->next;
+				}
 			}
 			if (goFurther == 0){
 				
@@ -5697,14 +5709,12 @@ void graphTraversal(FSMD* M1, PATHS_LIST *pl, int final, int end, var_list* V1, 
 					pathPairs[1] = tempPair;
 					RS[i]++;
 					rss++;
-					insecure = 0;
 				}
 				else{
 					PATH_PAIR_S* tempPair = initS(i,i,0,pathPairs[2]);
 					pathPairs[2] = tempPair;
 					candidate[i] ++;
 					
-					insecure = 1;
 				}
 			}
 			//printf("trasformed = %d, original = %d\n", transformed, original);
@@ -5737,6 +5747,10 @@ void graphTraversal(FSMD* M1, PATHS_LIST *pl, int final, int end, var_list* V1, 
 			
 			if (goFurther){
 				graphTraversal(M1, pl, final, pl->paths[i].end, V1, explicitleakage, implicitleakage, netDependency, netN, M2, pl1, V2, matching, insecure, pathPairs);
+				if(*insecure)return;
+				if(rs==1){
+					pathPairs[1]  = pathPairs[1]->next;
+				}
 			}
 			else{
 				queue[tt].state = pl->paths[i].end;
@@ -5807,9 +5821,12 @@ void XYZ(FSMD* M1, PATHS_LIST *pl1, var_list* V1, FSMD* M2, PATHS_LIST *pl2, var
    	int qq;
    	queue[0].state = 0;
    	tt = 1;
+
+	int* insecure = (int*)malloc(sizeof(int));
+	*insecure = 0;
 	PATH_PAIR_S* pathPairs[3];
 	for(int i=0;i<3; ++i){
-		pathPairs[i] = initS(0,0,0,(PATH_PAIR_S*)NULL);
+		pathPairs[i] = NULL;
 	}
    	for (ptr = 0; ptr < tt; ptr++)
    	{
@@ -5835,8 +5852,11 @@ void XYZ(FSMD* M1, PATHS_LIST *pl1, var_list* V1, FSMD* M2, PATHS_LIST *pl2, var
 			}
 			printf("GOING INSIDE %d\n", queue[ptr].state);
 			
-			graphTraversal(M1, pl1, lastState, queue[ptr].state, V1, implicitleakage, explicitleakage, netDependency, netN, M2, pl2, V2, matching, 0, pathPairs);
+			graphTraversal(M1, pl1, lastState, queue[ptr].state, V1, implicitleakage, explicitleakage, netDependency, netN, M2, pl2, V2, matching, insecure, pathPairs);
 			
+			if(*insecure){
+				break;
+			}
 		}
 	
 	 

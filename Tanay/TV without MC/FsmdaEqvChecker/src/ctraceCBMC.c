@@ -37,65 +37,34 @@ void  cTraceUsingCBMC(FSMD *M0, FSMD *M1,PATHS_LIST *P0,PATHS_LIST *P1,PATH_PAIR
   stdout = fdopen(0,"w");
 }
 
+PATH_PAIR_S* reverseCTrace(PATH_PAIR_S* ctrace){
+	PATH_PAIR_S* head = ctrace; 
+	PATH_PAIR_S* cur = head->next;
+	head->next = NULL;
+	while(cur!=NULL){
+		PATH_PAIR_S* next = cur->next;
+		cur->next = head;
+		head = cur;
+		cur = next;
+	}
+	return head;
+}
 
 
 PATH_PAIR_S* findcTrace(FSMD *M0, FSMD *M1,PATHS_LIST *P0,PATHS_LIST *P1,PATH_PAIR_S *tempLIST,PATH_PAIR_S *tempE_u,PATH_PAIR_S *tempE_c)
 {
-	PATH_PAIR_S *tempPathPairNode;
-	printf("finding cTrace\n");
-while(P0->paths[tempLIST->p0].start!=0||P1->paths[tempLIST->p1].start!=0)
-{
-	tempE_u=tempE_u->next;
-  tempE_c=tempE_c->next;
-  if(tempLIST->p0 < P0->numpaths)
-  {
-    while(tempE_u!=(PATH_PAIR_S *)NULL)
-    { 
-      if(P0->paths[tempE_u->p0].end==P0->paths[tempLIST->p0].start)
-      {
-        tempPathPairNode=initS(tempE_u->p0, tempE_u->p1, tempE_u->isLoop, tempLIST);
-        tempLIST=tempPathPairNode;
-        break;
-      }
-        tempE_u=tempE_u->next;
-    }
-    while(tempE_c!=(PATH_PAIR_S *)NULL)
-    { 
-      if(P0->paths[tempE_c->p0].end==P0->paths[tempLIST->p0].start)
-      {
-        tempPathPairNode=initS(tempE_c->p0, tempE_c->p1, tempE_c->isLoop, tempLIST);
-        tempLIST=tempPathPairNode;
-        break;
-      }
-      tempE_c=tempE_c->next;
-    }
-  }
- else
- {
-    while(tempE_u!=(PATH_PAIR_S *)NULL)
-    { 
-      if(P1->paths[tempE_u->p1].end==P1->paths[tempLIST->p1].start)
-      {
-        tempPathPairNode=initS(tempE_u->p0, tempE_u->p1, tempE_u->isLoop, tempLIST);
-        tempLIST=tempPathPairNode;
-        break;
-      }
-       tempE_u=tempE_u->next;
-    }
-    tempE_c=tempE_c->next;
-    while(tempE_c!=(PATH_PAIR_S *)NULL)
-    {  
-      if(P1->paths[tempE_c->p0].end==P1->paths[tempLIST->p1].start)
-      {
-        tempPathPairNode=initS(tempE_c->p0, tempE_c->p1, tempE_c->isLoop, tempLIST);
-        tempLIST=tempPathPairNode;
-        break;
-      }
-      tempE_c=tempE_c->next;
-    }
-  }
-}
-return tempLIST;
+	PATH_PAIR_S* ctrace = tempLIST;
+	PATH_PAIR_S* head = ctrace;
+	while(head->next!=NULL){
+		head = head->next;
+	}
+	head->next = tempE_c;
+	while(head->next!=NULL){
+		head = head->next;
+	}
+	head->next = tempE_u;
+	ctrace = reverseCTrace(ctrace);
+	return ctrace;
 }
 
 void printcTrace(FSMD *M,PATHS_LIST *P,PATH_PAIR_S *tempLIST,int ind)
