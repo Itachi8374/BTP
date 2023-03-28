@@ -4649,7 +4649,7 @@ void graphTraversal(FSMD* M1, PATHS_LIST *pl, int final, int end, var_list* V1, 
 	if (vis[end] == 1){
 		return;
 	}
-	printf("I AM INSIDE\n");
+	//printf("I AM INSIDE\n");
 	c ++;
 	
 	/*if (c == 50000){
@@ -4699,7 +4699,7 @@ void graphTraversal(FSMD* M1, PATHS_LIST *pl, int final, int end, var_list* V1, 
 		}else{
 			
 			printf("******************INSECURE PATH********************\n");
-			cTraceUsingCBMC(M1,M2,pl,pl1,pathPairs[2],pathPairs[0],pathPairs[1],V1,V2);
+			//cTraceUsingCBMC(M1,M2,pl,pl1,pathPairs[2],pathPairs[0],pathPairs[1],V1,V2);
 		}
 
 		vis[end] = 0;
